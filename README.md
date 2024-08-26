@@ -7,4 +7,4 @@ Ketua Kelompok: Hafidh Husna
 
 Anggota 1: Mahsa Quereda Bahjah - 22/503299/TK/54984
 
-Anggota 2: Steven Namora Roha Saragi Napitu
+Anggota 2: Steven Namora Roha Saragi Napitu - 22/505930/TK/55405

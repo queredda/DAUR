@@ -3,7 +3,7 @@ DAUR adalah sebuah aplikasi yang berfokus pada isu _circullar economy_, khususny
 
 Ambatron
 
-Ketua Kelompok: Hafidh Husna
+Ketua Kelompok: Hafidh Husna - 22/498640/TK/54706
 
 Anggota 1: Mahsa Quereda Bahjah - 22/503299/TK/54984
 

@@ -1,0 +1,17 @@
+C:\Junpro\DAUR\DAUR\DAUR\bin\Debug\net6.0-windows\DAUR.exe
+C:\Junpro\DAUR\DAUR\DAUR\bin\Debug\net6.0-windows\DAUR.deps.json
+C:\Junpro\DAUR\DAUR\DAUR\bin\Debug\net6.0-windows\DAUR.runtimeconfig.json
+C:\Junpro\DAUR\DAUR\DAUR\bin\Debug\net6.0-windows\DAUR.dll
+C:\Junpro\DAUR\DAUR\DAUR\bin\Debug\net6.0-windows\DAUR.pdb
+C:\Junpro\DAUR\DAUR\DAUR\obj\Debug\net6.0-windows\DAUR.Form1.resources
+C:\Junpro\DAUR\DAUR\DAUR\obj\Debug\net6.0-windows\DAUR.Properties.Resources.resources
+C:\Junpro\DAUR\DAUR\DAUR\obj\Debug\net6.0-windows\DAUR.csproj.GenerateResource.cache
+C:\Junpro\DAUR\DAUR\DAUR\obj\Debug\net6.0-windows\DAUR.GeneratedMSBuildEditorConfig.editorconfig
+C:\Junpro\DAUR\DAUR\DAUR\obj\Debug\net6.0-windows\DAUR.AssemblyInfoInputs.cache
+C:\Junpro\DAUR\DAUR\DAUR\obj\Debug\net6.0-windows\DAUR.AssemblyInfo.cs
+C:\Junpro\DAUR\DAUR\DAUR\obj\Debug\net6.0-windows\DAUR.csproj.CoreCompileInputs.cache
+C:\Junpro\DAUR\DAUR\DAUR\obj\Debug\net6.0-windows\DAUR.dll
+C:\Junpro\DAUR\DAUR\DAUR\obj\Debug\net6.0-windows\refint\DAUR.dll
+C:\Junpro\DAUR\DAUR\DAUR\obj\Debug\net6.0-windows\DAUR.pdb
+C:\Junpro\DAUR\DAUR\DAUR\obj\Debug\net6.0-windows\DAUR.genruntimeconfig.cache
+C:\Junpro\DAUR\DAUR\DAUR\obj\Debug\net6.0-windows\ref\DAUR.dll

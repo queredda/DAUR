@@ -1,13 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "leEjsxzREw8M3HHL6bE7VCTrHXoHdyb31JOYffde13GR3qtEJJfBqj0PQtd+HXiBIxI7Fse3zni+5vWCJgmXbA==",
+  "dgSpecHash": "wRTm6V8EnYk=",
   "success": true,
-  "projectFilePath": "C:\\Users\\ASUS\\Source\\Repos\\DAUR\\DAUR\\DAUR.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.28\\microsoft.windowsdesktop.app.ref.6.0.28.nupkg.sha512",
-    "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.28\\microsoft.netcore.app.ref.6.0.28.nupkg.sha512",
-    "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.28\\microsoft.aspnetcore.app.ref.6.0.28.nupkg.sha512",
-    "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.28\\microsoft.netcore.app.host.win-x64.6.0.28.nupkg.sha512"
-  ],
+  "projectFilePath": "C:\\Users\\quereda\\source\\repos\\DAUR\\DAUR\\DAUR.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }

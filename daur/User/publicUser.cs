@@ -19,7 +19,7 @@ namespace DAUR
             _ID = userID;
             _UserName = userName;
             _Password = userPassword;
-            _Address = userAddress
+            _Address = userAddress;
         }
 
         // Properties

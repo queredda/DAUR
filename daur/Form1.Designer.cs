@@ -37,11 +37,11 @@
             label5 = new Label();
             button3 = new Button();
             label4 = new Label();
-            textBox2 = new TextBox();
+            tbPassword = new TextBox();
             button2 = new Button();
             label3 = new Label();
             label2 = new Label();
-            textBox1 = new TextBox();
+            tbEmail = new TextBox();
             label1 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -69,11 +69,11 @@
             panel1.Controls.Add(label5);
             panel1.Controls.Add(button3);
             panel1.Controls.Add(label4);
-            panel1.Controls.Add(textBox2);
+            panel1.Controls.Add(tbPassword);
             panel1.Controls.Add(button2);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label2);
-            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(tbEmail);
             panel1.Controls.Add(label1);
             panel1.Name = "panel1";
             panel1.Paint += panel1_Paint;
@@ -116,11 +116,12 @@
             label4.ForeColor = Color.FromArgb(66, 66, 66);
             label4.Name = "label4";
             // 
-            // textBox2
+            // tbPassword
             // 
-            resources.ApplyResources(textBox2, "textBox2");
-            textBox2.ForeColor = Color.Gray;
-            textBox2.Name = "textBox2";
+            resources.ApplyResources(tbPassword, "tbPassword");
+            tbPassword.ForeColor = Color.Gray;
+            tbPassword.Name = "tbPassword";
+            tbPassword.UseSystemPasswordChar = true;
             // 
             // button2
             // 
@@ -147,12 +148,12 @@
             label2.ForeColor = Color.FromArgb(66, 66, 66);
             label2.Name = "label2";
             // 
-            // textBox1
+            // tbEmail
             // 
-            resources.ApplyResources(textBox1, "textBox1");
-            textBox1.ForeColor = Color.Gray;
-            textBox1.Name = "textBox1";
-            textBox1.TextChanged += textBox1_TextChanged;
+            resources.ApplyResources(tbEmail, "tbEmail");
+            tbEmail.ForeColor = Color.Gray;
+            tbEmail.Name = "tbEmail";
+            tbEmail.TextChanged += textBox1_TextChanged;
             // 
             // label1
             // 
@@ -185,10 +186,10 @@
         private Button button2;
         private Label label3;
         private Label label2;
-        private TextBox textBox1;
+        private TextBox tbEmail;
         private Label label1;
         private Label label4;
-        private TextBox textBox2;
+        private TextBox tbPassword;
         private Button button5;
         private Button button4;
         private Label label5;

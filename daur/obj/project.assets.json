@@ -8,19 +8,24 @@
     "net6.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\quereda\\.nuget\\packages\\": {}
+    "C:\\Users\\Praktikan\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\quereda\\source\\repos\\DAUR\\DAUR\\DAUR.csproj",
+      "projectUniqueName": "C:\\Users\\Praktikan\\source\\repos\\DAURIN\\DAUR\\DAUR.csproj",
       "projectName": "DAUR",
-      "projectPath": "C:\\Users\\quereda\\source\\repos\\DAUR\\DAUR\\DAUR.csproj",
-      "packagesPath": "C:\\Users\\quereda\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\quereda\\source\\repos\\DAUR\\DAUR\\obj\\",
+      "projectPath": "C:\\Users\\Praktikan\\source\\repos\\DAURIN\\DAUR\\DAUR.csproj",
+      "packagesPath": "C:\\Users\\Praktikan\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Praktikan\\source\\repos\\DAURIN\\DAUR\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\quereda\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Praktikan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

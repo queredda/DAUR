@@ -45,11 +45,14 @@ namespace DAUR
             get { return _typeOfWaste; }
         }
 
+        private bool _deliveryRequest;
+
         public bool deliveryRequest
         {
             get { return _deliveryRequest; }
             set { _deliveryRequest = value; }
         }
+
 
         // Method to request waste delivery for recycling
         public bool ReceiveDelivery()

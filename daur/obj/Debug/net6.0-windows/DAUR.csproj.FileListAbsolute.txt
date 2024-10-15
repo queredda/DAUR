@@ -20,7 +20,6 @@ C:\Junpro\DAUR\DAUR\bin\Debug\net6.0-windows\DAUR.deps.json
 C:\Junpro\DAUR\DAUR\bin\Debug\net6.0-windows\DAUR.runtimeconfig.json
 C:\Junpro\DAUR\DAUR\bin\Debug\net6.0-windows\DAUR.dll
 C:\Junpro\DAUR\DAUR\bin\Debug\net6.0-windows\DAUR.pdb
-C:\Junpro\DAUR\DAUR\obj\Debug\net6.0-windows\DAUR.Form1.resources
 C:\Junpro\DAUR\DAUR\obj\Debug\net6.0-windows\DAUR.Properties.Resources.resources
 C:\Junpro\DAUR\DAUR\obj\Debug\net6.0-windows\DAUR.csproj.GenerateResource.cache
 C:\Junpro\DAUR\DAUR\obj\Debug\net6.0-windows\DAUR.GeneratedMSBuildEditorConfig.editorconfig
@@ -50,3 +49,5 @@ C:\Users\Praktikan\source\repos\DAURIN\DAUR\bin\Debug\net6.0-windows\DAUR.dll
 C:\Users\Praktikan\source\repos\DAURIN\DAUR\bin\Debug\net6.0-windows\DAUR.pdb
 C:\Users\Praktikan\source\repos\DAURIN\DAUR\obj\Debug\net6.0-windows\DAUR.genruntimeconfig.cache
 C:\Users\Praktikan\source\repos\DAURIN\DAUR\obj\Debug\net6.0-windows\ref\DAUR.dll
+C:\Junpro\DAUR\DAUR\obj\Debug\net6.0-windows\DAUR.loginPage.resources
+C:\Junpro\DAUR\DAUR\obj\Debug\net6.0-windows\DAUR.signupPage.resources

@@ -8,19 +8,24 @@
     "net6.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\snroh\\.nuget\\packages\\": {}
+    "C:\\Users\\Praktikan\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Junpro\\DAUR\\DAUR\\DAUR.csproj",
+      "projectUniqueName": "C:\\Users\\Praktikan\\source\\repos\\DAURIN\\DAUR\\DAUR.csproj",
       "projectName": "DAUR",
-      "projectPath": "C:\\Junpro\\DAUR\\DAUR\\DAUR.csproj",
-      "packagesPath": "C:\\Users\\snroh\\.nuget\\packages\\",
-      "outputPath": "C:\\Junpro\\DAUR\\DAUR\\obj\\",
+      "projectPath": "C:\\Users\\Praktikan\\source\\repos\\DAURIN\\DAUR\\DAUR.csproj",
+      "packagesPath": "C:\\Users\\Praktikan\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Praktikan\\source\\repos\\DAURIN\\DAUR\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\snroh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Praktikan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -40,6 +45,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -64,7 +74,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

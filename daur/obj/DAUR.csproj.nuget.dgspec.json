@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Junpro\\DAUR\\DAUR\\DAUR.csproj": {}
+    "D:\\perjuanganHH\\Kuliah\\MATA KULIAH\\Semester 5\\Junpro\\DAUR\\DAUR\\DAUR.csproj": {}
   },
   "projects": {
-    "C:\\Junpro\\DAUR\\DAUR\\DAUR.csproj": {
+    "D:\\perjuanganHH\\Kuliah\\MATA KULIAH\\Semester 5\\Junpro\\DAUR\\DAUR\\DAUR.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Junpro\\DAUR\\DAUR\\DAUR.csproj",
+        "projectUniqueName": "D:\\perjuanganHH\\Kuliah\\MATA KULIAH\\Semester 5\\Junpro\\DAUR\\DAUR\\DAUR.csproj",
         "projectName": "DAUR",
-        "projectPath": "C:\\Junpro\\DAUR\\DAUR\\DAUR.csproj",
-        "packagesPath": "C:\\Users\\snroh\\.nuget\\packages\\",
-        "outputPath": "C:\\Junpro\\DAUR\\DAUR\\obj\\",
+        "projectPath": "D:\\perjuanganHH\\Kuliah\\MATA KULIAH\\Semester 5\\Junpro\\DAUR\\DAUR\\DAUR.csproj",
+        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+        "outputPath": "D:\\perjuanganHH\\Kuliah\\MATA KULIAH\\Semester 5\\Junpro\\DAUR\\DAUR\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\snroh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -34,11 +38,22 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
+          "dependencies": {
+            "Npgsql": {
+              "target": "Package",
+              "version": "[8.0.5, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -50,6 +65,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.28, 6.0.28]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[6.0.28, 6.0.28]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.28, 6.0.28]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.28, 6.0.28]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
@@ -58,7 +91,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

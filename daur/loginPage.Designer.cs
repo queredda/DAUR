@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(loginPage));
             button1 = new Button();
             panel1 = new Panel();
+            linkSign = new LinkLabel();
+            lblSign = new Label();
             pictureBox1 = new PictureBox();
             button5 = new Button();
             button4 = new Button();
@@ -38,13 +40,11 @@
             button3 = new Button();
             label4 = new Label();
             tbPassword = new TextBox();
-            button2 = new Button();
+            btnLogin = new Button();
             label3 = new Label();
             label2 = new Label();
             tbEmail = new TextBox();
             label1 = new Label();
-            lblSign = new Label();
-            linkSign = new LinkLabel();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -73,7 +73,7 @@
             panel1.Controls.Add(button3);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(tbPassword);
-            panel1.Controls.Add(button2);
+            panel1.Controls.Add(btnLogin);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(tbEmail);
@@ -81,6 +81,20 @@
             resources.ApplyResources(panel1, "panel1");
             panel1.Name = "panel1";
             panel1.Paint += panel1_Paint;
+            // 
+            // linkSign
+            // 
+            resources.ApplyResources(linkSign, "linkSign");
+            linkSign.Name = "linkSign";
+            linkSign.TabStop = true;
+            linkSign.LinkClicked += linkSign_LinkClicked;
+            // 
+            // lblSign
+            // 
+            resources.ApplyResources(lblSign, "lblSign");
+            lblSign.BackColor = Color.Transparent;
+            lblSign.ForeColor = Color.FromArgb(66, 66, 66);
+            lblSign.Name = "lblSign";
             // 
             // pictureBox1
             // 
@@ -127,15 +141,14 @@
             tbPassword.Name = "tbPassword";
             tbPassword.UseSystemPasswordChar = true;
             // 
-            // button2
+            // btnLogin
             // 
-            button2.BackColor = Color.FromArgb(66, 66, 66);
-            button2.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(button2, "button2");
-            button2.ForeColor = Color.White;
-            button2.Name = "button2";
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
+            btnLogin.BackColor = Color.FromArgb(66, 66, 66);
+            btnLogin.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(btnLogin, "btnLogin");
+            btnLogin.ForeColor = Color.White;
+            btnLogin.Name = "btnLogin";
+            btnLogin.UseVisualStyleBackColor = false;
             // 
             // label3
             // 
@@ -166,20 +179,6 @@
             label1.ForeColor = Color.FromArgb(66, 66, 66);
             label1.Name = "label1";
             // 
-            // lblSign
-            // 
-            resources.ApplyResources(lblSign, "lblSign");
-            lblSign.BackColor = Color.Transparent;
-            lblSign.ForeColor = Color.FromArgb(66, 66, 66);
-            lblSign.Name = "lblSign";
-            // 
-            // linkSign
-            // 
-            resources.ApplyResources(linkSign, "linkSign");
-            linkSign.Name = "linkSign";
-            linkSign.TabStop = true;
-            linkSign.LinkClicked += linkSign_LinkClicked;
-            // 
             // loginPage
             // 
             resources.ApplyResources(this, "$this");
@@ -201,7 +200,7 @@
 
         private Button button1;
         private Panel panel1;
-        private Button button2;
+        private Button btnLogin;
         private Label label3;
         private Label label2;
         private TextBox tbEmail;

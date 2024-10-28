@@ -2,6 +2,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrayNotify;
 using System;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using Npgsql;
 
 
 namespace DAUR
@@ -62,14 +63,9 @@ namespace DAUR
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
-            button2.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, button2.Width, button2.Height, 35, 35));
+            btnLogin.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, btnLogin.Width, btnLogin.Height, 35, 35));
             tbEmail.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, tbEmail.Width, tbEmail.Height, 15, 15));
             tbPassword.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, tbPassword.Width, tbPassword.Height, 15, 15));
             panel1.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel1.Width, panel1.Height, 25, 25));

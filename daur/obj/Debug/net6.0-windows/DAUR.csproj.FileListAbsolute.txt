@@ -51,3 +51,31 @@ C:\Users\Praktikan\source\repos\DAURIN\DAUR\obj\Debug\net6.0-windows\DAUR.genrun
 C:\Users\Praktikan\source\repos\DAURIN\DAUR\obj\Debug\net6.0-windows\ref\DAUR.dll
 C:\Junpro\DAUR\DAUR\obj\Debug\net6.0-windows\DAUR.loginPage.resources
 C:\Junpro\DAUR\DAUR\obj\Debug\net6.0-windows\DAUR.signupPage.resources
+D:\perjuanganHH\Kuliah\MATA KULIAH\Semester 5\Junpro\DAUR\daur\obj\Debug\net6.0-windows\DAUR.dll
+D:\perjuanganHH\Kuliah\MATA KULIAH\Semester 5\Junpro\DAUR\daur\obj\Debug\net6.0-windows\refint\DAUR.dll
+D:\perjuanganHH\Kuliah\MATA KULIAH\Semester 5\Junpro\DAUR\daur\obj\Debug\net6.0-windows\DAUR.pdb
+D:\perjuanganHH\Kuliah\MATA KULIAH\Semester 5\Junpro\DAUR\DAUR\bin\Debug\net6.0-windows\DAUR.exe
+D:\perjuanganHH\Kuliah\MATA KULIAH\Semester 5\Junpro\DAUR\DAUR\bin\Debug\net6.0-windows\DAUR.deps.json
+D:\perjuanganHH\Kuliah\MATA KULIAH\Semester 5\Junpro\DAUR\DAUR\bin\Debug\net6.0-windows\DAUR.runtimeconfig.json
+D:\perjuanganHH\Kuliah\MATA KULIAH\Semester 5\Junpro\DAUR\DAUR\bin\Debug\net6.0-windows\DAUR.dll
+D:\perjuanganHH\Kuliah\MATA KULIAH\Semester 5\Junpro\DAUR\DAUR\bin\Debug\net6.0-windows\DAUR.pdb
+D:\perjuanganHH\Kuliah\MATA KULIAH\Semester 5\Junpro\DAUR\DAUR\bin\Debug\net6.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\perjuanganHH\Kuliah\MATA KULIAH\Semester 5\Junpro\DAUR\DAUR\bin\Debug\net6.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+D:\perjuanganHH\Kuliah\MATA KULIAH\Semester 5\Junpro\DAUR\DAUR\bin\Debug\net6.0-windows\Npgsql.dll
+D:\perjuanganHH\Kuliah\MATA KULIAH\Semester 5\Junpro\DAUR\DAUR\bin\Debug\net6.0-windows\System.Diagnostics.DiagnosticSource.dll
+D:\perjuanganHH\Kuliah\MATA KULIAH\Semester 5\Junpro\DAUR\DAUR\bin\Debug\net6.0-windows\System.Text.Encodings.Web.dll
+D:\perjuanganHH\Kuliah\MATA KULIAH\Semester 5\Junpro\DAUR\DAUR\bin\Debug\net6.0-windows\System.Text.Json.dll
+D:\perjuanganHH\Kuliah\MATA KULIAH\Semester 5\Junpro\DAUR\DAUR\bin\Debug\net6.0-windows\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+D:\perjuanganHH\Kuliah\MATA KULIAH\Semester 5\Junpro\DAUR\DAUR\obj\Debug\net6.0-windows\DAUR.csproj.AssemblyReference.cache
+D:\perjuanganHH\Kuliah\MATA KULIAH\Semester 5\Junpro\DAUR\DAUR\obj\Debug\net6.0-windows\DAUR.loginPage.resources
+D:\perjuanganHH\Kuliah\MATA KULIAH\Semester 5\Junpro\DAUR\DAUR\obj\Debug\net6.0-windows\DAUR.Properties.Resources.resources
+D:\perjuanganHH\Kuliah\MATA KULIAH\Semester 5\Junpro\DAUR\DAUR\obj\Debug\net6.0-windows\DAUR.signupPage.resources
+D:\perjuanganHH\Kuliah\MATA KULIAH\Semester 5\Junpro\DAUR\DAUR\obj\Debug\net6.0-windows\DAUR.csproj.GenerateResource.cache
+D:\perjuanganHH\Kuliah\MATA KULIAH\Semester 5\Junpro\DAUR\DAUR\obj\Debug\net6.0-windows\DAUR.GeneratedMSBuildEditorConfig.editorconfig
+D:\perjuanganHH\Kuliah\MATA KULIAH\Semester 5\Junpro\DAUR\DAUR\obj\Debug\net6.0-windows\DAUR.AssemblyInfoInputs.cache
+D:\perjuanganHH\Kuliah\MATA KULIAH\Semester 5\Junpro\DAUR\DAUR\obj\Debug\net6.0-windows\DAUR.AssemblyInfo.cs
+D:\perjuanganHH\Kuliah\MATA KULIAH\Semester 5\Junpro\DAUR\DAUR\obj\Debug\net6.0-windows\DAUR.csproj.CoreCompileInputs.cache
+D:\perjuanganHH\Kuliah\MATA KULIAH\Semester 5\Junpro\DAUR\DAUR\obj\Debug\net6.0-windows\DAUR.sourcelink.json
+D:\perjuanganHH\Kuliah\MATA KULIAH\Semester 5\Junpro\DAUR\DAUR\obj\Debug\net6.0-windows\DAUR.csproj.Up2Date
+D:\perjuanganHH\Kuliah\MATA KULIAH\Semester 5\Junpro\DAUR\DAUR\obj\Debug\net6.0-windows\DAUR.genruntimeconfig.cache
+D:\perjuanganHH\Kuliah\MATA KULIAH\Semester 5\Junpro\DAUR\DAUR\obj\Debug\net6.0-windows\ref\DAUR.dll

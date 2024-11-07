@@ -79,3 +79,12 @@ D:\perjuanganHH\Kuliah\MATA KULIAH\Semester 5\Junpro\DAUR\DAUR\obj\Debug\net6.0-
 D:\perjuanganHH\Kuliah\MATA KULIAH\Semester 5\Junpro\DAUR\DAUR\obj\Debug\net6.0-windows\DAUR.csproj.Up2Date
 D:\perjuanganHH\Kuliah\MATA KULIAH\Semester 5\Junpro\DAUR\DAUR\obj\Debug\net6.0-windows\DAUR.genruntimeconfig.cache
 D:\perjuanganHH\Kuliah\MATA KULIAH\Semester 5\Junpro\DAUR\DAUR\obj\Debug\net6.0-windows\ref\DAUR.dll
+C:\Junpro\DAUR\DAUR\bin\Debug\net6.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Junpro\DAUR\DAUR\bin\Debug\net6.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Junpro\DAUR\DAUR\bin\Debug\net6.0-windows\Npgsql.dll
+C:\Junpro\DAUR\DAUR\bin\Debug\net6.0-windows\System.Diagnostics.DiagnosticSource.dll
+C:\Junpro\DAUR\DAUR\bin\Debug\net6.0-windows\System.Text.Encodings.Web.dll
+C:\Junpro\DAUR\DAUR\bin\Debug\net6.0-windows\System.Text.Json.dll
+C:\Junpro\DAUR\DAUR\bin\Debug\net6.0-windows\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+C:\Junpro\DAUR\DAUR\obj\Debug\net6.0-windows\DAUR.csproj.AssemblyReference.cache
+C:\Junpro\DAUR\DAUR\obj\Debug\net6.0-windows\DAUR.csproj.CopyComplete

@@ -88,3 +88,11 @@ C:\Junpro\DAUR\DAUR\bin\Debug\net6.0-windows\System.Text.Json.dll
 C:\Junpro\DAUR\DAUR\bin\Debug\net6.0-windows\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
 C:\Junpro\DAUR\DAUR\obj\Debug\net6.0-windows\DAUR.csproj.AssemblyReference.cache
 C:\Junpro\DAUR\DAUR\obj\Debug\net6.0-windows\DAUR.csproj.CopyComplete
+C:\Junpro\DAUR\DAUR\obj\Debug\net6.0-windows\DAUR.Dashboard.resources
+C:\Junpro\DAUR\DAUR\bin\Debug\net6.0-windows\Bunifu.Licensing.dll
+C:\Junpro\DAUR\DAUR\bin\Debug\net6.0-windows\Bunifu.UI.WinForms.dll
+C:\Junpro\DAUR\DAUR\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+C:\Junpro\DAUR\DAUR\bin\Debug\net6.0-windows\RestSharp.dll
+C:\Junpro\DAUR\DAUR\bin\Debug\net6.0-windows\System.CodeDom.dll
+C:\Junpro\DAUR\DAUR\bin\Debug\net6.0-windows\System.Management.dll
+C:\Junpro\DAUR\DAUR\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Management.dll

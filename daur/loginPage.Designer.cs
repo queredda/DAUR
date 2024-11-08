@@ -149,6 +149,7 @@
             btnLogin.ForeColor = Color.White;
             btnLogin.Name = "btnLogin";
             btnLogin.UseVisualStyleBackColor = false;
+            btnLogin.Click += btnLogin_Click;
             // 
             // label3
             // 

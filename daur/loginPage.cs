@@ -12,12 +12,12 @@ namespace DAUR
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (
-            int nLeftRect,     // x-coordinate of upper-left corner
-            int nTopRect,      // y-coordinate of upper-left corner
-            int nRightRect,    // x-coordinate of lower-right corner
-            int nBottomRect,   // y-coordinate of lower-right corner
-            int nWidthEllipse, // height of ellipse
-            int nHeightEllipse // width of ellipse
+            int nLeftRect,   
+            int nTopRect,      
+            int nRightRect,    
+            int nBottomRect,   
+            int nWidthEllipse, 
+            int nHeightEllipse 
         );
 
 
@@ -28,11 +28,9 @@ namespace DAUR
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
 
-            // Subscribe to the MouseEnter and MouseLeave events
             button1.MouseEnter += button1_MouseEnter;
             button1.MouseLeave += button1_MouseLeave;
 
-            // Add the button to the form
             this.Controls.Add(button1);
         }
 
@@ -84,6 +82,18 @@ namespace DAUR
         {
             signupPage signUpForm = new signupPage();
             signUpForm.Show();
+            this.Hide();
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            OpenDashboard();
+        }
+
+        private void OpenDashboard()
+        {
+            Dashboard dashboard = new Dashboard();
+            dashboard.Show();
             this.Hide();
         }
     }

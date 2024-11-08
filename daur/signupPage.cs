@@ -27,7 +27,6 @@ namespace DAUR
 
         private void signupPage_Load(object sender, EventArgs e)
         {
-            // Set round corners for controls
             btn_SignUp.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, btn_SignUp.Width, btn_SignUp.Height, 35, 35));
             tbName.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, tbName.Width, tbName.Height, 15, 15));
             tbEmail.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, tbEmail.Width, tbEmail.Height, 15, 15));
@@ -45,7 +44,7 @@ namespace DAUR
 
         private void btnSignUp_Click(object sender, EventArgs e)
         {
-            // Add signup logic here
+           
         }
 
 

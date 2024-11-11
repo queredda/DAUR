@@ -28,46 +28,59 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             label1 = new Label();
-            nav_pnl = new Panel();
-            button6 = new Button();
-            button5 = new Button();
-            button4 = new Button();
-            button3 = new Button();
-            button2 = new Button();
-            pictureBox1 = new PictureBox();
             main_pnl = new Panel();
             panel2 = new Panel();
+            button9 = new Button();
             pnl_artikel = new Panel();
             label3 = new Label();
             pnl_weather = new Panel();
+            button8 = new Button();
             lbl_weather = new Label();
             today_weather = new Label();
             pictureBox5 = new PictureBox();
             pnl_waste = new Panel();
+            button7 = new Button();
             total_waste = new Label();
             lbl_waste = new Label();
             pictureBox4 = new PictureBox();
+            panel4 = new Panel();
+            button2 = new Button();
             textBox1 = new TextBox();
             pictureBox2 = new PictureBox();
             pictureBox3 = new PictureBox();
             button1 = new Button();
             panel1 = new Panel();
-            button7 = new Button();
-            button8 = new Button();
-            button9 = new Button();
-            nav_pnl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            sidebar = new FlowLayoutPanel();
+            panel3 = new Panel();
+            logoBtn = new PictureBox();
+            panel5 = new Panel();
+            button3 = new Button();
+            panel6 = new Panel();
+            button4 = new Button();
+            panel7 = new Panel();
+            btn_profile = new Button();
+            panel8 = new Panel();
+            button6 = new Button();
+            sidebarTimer = new System.Windows.Forms.Timer(components);
             main_pnl.SuspendLayout();
             panel2.SuspendLayout();
             pnl_weather.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             pnl_waste.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            panel1.SuspendLayout();
+            sidebar.SuspendLayout();
+            panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)logoBtn).BeginInit();
+            panel5.SuspendLayout();
+            panel6.SuspendLayout();
+            panel7.SuspendLayout();
+            panel8.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -80,97 +93,14 @@
             label1.TabIndex = 0;
             label1.Text = "Welcome, Tipen";
             // 
-            // nav_pnl
-            // 
-            nav_pnl.BackColor = Color.White;
-            nav_pnl.Controls.Add(button6);
-            nav_pnl.Controls.Add(button5);
-            nav_pnl.Controls.Add(button4);
-            nav_pnl.Controls.Add(button3);
-            nav_pnl.Controls.Add(button2);
-            nav_pnl.Controls.Add(pictureBox1);
-            nav_pnl.Location = new Point(-8, -6);
-            nav_pnl.Name = "nav_pnl";
-            nav_pnl.Size = new Size(125, 780);
-            nav_pnl.TabIndex = 1;
-            nav_pnl.Paint += nav_pnl_Paint;
-            // 
-            // button6
-            // 
-            button6.BackgroundImage = Properties.Resources.btn_setting;
-            button6.BackgroundImageLayout = ImageLayout.Stretch;
-            button6.FlatStyle = FlatStyle.Flat;
-            button6.ForeColor = Color.White;
-            button6.Location = new Point(51, 536);
-            button6.Name = "button6";
-            button6.Size = new Size(31, 31);
-            button6.TabIndex = 5;
-            button6.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            button5.BackgroundImage = Properties.Resources.btn_profile;
-            button5.BackgroundImageLayout = ImageLayout.Stretch;
-            button5.FlatStyle = FlatStyle.Flat;
-            button5.ForeColor = Color.White;
-            button5.Location = new Point(51, 461);
-            button5.Name = "button5";
-            button5.Size = new Size(31, 31);
-            button5.TabIndex = 4;
-            button5.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            button4.BackgroundImage = Properties.Resources.send_btn;
-            button4.BackgroundImageLayout = ImageLayout.Stretch;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.ForeColor = Color.White;
-            button4.Location = new Point(51, 386);
-            button4.Name = "button4";
-            button4.Size = new Size(31, 31);
-            button4.TabIndex = 3;
-            button4.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            button3.BackgroundImage = Properties.Resources.btn_order;
-            button3.BackgroundImageLayout = ImageLayout.Stretch;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.ForeColor = Color.White;
-            button3.Location = new Point(51, 311);
-            button3.Name = "button3";
-            button3.Size = new Size(31, 31);
-            button3.TabIndex = 2;
-            button3.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            button2.BackgroundImage = (Image)resources.GetObject("button2.BackgroundImage");
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(51, 236);
-            button2.Name = "button2";
-            button2.Size = new Size(31, 31);
-            button2.TabIndex = 1;
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(34, 66);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(61, 67);
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
-            // 
             // main_pnl
             // 
             main_pnl.Controls.Add(panel2);
             main_pnl.Controls.Add(pnl_weather);
             main_pnl.Controls.Add(pnl_waste);
-            main_pnl.Location = new Point(117, 119);
+            main_pnl.Location = new Point(179, 119);
             main_pnl.Name = "main_pnl";
-            main_pnl.Size = new Size(1254, 655);
+            main_pnl.Size = new Size(1191, 655);
             main_pnl.TabIndex = 2;
             main_pnl.Paint += main_pnl_Paint;
             // 
@@ -184,6 +114,18 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(1130, 318);
             panel2.TabIndex = 3;
+            // 
+            // button9
+            // 
+            button9.BackgroundImage = Properties.Resources._3dot;
+            button9.BackgroundImageLayout = ImageLayout.Stretch;
+            button9.FlatStyle = FlatStyle.Flat;
+            button9.ForeColor = Color.White;
+            button9.Location = new Point(1081, 30);
+            button9.Name = "button9";
+            button9.Size = new Size(24, 24);
+            button9.TabIndex = 7;
+            button9.UseVisualStyleBackColor = true;
             // 
             // pnl_artikel
             // 
@@ -214,6 +156,18 @@
             pnl_weather.Name = "pnl_weather";
             pnl_weather.Size = new Size(535, 248);
             pnl_weather.TabIndex = 1;
+            // 
+            // button8
+            // 
+            button8.BackgroundImage = Properties.Resources._3dot;
+            button8.BackgroundImageLayout = ImageLayout.Stretch;
+            button8.FlatStyle = FlatStyle.Flat;
+            button8.ForeColor = Color.White;
+            button8.Location = new Point(486, 24);
+            button8.Name = "button8";
+            button8.Size = new Size(24, 24);
+            button8.TabIndex = 7;
+            button8.UseVisualStyleBackColor = true;
             // 
             // lbl_weather
             // 
@@ -257,6 +211,19 @@
             pnl_waste.Name = "pnl_waste";
             pnl_waste.Size = new Size(535, 248);
             pnl_waste.TabIndex = 0;
+            pnl_waste.Paint += pnl_waste_Paint;
+            // 
+            // button7
+            // 
+            button7.BackgroundImage = Properties.Resources._3dot;
+            button7.BackgroundImageLayout = ImageLayout.Stretch;
+            button7.FlatStyle = FlatStyle.Flat;
+            button7.ForeColor = Color.White;
+            button7.Location = new Point(484, 24);
+            button7.Name = "button7";
+            button7.Size = new Size(24, 24);
+            button7.TabIndex = 6;
+            button7.UseVisualStyleBackColor = true;
             // 
             // total_waste
             // 
@@ -288,6 +255,27 @@
             pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox4.TabIndex = 0;
             pictureBox4.TabStop = false;
+            // 
+            // panel4
+            // 
+            panel4.Controls.Add(button2);
+            panel4.Location = new Point(3, 119);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(177, 58);
+            panel4.TabIndex = 1;
+            // 
+            // button2
+            // 
+            button2.Image = Properties.Resources.btn_dashboard;
+            button2.ImageAlign = ContentAlignment.MiddleLeft;
+            button2.Location = new Point(-7, -8);
+            button2.Name = "button2";
+            button2.Padding = new Padding(30, 0, 0, 0);
+            button2.Size = new Size(194, 77);
+            button2.TabIndex = 7;
+            button2.Text = "             Dashboard";
+            button2.TextAlign = ContentAlignment.MiddleLeft;
+            button2.UseVisualStyleBackColor = true;
             // 
             // textBox1
             // 
@@ -342,48 +330,137 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(label1);
-            panel1.Location = new Point(117, 37);
+            panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1253, 76);
-            panel1.TabIndex = 7;
-            panel1.Paint += panel1_Paint;
+            panel1.Size = new Size(200, 100);
+            panel1.TabIndex = 9;
             // 
-            // button7
+            // sidebar
             // 
-            button7.BackgroundImage = Properties.Resources._3dot;
-            button7.BackgroundImageLayout = ImageLayout.Stretch;
-            button7.FlatStyle = FlatStyle.Flat;
-            button7.ForeColor = Color.White;
-            button7.Location = new Point(484, 24);
-            button7.Name = "button7";
-            button7.Size = new Size(24, 24);
-            button7.TabIndex = 6;
-            button7.UseVisualStyleBackColor = true;
+            sidebar.Controls.Add(panel3);
+            sidebar.Controls.Add(panel4);
+            sidebar.Controls.Add(panel5);
+            sidebar.Controls.Add(panel6);
+            sidebar.Controls.Add(panel7);
+            sidebar.Controls.Add(panel8);
+            sidebar.Dock = DockStyle.Left;
+            sidebar.Location = new Point(0, 0);
+            sidebar.MaximumSize = new Size(180, 768);
+            sidebar.MinimumSize = new Size(86, 768);
+            sidebar.Name = "sidebar";
+            sidebar.Size = new Size(180, 768);
+            sidebar.TabIndex = 8;
+            sidebar.Paint += sidebar_Paint;
             // 
-            // button8
+            // panel3
             // 
-            button8.BackgroundImage = Properties.Resources._3dot;
-            button8.BackgroundImageLayout = ImageLayout.Stretch;
-            button8.FlatStyle = FlatStyle.Flat;
-            button8.ForeColor = Color.White;
-            button8.Location = new Point(486, 24);
-            button8.Name = "button8";
-            button8.Size = new Size(24, 24);
-            button8.TabIndex = 7;
-            button8.UseVisualStyleBackColor = true;
+            panel3.Controls.Add(logoBtn);
+            panel3.Location = new Point(3, 3);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(177, 110);
+            panel3.TabIndex = 0;
             // 
-            // button9
+            // logoBtn
             // 
-            button9.BackgroundImage = Properties.Resources._3dot;
-            button9.BackgroundImageLayout = ImageLayout.Stretch;
-            button9.FlatStyle = FlatStyle.Flat;
-            button9.ForeColor = Color.White;
-            button9.Location = new Point(1081, 30);
-            button9.Name = "button9";
-            button9.Size = new Size(24, 24);
-            button9.TabIndex = 7;
-            button9.UseVisualStyleBackColor = true;
+            logoBtn.Cursor = Cursors.Hand;
+            logoBtn.Image = Properties.Resources.Logo_junpro;
+            logoBtn.Location = new Point(9, 20);
+            logoBtn.Name = "logoBtn";
+            logoBtn.Size = new Size(61, 67);
+            logoBtn.SizeMode = PictureBoxSizeMode.StretchImage;
+            logoBtn.TabIndex = 0;
+            logoBtn.TabStop = false;
+            logoBtn.Click += logoBtn_Click;
+            // 
+            // panel5
+            // 
+            panel5.Controls.Add(button3);
+            panel5.Location = new Point(3, 183);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(177, 58);
+            panel5.TabIndex = 8;
+            // 
+            // button3
+            // 
+            button3.Image = Properties.Resources.btn_order;
+            button3.ImageAlign = ContentAlignment.MiddleLeft;
+            button3.Location = new Point(-7, -8);
+            button3.Name = "button3";
+            button3.Padding = new Padding(30, 0, 0, 0);
+            button3.Size = new Size(194, 77);
+            button3.TabIndex = 7;
+            button3.Text = "             Track";
+            button3.TextAlign = ContentAlignment.MiddleLeft;
+            button3.UseVisualStyleBackColor = true;
+            // 
+            // panel6
+            // 
+            panel6.Controls.Add(button4);
+            panel6.Location = new Point(3, 247);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(177, 58);
+            panel6.TabIndex = 8;
+            // 
+            // button4
+            // 
+            button4.Image = Properties.Resources.send_btn;
+            button4.ImageAlign = ContentAlignment.MiddleLeft;
+            button4.Location = new Point(-7, -8);
+            button4.Name = "button4";
+            button4.Padding = new Padding(30, 0, 0, 0);
+            button4.Size = new Size(194, 77);
+            button4.TabIndex = 7;
+            button4.Text = "             Send Waste";
+            button4.TextAlign = ContentAlignment.MiddleLeft;
+            button4.UseVisualStyleBackColor = true;
+            // 
+            // panel7
+            // 
+            panel7.Controls.Add(btn_profile);
+            panel7.Location = new Point(3, 311);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(177, 58);
+            panel7.TabIndex = 8;
+            // 
+            // btn_profile
+            // 
+            btn_profile.Image = Properties.Resources.btn_profile;
+            btn_profile.ImageAlign = ContentAlignment.MiddleLeft;
+            btn_profile.Location = new Point(-7, -8);
+            btn_profile.Name = "btn_profile";
+            btn_profile.Padding = new Padding(30, 0, 0, 0);
+            btn_profile.Size = new Size(194, 77);
+            btn_profile.TabIndex = 7;
+            btn_profile.Text = "             Profile";
+            btn_profile.TextAlign = ContentAlignment.MiddleLeft;
+            btn_profile.UseVisualStyleBackColor = true;
+            btn_profile.Click += btn_profile_Click;
+            // 
+            // panel8
+            // 
+            panel8.Controls.Add(button6);
+            panel8.Location = new Point(3, 375);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(177, 58);
+            panel8.TabIndex = 8;
+            // 
+            // button6
+            // 
+            button6.Image = Properties.Resources.btn_setting;
+            button6.ImageAlign = ContentAlignment.MiddleLeft;
+            button6.Location = new Point(-7, -8);
+            button6.Name = "button6";
+            button6.Padding = new Padding(30, 0, 0, 0);
+            button6.Size = new Size(194, 77);
+            button6.TabIndex = 7;
+            button6.Text = "             Setting";
+            button6.TextAlign = ContentAlignment.MiddleLeft;
+            button6.UseVisualStyleBackColor = true;
+            // 
+            // sidebarTimer
+            // 
+            sidebarTimer.Interval = 5;
+            sidebarTimer.Tick += sidebarTimer_Tick;
             // 
             // Dashboard
             // 
@@ -391,10 +468,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1366, 768);
+            Controls.Add(sidebar);
             Controls.Add(button1);
             Controls.Add(pictureBox3);
             Controls.Add(pictureBox2);
-            Controls.Add(nav_pnl);
             Controls.Add(textBox1);
             Controls.Add(panel1);
             Controls.Add(main_pnl);
@@ -403,8 +480,6 @@
             Name = "Dashboard";
             Text = "Dashboard";
             Load += Dashboard_Load;
-            nav_pnl.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             main_pnl.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
@@ -414,10 +489,16 @@
             pnl_waste.ResumeLayout(false);
             pnl_waste.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            sidebar.ResumeLayout(false);
+            panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)logoBtn).EndInit();
+            panel5.ResumeLayout(false);
+            panel6.ResumeLayout(false);
+            panel7.ResumeLayout(false);
+            panel8.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -425,19 +506,12 @@
         #endregion
 
         private Label label1;
-        private Panel nav_pnl;
         private Panel main_pnl;
-        private PictureBox pictureBox1;
         private TextBox textBox1;
         private PictureBox pictureBox2;
         private PictureBox pictureBox3;
         private Button button1;
         private Panel panel1;
-        private Button button2;
-        private Button button6;
-        private Button button5;
-        private Button button4;
-        private Button button3;
         private Panel pnl_waste;
         private Panel pnl_weather;
         private PictureBox pictureBox5;
@@ -452,5 +526,19 @@
         private Button button9;
         private Button button8;
         private Button button7;
+        private FlowLayoutPanel sidebar;
+        private Panel panel4;
+        private Panel panel3;
+        private PictureBox logoBtn;
+        private System.Windows.Forms.Timer sidebarTimer;
+        private Button button2;
+        private Panel panel5;
+        private Button button3;
+        private Panel panel6;
+        private Button button4;
+        private Panel panel7;
+        private Button btn_profile;
+        private Panel panel8;
+        private Button button6;
     }
 }

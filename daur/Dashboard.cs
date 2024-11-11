@@ -16,12 +16,13 @@ namespace DAUR
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn(
         int nLeftRect,
-        int nTopRect,      
-        int nRightRect,    
-        int nBottomRect,   
-        int nWidthEllipse, 
-        int nHeightEllipse 
+        int nTopRect,
+        int nRightRect,
+        int nBottomRect,
+        int nWidthEllipse,
+        int nHeightEllipse
     );
+        bool sidebarExpand;
         public Dashboard()
         {
             InitializeComponent();
@@ -75,14 +76,7 @@ namespace DAUR
         private static extern bool DeleteObject(IntPtr hObject);
         private void nav_pnl_Paint(object sender, PaintEventArgs e)
         {
-            Panel panel = (Panel)sender;
-            int borderWidth = 1; 
-            Color borderColor = ColorTranslator.FromHtml("#48CFCB");
-            using (Pen pen = new Pen(borderColor, borderWidth))
-            {
-                pen.Alignment = System.Drawing.Drawing2D.PenAlignment.Inset;
-                e.Graphics.DrawRectangle(pen, new Rectangle(0, 0, panel.Width - 1, panel.Height - 1));
-            }
+
         }
 
         private void main_pnl_Paint(object sender, PaintEventArgs e)
@@ -93,7 +87,7 @@ namespace DAUR
 
             using (Pen pen = new Pen(borderColor, borderWidth))
             {
-                pen.Alignment = System.Drawing.Drawing2D.PenAlignment.Inset; 
+                pen.Alignment = System.Drawing.Drawing2D.PenAlignment.Inset;
                 e.Graphics.DrawLine(pen, 0, 0, panel.Width, 0);
             }
         }
@@ -117,11 +111,6 @@ namespace DAUR
             Application.Exit();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void textBox1_MouseClick(object sender, MouseEventArgs e)
         {
             textBox1.Text = "";
@@ -130,14 +119,70 @@ namespace DAUR
         private void pnl_artikel_Paint_1(object sender, PaintEventArgs e)
         {
             Panel panel = (Panel)sender;
-            int borderWidth = 1; 
+            int borderWidth = 1;
             Color borderColor = ColorTranslator.FromHtml("#48CFCB");
 
             using (Pen pen = new Pen(borderColor, borderWidth))
             {
                 pen.Alignment = System.Drawing.Drawing2D.PenAlignment.Inset;
-                e.Graphics.DrawLine(pen, 0, 0, panel.Width, 0); 
+                e.Graphics.DrawLine(pen, 0, 0, panel.Width, 0);
             }
+        }
+
+        private void sidebarTimer_Tick(object sender, EventArgs e)
+        {
+            if (sidebarExpand)
+            {
+                sidebar.Width -= 10;
+                if (sidebar.Width == sidebar.MinimumSize.Width)
+                {
+                    sidebarExpand = false;
+                    sidebarTimer.Stop();
+
+                }
+            }
+            else
+            {
+                sidebar.Width += 10;
+                if (sidebar.Width == sidebar.MaximumSize.Width)
+                {
+                    sidebarExpand = true;
+                    sidebarTimer.Stop();
+                }
+            }
+        }
+
+        private void logoBtn_Click(object sender, EventArgs e)
+        {
+            sidebarTimer.Start();
+        }
+
+        private void sidebar_Paint(object sender, PaintEventArgs e)
+        {
+            Panel panel = (Panel)sender;
+            int borderWidth = 1;
+            Color borderColor = ColorTranslator.FromHtml("#48CFCB");
+            using (Pen pen = new Pen(borderColor, borderWidth))
+            {
+                pen.Alignment = System.Drawing.Drawing2D.PenAlignment.Inset;
+                e.Graphics.DrawRectangle(pen, new Rectangle(0, 0, panel.Width - 1, panel.Height - 1));
+            }
+        }
+
+        private void pnl_waste_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btn_profile_Click(object sender, EventArgs e)
+        {
+            OpenProfile();
+        }
+        private void OpenProfile()
+        {
+            Profile Profile = new Profile();
+            Profile.Show();
+            this.Hide();
         }
     }
 }

@@ -81,15 +81,7 @@ namespace DAUR
 
         private void main_pnl_Paint(object sender, PaintEventArgs e)
         {
-            Panel panel = (Panel)sender;
-            int borderWidth = 1;
-            Color borderColor = ColorTranslator.FromHtml("#48CFCB");
 
-            using (Pen pen = new Pen(borderColor, borderWidth))
-            {
-                pen.Alignment = System.Drawing.Drawing2D.PenAlignment.Inset;
-                e.Graphics.DrawLine(pen, 0, 0, panel.Width, 0);
-            }
         }
 
 
@@ -182,6 +174,24 @@ namespace DAUR
         {
             Profile Profile = new Profile();
             Profile.Show();
+            this.Hide();
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+
+
+        }
+
+        private void btn_setting_Click(object sender, EventArgs e)
+        {
+            Opensetting();
+        }
+        private void Opensetting()
+        {
+            setting setting = new setting();
+            setting.Show();
             this.Hide();
         }
     }

@@ -97,3 +97,4 @@ C:\Junpro\DAUR\DAUR\bin\Debug\net6.0-windows\System.CodeDom.dll
 C:\Junpro\DAUR\DAUR\bin\Debug\net6.0-windows\System.Management.dll
 C:\Junpro\DAUR\DAUR\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Management.dll
 C:\Junpro\DAUR\DAUR\obj\Debug\net6.0-windows\DAUR.Profile.resources
+C:\Junpro\DAUR\DAUR\obj\Debug\net6.0-windows\DAUR.setting.resources

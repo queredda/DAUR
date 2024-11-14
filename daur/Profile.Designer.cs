@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             button1 = new Button();
+            panel1 = new Panel();
             sidebar = new FlowLayoutPanel();
             panel3 = new Panel();
             logoBtn = new PictureBox();
@@ -39,10 +40,9 @@
             panel6 = new Panel();
             button4 = new Button();
             panel7 = new Panel();
-            button5 = new Button();
+            btn_profile = new Button();
             panel8 = new Panel();
-            button6 = new Button();
-            panel1 = new Panel();
+            btn_setting = new Button();
             button7 = new Button();
             pnl_profile = new Panel();
             lblRole = new Label();
@@ -51,6 +51,7 @@
             email_email = new Label();
             pictureBox1 = new PictureBox();
             urProfile = new Label();
+            panel1.SuspendLayout();
             sidebar.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)logoBtn).BeginInit();
@@ -59,7 +60,6 @@
             panel6.SuspendLayout();
             panel7.SuspendLayout();
             panel8.SuspendLayout();
-            panel1.SuspendLayout();
             pnl_profile.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -82,6 +82,19 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
+            // panel1
+            // 
+            panel1.Controls.Add(sidebar);
+            panel1.Controls.Add(button7);
+            panel1.Controls.Add(pnl_profile);
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(0, 0);
+            panel1.MaximumSize = new Size(1366, 768);
+            panel1.MinimumSize = new Size(1366, 768);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1366, 768);
+            panel1.TabIndex = 10;
+            // 
             // sidebar
             // 
             sidebar.Controls.Add(panel3);
@@ -95,7 +108,7 @@
             sidebar.MaximumSize = new Size(180, 768);
             sidebar.MinimumSize = new Size(86, 768);
             sidebar.Name = "sidebar";
-            sidebar.Size = new Size(180, 768);
+            sidebar.Size = new Size(92, 768);
             sidebar.TabIndex = 9;
             // 
             // panel3
@@ -103,7 +116,7 @@
             panel3.Controls.Add(logoBtn);
             panel3.Location = new Point(3, 3);
             panel3.Name = "panel3";
-            panel3.Size = new Size(177, 110);
+            panel3.Size = new Size(75, 116);
             panel3.TabIndex = 0;
             // 
             // logoBtn
@@ -120,9 +133,9 @@
             // panel4
             // 
             panel4.Controls.Add(btn_dashboard);
-            panel4.Location = new Point(3, 119);
+            panel4.Location = new Point(3, 125);
             panel4.Name = "panel4";
-            panel4.Size = new Size(177, 58);
+            panel4.Size = new Size(75, 58);
             panel4.TabIndex = 1;
             // 
             // btn_dashboard
@@ -134,17 +147,16 @@
             btn_dashboard.Padding = new Padding(30, 0, 0, 0);
             btn_dashboard.Size = new Size(194, 77);
             btn_dashboard.TabIndex = 7;
-            btn_dashboard.Text = "             Dashboard";
             btn_dashboard.TextAlign = ContentAlignment.MiddleLeft;
             btn_dashboard.UseVisualStyleBackColor = true;
-            btn_dashboard.Click += btn_dashboard_Click;
+            btn_dashboard.Click += btn_dashboard_Click_1;
             // 
             // panel5
             // 
             panel5.Controls.Add(button3);
-            panel5.Location = new Point(3, 183);
+            panel5.Location = new Point(3, 189);
             panel5.Name = "panel5";
-            panel5.Size = new Size(177, 58);
+            panel5.Size = new Size(75, 58);
             panel5.TabIndex = 8;
             // 
             // button3
@@ -156,16 +168,15 @@
             button3.Padding = new Padding(30, 0, 0, 0);
             button3.Size = new Size(194, 77);
             button3.TabIndex = 7;
-            button3.Text = "             Track";
             button3.TextAlign = ContentAlignment.MiddleLeft;
             button3.UseVisualStyleBackColor = true;
             // 
             // panel6
             // 
             panel6.Controls.Add(button4);
-            panel6.Location = new Point(3, 247);
+            panel6.Location = new Point(3, 253);
             panel6.Name = "panel6";
-            panel6.Size = new Size(177, 58);
+            panel6.Size = new Size(75, 58);
             panel6.TabIndex = 8;
             // 
             // button4
@@ -177,61 +188,49 @@
             button4.Padding = new Padding(30, 0, 0, 0);
             button4.Size = new Size(194, 77);
             button4.TabIndex = 7;
-            button4.Text = "             Send Waste";
             button4.TextAlign = ContentAlignment.MiddleLeft;
             button4.UseVisualStyleBackColor = true;
             // 
             // panel7
             // 
-            panel7.Controls.Add(button5);
-            panel7.Location = new Point(3, 311);
+            panel7.Controls.Add(btn_profile);
+            panel7.Location = new Point(3, 317);
             panel7.Name = "panel7";
-            panel7.Size = new Size(177, 58);
+            panel7.Size = new Size(75, 58);
             panel7.TabIndex = 8;
             // 
-            // button5
+            // btn_profile
             // 
-            button5.Image = Properties.Resources.btn_profile;
-            button5.ImageAlign = ContentAlignment.MiddleLeft;
-            button5.Location = new Point(-7, -8);
-            button5.Name = "button5";
-            button5.Padding = new Padding(30, 0, 0, 0);
-            button5.Size = new Size(194, 77);
-            button5.TabIndex = 7;
-            button5.Text = "             Profile";
-            button5.TextAlign = ContentAlignment.MiddleLeft;
-            button5.UseVisualStyleBackColor = true;
+            btn_profile.Image = Properties.Resources.btn_profile;
+            btn_profile.ImageAlign = ContentAlignment.MiddleLeft;
+            btn_profile.Location = new Point(-7, -8);
+            btn_profile.Name = "btn_profile";
+            btn_profile.Padding = new Padding(30, 0, 0, 0);
+            btn_profile.Size = new Size(194, 77);
+            btn_profile.TabIndex = 7;
+            btn_profile.TextAlign = ContentAlignment.MiddleLeft;
+            btn_profile.UseVisualStyleBackColor = true;
             // 
             // panel8
             // 
-            panel8.Controls.Add(button6);
-            panel8.Location = new Point(3, 375);
+            panel8.Controls.Add(btn_setting);
+            panel8.Location = new Point(3, 381);
             panel8.Name = "panel8";
-            panel8.Size = new Size(177, 58);
+            panel8.Size = new Size(75, 58);
             panel8.TabIndex = 8;
             // 
-            // button6
+            // btn_setting
             // 
-            button6.Image = Properties.Resources.btn_setting;
-            button6.ImageAlign = ContentAlignment.MiddleLeft;
-            button6.Location = new Point(-7, -8);
-            button6.Name = "button6";
-            button6.Padding = new Padding(30, 0, 0, 0);
-            button6.Size = new Size(194, 77);
-            button6.TabIndex = 7;
-            button6.Text = "             Setting";
-            button6.TextAlign = ContentAlignment.MiddleLeft;
-            button6.UseVisualStyleBackColor = true;
-            // 
-            // panel1
-            // 
-            panel1.Controls.Add(button7);
-            panel1.Controls.Add(pnl_profile);
-            panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(180, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1186, 768);
-            panel1.TabIndex = 10;
+            btn_setting.Image = Properties.Resources.btn_setting;
+            btn_setting.ImageAlign = ContentAlignment.MiddleLeft;
+            btn_setting.Location = new Point(-7, -8);
+            btn_setting.Name = "btn_setting";
+            btn_setting.Padding = new Padding(30, 0, 0, 0);
+            btn_setting.Size = new Size(194, 77);
+            btn_setting.TabIndex = 7;
+            btn_setting.TextAlign = ContentAlignment.MiddleLeft;
+            btn_setting.UseVisualStyleBackColor = true;
+            btn_setting.Click += btn_setting_Click;
             // 
             // button7
             // 
@@ -243,7 +242,7 @@
             button7.Font = new Font("Calisto MT", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
             button7.ForeColor = Color.Black;
             button7.ImeMode = ImeMode.NoControl;
-            button7.Location = new Point(1125, -2);
+            button7.Location = new Point(1305, -2);
             button7.Name = "button7";
             button7.Size = new Size(61, 56);
             button7.TabIndex = 7;
@@ -330,12 +329,12 @@
             BackColor = Color.White;
             ClientSize = new Size(1366, 768);
             Controls.Add(panel1);
-            Controls.Add(sidebar);
             Controls.Add(button1);
             FormBorderStyle = FormBorderStyle.None;
             MaximumSize = new Size(1366, 768);
             Name = "Profile";
             Text = "Profile";
+            panel1.ResumeLayout(false);
             sidebar.ResumeLayout(false);
             panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)logoBtn).EndInit();
@@ -344,7 +343,6 @@
             panel6.ResumeLayout(false);
             panel7.ResumeLayout(false);
             panel8.ResumeLayout(false);
-            panel1.ResumeLayout(false);
             pnl_profile.ResumeLayout(false);
             pnl_profile.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -354,6 +352,15 @@
         #endregion
 
         private Button button1;
+        private Panel panel1;
+        private Panel pnl_profile;
+        private Label urProfile;
+        private Label lblEmail;
+        private Label email_email;
+        private PictureBox pictureBox1;
+        private Label lblRole;
+        private Label role_role;
+        private Button button7;
         private FlowLayoutPanel sidebar;
         private Panel panel3;
         private PictureBox logoBtn;
@@ -364,17 +371,8 @@
         private Panel panel6;
         private Button button4;
         private Panel panel7;
-        private Button button5;
+        private Button btn_profile;
         private Panel panel8;
-        private Button button6;
-        private Panel panel1;
-        private Panel pnl_profile;
-        private Label urProfile;
-        private Label lblEmail;
-        private Label email_email;
-        private PictureBox pictureBox1;
-        private Label lblRole;
-        private Label role_role;
-        private Button button7;
+        private Button btn_setting;
     }
 }

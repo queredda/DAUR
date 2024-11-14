@@ -56,15 +56,27 @@ namespace DAUR
             Application.Exit();
         }
 
-        private void btn_dashboard_Click(object sender, EventArgs e)
+        private void btn_dashboard_Click_1(object sender, EventArgs e)
         {
             OpenDashboard();
         }
         private void OpenDashboard()
         {
-            Dashboard dashboard = new Dashboard();
-            dashboard.Show();
+            Dashboard Dashboard = new Dashboard();
+            Dashboard.Show();
             this.Hide();
         }
+
+        private void btn_setting_Click(object sender, EventArgs e)
+        {
+            Opensetting();
+        }
+        private void Opensetting()
+        {
+            setting setting = new setting();
+            setting.Show();
+            this.Hide();
+        }
+
     }
 }

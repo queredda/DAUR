@@ -45,5 +45,29 @@ namespace DAUR
         {
             Application.Exit();
         }
+
+        private void btn_send_Click(object sender, EventArgs e)
+        {
+            OpenSend();
+        }
+
+        private void OpenSend()
+        {
+            send send = new send();
+            send.Show();
+            this.Hide();
+        }
+
+        private void sidebar_Paint(object sender, PaintEventArgs e)
+        {
+            Panel panel = (Panel)sender;
+            int borderWidth = 1;
+            Color borderColor = ColorTranslator.FromHtml("#48CFCB");
+            using (Pen pen = new Pen(borderColor, borderWidth))
+            {
+                pen.Alignment = System.Drawing.Drawing2D.PenAlignment.Inset;
+                e.Graphics.DrawRectangle(pen, new Rectangle(0, 0, panel.Width - 1, panel.Height - 1));
+            }
+        }
     }
 }

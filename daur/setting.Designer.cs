@@ -36,13 +36,21 @@
             panel5 = new Panel();
             button3 = new Button();
             panel6 = new Panel();
-            button4 = new Button();
+            btn_send = new Button();
             panel7 = new Panel();
             btn_profile = new Button();
             panel8 = new Panel();
             button6 = new Button();
             button7 = new Button();
             lbl_weather = new Label();
+            label1 = new Label();
+            button1 = new Button();
+            label2 = new Label();
+            button2 = new Button();
+            label3 = new Label();
+            button5 = new Button();
+            label4 = new Label();
+            button8 = new Button();
             sidebar.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)logoBtn).BeginInit();
@@ -68,6 +76,7 @@
             sidebar.Name = "sidebar";
             sidebar.Size = new Size(92, 768);
             sidebar.TabIndex = 9;
+            sidebar.Paint += sidebar_Paint;
             // 
             // panel3
             // 
@@ -131,23 +140,24 @@
             // 
             // panel6
             // 
-            panel6.Controls.Add(button4);
+            panel6.Controls.Add(btn_send);
             panel6.Location = new Point(3, 253);
             panel6.Name = "panel6";
             panel6.Size = new Size(75, 58);
             panel6.TabIndex = 8;
             // 
-            // button4
+            // btn_send
             // 
-            button4.Image = Properties.Resources.send_btn;
-            button4.ImageAlign = ContentAlignment.MiddleLeft;
-            button4.Location = new Point(-7, -8);
-            button4.Name = "button4";
-            button4.Padding = new Padding(30, 0, 0, 0);
-            button4.Size = new Size(194, 77);
-            button4.TabIndex = 7;
-            button4.TextAlign = ContentAlignment.MiddleLeft;
-            button4.UseVisualStyleBackColor = true;
+            btn_send.Image = Properties.Resources.send_btn;
+            btn_send.ImageAlign = ContentAlignment.MiddleLeft;
+            btn_send.Location = new Point(-7, -8);
+            btn_send.Name = "btn_send";
+            btn_send.Padding = new Padding(30, 0, 0, 0);
+            btn_send.Size = new Size(194, 77);
+            btn_send.TabIndex = 7;
+            btn_send.TextAlign = ContentAlignment.MiddleLeft;
+            btn_send.UseVisualStyleBackColor = true;
+            btn_send.Click += btn_send_Click;
             // 
             // panel7
             // 
@@ -219,12 +229,96 @@
             lbl_weather.TabIndex = 11;
             lbl_weather.Text = "Setting";
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Montserrat SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(217, 309);
+            label1.Name = "label1";
+            label1.Size = new Size(162, 28);
+            label1.TabIndex = 12;
+            label1.Text = "Edit username";
+            // 
+            // button1
+            // 
+            button1.Location = new Point(900, 301);
+            button1.Name = "button1";
+            button1.Size = new Size(139, 50);
+            button1.TabIndex = 13;
+            button1.Text = "Edit";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Montserrat SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Location = new Point(217, 394);
+            label2.Name = "label2";
+            label2.Size = new Size(199, 28);
+            label2.TabIndex = 14;
+            label2.Text = "Change Password";
+            // 
+            // button2
+            // 
+            button2.Location = new Point(900, 381);
+            button2.Name = "button2";
+            button2.Size = new Size(139, 50);
+            button2.TabIndex = 15;
+            button2.Text = "Change";
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Montserrat SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.Location = new Point(217, 486);
+            label3.Name = "label3";
+            label3.Size = new Size(92, 28);
+            label3.TabIndex = 16;
+            label3.Text = "Edit bio";
+            // 
+            // button5
+            // 
+            button5.Location = new Point(900, 478);
+            button5.Name = "button5";
+            button5.Size = new Size(139, 50);
+            button5.TabIndex = 17;
+            button5.Text = "Edit";
+            button5.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Montserrat SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.Location = new Point(217, 219);
+            label4.Name = "label4";
+            label4.Size = new Size(148, 28);
+            label4.TabIndex = 18;
+            label4.Text = "View Profiles";
+            // 
+            // button8
+            // 
+            button8.Location = new Point(900, 211);
+            button8.Name = "button8";
+            button8.Size = new Size(139, 50);
+            button8.TabIndex = 19;
+            button8.Text = "View";
+            button8.UseVisualStyleBackColor = true;
+            // 
             // setting
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1366, 768);
+            Controls.Add(button8);
+            Controls.Add(label4);
+            Controls.Add(button5);
+            Controls.Add(label3);
+            Controls.Add(button2);
+            Controls.Add(label2);
+            Controls.Add(button1);
+            Controls.Add(label1);
             Controls.Add(lbl_weather);
             Controls.Add(button7);
             Controls.Add(sidebar);
@@ -232,7 +326,7 @@
             MaximumSize = new Size(1366, 768);
             MinimumSize = new Size(1366, 768);
             Name = "setting";
-            Text = "setting";
+            Text = " ";
             sidebar.ResumeLayout(false);
             panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)logoBtn).EndInit();
@@ -255,12 +349,20 @@
         private Panel panel5;
         private Button button3;
         private Panel panel6;
-        private Button button4;
+        private Button btn_send;
         private Panel panel7;
         private Button btn_profile;
         private Panel panel8;
         private Button button6;
         private Button button7;
         private Label lbl_weather;
+        private Label label1;
+        private Button button1;
+        private Label label2;
+        private Button button2;
+        private Label label3;
+        private Button button5;
+        private Label label4;
+        private Button button8;
     }
 }

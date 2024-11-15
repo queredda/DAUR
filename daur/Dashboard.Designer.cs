@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             label1 = new Label();
             main_pnl = new Panel();
@@ -58,12 +57,11 @@
             panel5 = new Panel();
             button3 = new Button();
             panel6 = new Panel();
-            button4 = new Button();
+            btn_send = new Button();
             panel7 = new Panel();
             btn_profile = new Button();
             panel8 = new Panel();
             btn_setting = new Button();
-            sidebarTimer = new System.Windows.Forms.Timer(components);
             main_pnl.SuspendLayout();
             panel2.SuspendLayout();
             pnl_weather.SuspendLayout();
@@ -386,23 +384,24 @@
             // 
             // panel6
             // 
-            panel6.Controls.Add(button4);
+            panel6.Controls.Add(btn_send);
             panel6.Location = new Point(3, 253);
             panel6.Name = "panel6";
             panel6.Size = new Size(75, 58);
             panel6.TabIndex = 8;
             // 
-            // button4
+            // btn_send
             // 
-            button4.Image = Properties.Resources.send_btn;
-            button4.ImageAlign = ContentAlignment.MiddleLeft;
-            button4.Location = new Point(-7, -8);
-            button4.Name = "button4";
-            button4.Padding = new Padding(30, 0, 0, 0);
-            button4.Size = new Size(194, 77);
-            button4.TabIndex = 7;
-            button4.TextAlign = ContentAlignment.MiddleLeft;
-            button4.UseVisualStyleBackColor = true;
+            btn_send.Image = Properties.Resources.send_btn;
+            btn_send.ImageAlign = ContentAlignment.MiddleLeft;
+            btn_send.Location = new Point(-7, -8);
+            btn_send.Name = "btn_send";
+            btn_send.Padding = new Padding(30, 0, 0, 0);
+            btn_send.Size = new Size(194, 77);
+            btn_send.TabIndex = 7;
+            btn_send.TextAlign = ContentAlignment.MiddleLeft;
+            btn_send.UseVisualStyleBackColor = true;
+            btn_send.Click += btn_send_Click;
             // 
             // panel7
             // 
@@ -445,11 +444,6 @@
             btn_setting.TextAlign = ContentAlignment.MiddleLeft;
             btn_setting.UseVisualStyleBackColor = true;
             btn_setting.Click += btn_setting_Click;
-            // 
-            // sidebarTimer
-            // 
-            sidebarTimer.Interval = 5;
-            sidebarTimer.Tick += sidebarTimer_Tick;
             // 
             // Dashboard
             // 
@@ -518,7 +512,6 @@
         private Panel panel4;
         private Panel panel3;
         private PictureBox logoBtn;
-        private System.Windows.Forms.Timer sidebarTimer;
         private Button button2;
         private Panel panel5;
         private Button button3;
@@ -527,6 +520,6 @@
         private Panel panel8;
         private Button btn_setting;
         private Panel panel6;
-        private Button button4;
+        private Button btn_send;
     }
 }

@@ -44,7 +44,7 @@ namespace DAUR
 
         private void btnSignUp_Click(object sender, EventArgs e)
         {
-           
+
         }
 
 
@@ -90,6 +90,10 @@ namespace DAUR
                 conn.Close();
                 tbName.Text = tbEmail.Text = tbPassword.Text = tbCP.Text = null;
             }
+        }
+
+        private void tbName_TextChanged(object sender, EventArgs e)
+        {
         }
     }
 }

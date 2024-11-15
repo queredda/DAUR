@@ -163,6 +163,16 @@ namespace DAUR.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Rambut_cewe_aesthetic_Korea {
+            get {
+                object obj = ResourceManager.GetObject("Rambut cewe aesthetic Korea", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap send_btn {
             get {
                 object obj = ResourceManager.GetObject("send btn", resourceCulture);

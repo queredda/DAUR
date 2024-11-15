@@ -19292,13 +19292,13 @@
     <value>7</value>
   </data>
   <data name="tbPassword.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 7.7999997pt, style=Italic</value>
+    <value>Montserrat SemiBold, 10.8pt, style=Bold</value>
   </data>
   <data name="tbPassword.Location" type="System.Drawing.Point, System.Drawing">
-    <value>89, 336</value>
+    <value>89, 327</value>
   </data>
   <data name="tbPassword.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 22</value>
+    <value>228, 29</value>
   </data>
   <data name="tbPassword.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -19382,7 +19382,7 @@
     <value>Microsoft Sans Serif, 7.7999997pt, style=Bold, Italic</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>89, 309</value>
+    <value>89, 302</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 16</value>
@@ -19406,13 +19406,13 @@
     <value>11</value>
   </data>
   <data name="tbEmail.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 7.7999997pt, style=Italic</value>
+    <value>Montserrat SemiBold, 10.8pt, style=Bold</value>
   </data>
   <data name="tbEmail.Location" type="System.Drawing.Point, System.Drawing">
     <value>89, 256</value>
   </data>
   <data name="tbEmail.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 22</value>
+    <value>228, 29</value>
   </data>
   <data name="tbEmail.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>

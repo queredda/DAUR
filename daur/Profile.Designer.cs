@@ -49,7 +49,7 @@
             role_role = new Label();
             lblEmail = new Label();
             email_email = new Label();
-            pictureBox1 = new PictureBox();
+            pbProfile = new PictureBox();
             urProfile = new Label();
             panel1.SuspendLayout();
             sidebar.SuspendLayout();
@@ -61,7 +61,7 @@
             panel7.SuspendLayout();
             panel8.SuspendLayout();
             pnl_profile.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbProfile).BeginInit();
             SuspendLayout();
             // 
             // button1
@@ -71,7 +71,7 @@
             button1.BackgroundImageLayout = ImageLayout.Center;
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Calisto MT", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
             button1.ForeColor = Color.Black;
             button1.ImeMode = ImeMode.NoControl;
             button1.Location = new Point(1307, -1);
@@ -203,6 +203,7 @@
             // 
             // btn_profile
             // 
+            btn_profile.BackColor = Color.FromArgb(42, 42, 42);
             btn_profile.Image = Properties.Resources.btn_profile;
             btn_profile.ImageAlign = ContentAlignment.MiddleLeft;
             btn_profile.Location = new Point(-7, -8);
@@ -211,7 +212,7 @@
             btn_profile.Size = new Size(194, 77);
             btn_profile.TabIndex = 7;
             btn_profile.TextAlign = ContentAlignment.MiddleLeft;
-            btn_profile.UseVisualStyleBackColor = true;
+            btn_profile.UseVisualStyleBackColor = false;
             // 
             // panel8
             // 
@@ -241,7 +242,7 @@
             button7.BackgroundImageLayout = ImageLayout.Center;
             button7.FlatAppearance.BorderSize = 0;
             button7.FlatStyle = FlatStyle.Flat;
-            button7.Font = new Font("Calisto MT", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            button7.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
             button7.ForeColor = Color.Black;
             button7.ImeMode = ImeMode.NoControl;
             button7.Location = new Point(1305, -2);
@@ -259,7 +260,7 @@
             pnl_profile.Controls.Add(role_role);
             pnl_profile.Controls.Add(lblEmail);
             pnl_profile.Controls.Add(email_email);
-            pnl_profile.Controls.Add(pictureBox1);
+            pnl_profile.Controls.Add(pbProfile);
             pnl_profile.Controls.Add(urProfile);
             pnl_profile.Location = new Point(221, 52);
             pnl_profile.Name = "pnl_profile";
@@ -270,60 +271,61 @@
             // lblRole
             // 
             lblRole.AutoSize = true;
-            lblRole.Font = new Font("Montserrat", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            lblRole.Font = new Font("Montserrat", 12F, FontStyle.Regular, GraphicsUnit.Point);
             lblRole.Location = new Point(96, 509);
             lblRole.Name = "lblRole";
-            lblRole.Size = new Size(175, 28);
+            lblRole.Size = new Size(165, 31);
             lblRole.TabIndex = 5;
             lblRole.Text = "Pelaku Industri";
             // 
             // role_role
             // 
             role_role.AutoSize = true;
-            role_role.Font = new Font("Montserrat SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            role_role.Font = new Font("Montserrat", 12F, FontStyle.Bold, GraphicsUnit.Point);
             role_role.Location = new Point(96, 464);
             role_role.Name = "role_role";
-            role_role.Size = new Size(58, 28);
+            role_role.Size = new Size(61, 31);
             role_role.TabIndex = 4;
             role_role.Text = "Role";
             // 
             // lblEmail
             // 
             lblEmail.AutoSize = true;
-            lblEmail.Font = new Font("Montserrat", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            lblEmail.Font = new Font("Montserrat", 12F, FontStyle.Regular, GraphicsUnit.Point);
             lblEmail.Location = new Point(96, 389);
             lblEmail.Name = "lblEmail";
-            lblEmail.Size = new Size(216, 28);
+            lblEmail.Size = new Size(212, 31);
             lblEmail.TabIndex = 3;
             lblEmail.Text = "snroha@gmail.com";
             // 
             // email_email
             // 
             email_email.AutoSize = true;
-            email_email.Font = new Font("Montserrat SemiBold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            email_email.Font = new Font("Montserrat", 12F, FontStyle.Bold, GraphicsUnit.Point);
             email_email.Location = new Point(96, 350);
             email_email.Name = "email_email";
-            email_email.Size = new Size(64, 25);
+            email_email.Size = new Size(72, 31);
             email_email.TabIndex = 2;
             email_email.Text = "Email";
             // 
-            // pictureBox1
+            // pbProfile
             // 
-            pictureBox1.Image = Properties.Resources.Rambut_cewe_aesthetic_Korea;
-            pictureBox1.Location = new Point(350, 101);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(230, 222);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 1;
-            pictureBox1.TabStop = false;
+            pbProfile.Image = Properties.Resources.Rambut_cewe_aesthetic_Korea;
+            pbProfile.Location = new Point(350, 101);
+            pbProfile.Name = "pbProfile";
+            pbProfile.Size = new Size(230, 222);
+            pbProfile.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbProfile.TabIndex = 1;
+            pbProfile.TabStop = false;
+            pbProfile.Click += pbProfile_Click;
             // 
             // urProfile
             // 
             urProfile.AutoSize = true;
-            urProfile.Font = new Font("Montserrat ExtraBold", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            urProfile.Font = new Font("Montserrat", 18F, FontStyle.Bold, GraphicsUnit.Point);
             urProfile.Location = new Point(360, 35);
             urProfile.Name = "urProfile";
-            urProfile.Size = new Size(207, 41);
+            urProfile.Size = new Size(204, 47);
             urProfile.TabIndex = 0;
             urProfile.Text = "Your Profile";
             // 
@@ -350,7 +352,7 @@
             panel8.ResumeLayout(false);
             pnl_profile.ResumeLayout(false);
             pnl_profile.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbProfile).EndInit();
             ResumeLayout(false);
         }
 
@@ -362,7 +364,7 @@
         private Label urProfile;
         private Label lblEmail;
         private Label email_email;
-        private PictureBox pictureBox1;
+        private PictureBox pbProfile;
         private Label lblRole;
         private Label role_role;
         private Button button7;

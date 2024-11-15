@@ -33,12 +33,6 @@
             panel1 = new Panel();
             linkSign = new LinkLabel();
             lblSign = new Label();
-            pictureBox1 = new PictureBox();
-            button5 = new Button();
-            button4 = new Button();
-            label5 = new Label();
-            button3 = new Button();
-            label4 = new Label();
             tbPassword = new TextBox();
             btnLogin = new Button();
             label3 = new Label();
@@ -46,7 +40,6 @@
             tbEmail = new TextBox();
             label1 = new Label();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // button1
@@ -66,12 +59,6 @@
             panel1.BackColor = Color.White;
             panel1.Controls.Add(linkSign);
             panel1.Controls.Add(lblSign);
-            panel1.Controls.Add(pictureBox1);
-            panel1.Controls.Add(button5);
-            panel1.Controls.Add(button4);
-            panel1.Controls.Add(label5);
-            panel1.Controls.Add(button3);
-            panel1.Controls.Add(label4);
             panel1.Controls.Add(tbPassword);
             panel1.Controls.Add(btnLogin);
             panel1.Controls.Add(label3);
@@ -95,44 +82,6 @@
             lblSign.BackColor = Color.Transparent;
             lblSign.ForeColor = Color.FromArgb(66, 66, 66);
             lblSign.Name = "lblSign";
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.BackColor = Color.Transparent;
-            resources.ApplyResources(pictureBox1, "pictureBox1");
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.TabStop = false;
-            // 
-            // button5
-            // 
-            resources.ApplyResources(button5, "button5");
-            button5.Name = "button5";
-            button5.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            resources.ApplyResources(button4, "button4");
-            button4.Name = "button4";
-            button4.UseVisualStyleBackColor = true;
-            // 
-            // label5
-            // 
-            resources.ApplyResources(label5, "label5");
-            label5.BackColor = Color.Transparent;
-            label5.Name = "label5";
-            // 
-            // button3
-            // 
-            resources.ApplyResources(button3, "button3");
-            button3.Name = "button3";
-            button3.UseVisualStyleBackColor = true;
-            // 
-            // label4
-            // 
-            resources.ApplyResources(label4, "label4");
-            label4.BackColor = Color.Transparent;
-            label4.ForeColor = Color.FromArgb(66, 66, 66);
-            label4.Name = "label4";
             // 
             // tbPassword
             // 
@@ -184,7 +133,8 @@
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Silver;
+            BackColor = Color.FromArgb(249, 250, 251);
+            BackgroundImage = Properties.Resources.login_dashboard;
             Controls.Add(panel1);
             Controls.Add(button1);
             DoubleBuffered = true;
@@ -193,7 +143,6 @@
             Load += Form1_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -206,13 +155,7 @@
         private Label label2;
         private TextBox tbEmail;
         private Label label1;
-        private Label label4;
         private TextBox tbPassword;
-        private Button button5;
-        private Button button4;
-        private Label label5;
-        private Button button3;
-        private PictureBox pictureBox1;
         private Label lblSign;
         private LinkLabel linkSign;
     }

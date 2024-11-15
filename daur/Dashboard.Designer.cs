@@ -138,7 +138,7 @@
             label3.Font = new Font("Montserrat SemiBold", 13.7999992F, FontStyle.Bold, GraphicsUnit.Point);
             label3.Location = new Point(30, 24);
             label3.Name = "label3";
-            label3.Size = new Size(92, 32);
+            label3.Size = new Size(93, 36);
             label3.TabIndex = 1;
             label3.Text = "Article";
             // 
@@ -173,7 +173,7 @@
             lbl_weather.Font = new Font("Montserrat SemiBold", 24F, FontStyle.Bold, GraphicsUnit.Point);
             lbl_weather.Location = new Point(30, 142);
             lbl_weather.Name = "lbl_weather";
-            lbl_weather.Size = new Size(153, 55);
+            lbl_weather.Size = new Size(155, 62);
             lbl_weather.TabIndex = 3;
             lbl_weather.Text = "Sunny";
             // 
@@ -183,7 +183,7 @@
             today_weather.Font = new Font("Montserrat SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             today_weather.Location = new Point(36, 114);
             today_weather.Name = "today_weather";
-            today_weather.Size = new Size(136, 21);
+            today_weather.Size = new Size(136, 24);
             today_weather.TabIndex = 2;
             today_weather.Text = "Today's Weather";
             // 
@@ -229,7 +229,7 @@
             total_waste.Font = new Font("Montserrat SemiBold", 24F, FontStyle.Bold, GraphicsUnit.Point);
             total_waste.Location = new Point(30, 142);
             total_waste.Name = "total_waste";
-            total_waste.Size = new Size(47, 55);
+            total_waste.Size = new Size(50, 62);
             total_waste.TabIndex = 2;
             total_waste.Text = "5";
             // 
@@ -239,7 +239,7 @@
             lbl_waste.Font = new Font("Montserrat SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             lbl_waste.Location = new Point(30, 114);
             lbl_waste.Name = "lbl_waste";
-            lbl_waste.Size = new Size(96, 21);
+            lbl_waste.Size = new Size(96, 24);
             lbl_waste.TabIndex = 1;
             lbl_waste.Text = "Waste Sent";
             // 
@@ -263,15 +263,16 @@
             // 
             // button2
             // 
+            button2.BackColor = Color.FromArgb(42, 42, 42);
             button2.Image = Properties.Resources.btn_dashboard;
             button2.ImageAlign = ContentAlignment.MiddleLeft;
-            button2.Location = new Point(-7, -8);
+            button2.Location = new Point(-3, -6);
             button2.Name = "button2";
-            button2.Padding = new Padding(30, 0, 0, 0);
-            button2.Size = new Size(194, 77);
+            button2.Padding = new Padding(20, 0, 0, 0);
+            button2.Size = new Size(82, 77);
             button2.TabIndex = 7;
             button2.TextAlign = ContentAlignment.MiddleLeft;
-            button2.UseVisualStyleBackColor = true;
+            button2.UseVisualStyleBackColor = false;
             // 
             // textBox1
             // 
@@ -313,7 +314,7 @@
             button1.BackgroundImageLayout = ImageLayout.Center;
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Calisto MT", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
             button1.ForeColor = Color.Black;
             button1.ImeMode = ImeMode.NoControl;
             button1.Location = new Point(1309, -2);
@@ -337,7 +338,7 @@
             sidebar.MaximumSize = new Size(180, 768);
             sidebar.MinimumSize = new Size(86, 768);
             sidebar.Name = "sidebar";
-            sidebar.Size = new Size(92, 768);
+            sidebar.Size = new Size(86, 768);
             sidebar.TabIndex = 8;
             sidebar.Paint += sidebar_Paint;
             // 
@@ -374,9 +375,9 @@
             // 
             button3.Image = Properties.Resources.btn_order;
             button3.ImageAlign = ContentAlignment.MiddleLeft;
-            button3.Location = new Point(-7, -8);
+            button3.Location = new Point(0, -2);
             button3.Name = "button3";
-            button3.Padding = new Padding(30, 0, 0, 0);
+            button3.Padding = new Padding(20, 0, 0, 0);
             button3.Size = new Size(194, 77);
             button3.TabIndex = 7;
             button3.TextAlign = ContentAlignment.MiddleLeft;
@@ -394,9 +395,9 @@
             // 
             btn_send.Image = Properties.Resources.send_btn;
             btn_send.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_send.Location = new Point(-7, -8);
+            btn_send.Location = new Point(3, -3);
             btn_send.Name = "btn_send";
-            btn_send.Padding = new Padding(30, 0, 0, 0);
+            btn_send.Padding = new Padding(20, 0, 0, 0);
             btn_send.Size = new Size(194, 77);
             btn_send.TabIndex = 7;
             btn_send.TextAlign = ContentAlignment.MiddleLeft;
@@ -415,9 +416,9 @@
             // 
             btn_profile.Image = Properties.Resources.btn_profile;
             btn_profile.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_profile.Location = new Point(-7, -8);
+            btn_profile.Location = new Point(3, -12);
             btn_profile.Name = "btn_profile";
-            btn_profile.Padding = new Padding(30, 0, 0, 0);
+            btn_profile.Padding = new Padding(20, 0, 0, 0);
             btn_profile.Size = new Size(194, 77);
             btn_profile.TabIndex = 7;
             btn_profile.TextAlign = ContentAlignment.MiddleLeft;
@@ -436,9 +437,9 @@
             // 
             btn_setting.Image = Properties.Resources.btn_setting;
             btn_setting.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_setting.Location = new Point(-7, -8);
+            btn_setting.Location = new Point(3, -11);
             btn_setting.Name = "btn_setting";
-            btn_setting.Padding = new Padding(30, 0, 0, 0);
+            btn_setting.Padding = new Padding(20, 0, 0, 0);
             btn_setting.Size = new Size(194, 77);
             btn_setting.TabIndex = 7;
             btn_setting.TextAlign = ContentAlignment.MiddleLeft;

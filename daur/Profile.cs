@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -26,6 +27,7 @@ namespace DAUR
         {
             InitializeComponent();
             MakePanelRounded();
+
         }
         [DllImport("Gdi32.dll", EntryPoint = "DeleteObject")]
         private static extern bool DeleteObject(IntPtr hObject);
@@ -40,6 +42,21 @@ namespace DAUR
 
             DeleteObject(roundedRegionWaste);
         }
+        private void MakePictureBoxCircular()
+        {
+            // Set the PictureBox size to be square
+            pbProfile.Width = 150; 
+            pbProfile.Height = 150;
+
+            // Create a circular region based on the PictureBox size
+            GraphicsPath path = new GraphicsPath();
+            path.AddEllipse(0, 0, pbProfile.Width, pbProfile.Height);
+
+            // Set the region of the PictureBox to the circular path
+            pbProfile.Region = new Region(path);
+
+            pbProfile.SizeMode = PictureBoxSizeMode.Zoom;
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -51,7 +68,7 @@ namespace DAUR
             Panel panel = sender as Panel;
             if (panel == null) return;
 
-            int cornerRadius = 20; // Radius lengkungan sudut
+            int cornerRadius = 100; // Radius lengkungan sudut
             int strokeWidth = 2; // Ketebalan garis stroke
             Color strokeColor = Color.Gray; // Warna garis stroke
 
@@ -128,6 +145,11 @@ namespace DAUR
                 pen.Alignment = System.Drawing.Drawing2D.PenAlignment.Inset;
                 e.Graphics.DrawRectangle(pen, new Rectangle(0, 0, panel.Width - 1, panel.Height - 1));
             }
+        }
+
+        private void pbProfile_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

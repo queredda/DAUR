@@ -42,6 +42,13 @@
             btn_profile = new Button();
             panel8 = new Panel();
             btn_setting = new Button();
+            panelForm = new Panel();
+            tbBerat = new TextBox();
+            btnKirim = new Button();
+            labelJenis = new Label();
+            labelBerat = new Label();
+            tbJenis = new TextBox();
+            labelJudul = new Label();
             sidebar.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)logoBtn).BeginInit();
@@ -50,6 +57,7 @@
             panel6.SuspendLayout();
             panel7.SuspendLayout();
             panel8.SuspendLayout();
+            panelForm.SuspendLayout();
             SuspendLayout();
             // 
             // button7
@@ -59,7 +67,7 @@
             button7.BackgroundImageLayout = ImageLayout.Center;
             button7.FlatAppearance.BorderSize = 0;
             button7.FlatStyle = FlatStyle.Flat;
-            button7.Font = new Font("Calisto MT", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            button7.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
             button7.ForeColor = Color.Black;
             button7.ImeMode = ImeMode.NoControl;
             button7.Location = new Point(1306, -1);
@@ -157,6 +165,7 @@
             // 
             // button4
             // 
+            button4.BackColor = Color.FromArgb(42, 42, 42);
             button4.Image = Properties.Resources.send_btn;
             button4.ImageAlign = ContentAlignment.MiddleLeft;
             button4.Location = new Point(-7, -8);
@@ -165,7 +174,7 @@
             button4.Size = new Size(194, 77);
             button4.TabIndex = 7;
             button4.TextAlign = ContentAlignment.MiddleLeft;
-            button4.UseVisualStyleBackColor = true;
+            button4.UseVisualStyleBackColor = false;
             // 
             // panel7
             // 
@@ -209,12 +218,101 @@
             btn_setting.UseVisualStyleBackColor = true;
             btn_setting.Click += btn_setting_Click;
             // 
+            // panelForm
+            // 
+            panelForm.BackColor = Color.White;
+            panelForm.Controls.Add(tbBerat);
+            panelForm.Controls.Add(btnKirim);
+            panelForm.Controls.Add(labelJenis);
+            panelForm.Controls.Add(labelBerat);
+            panelForm.Controls.Add(tbJenis);
+            panelForm.Controls.Add(labelJudul);
+            panelForm.Location = new Point(475, 172);
+            panelForm.Name = "panelForm";
+            panelForm.Size = new Size(417, 424);
+            panelForm.TabIndex = 13;
+            panelForm.Paint += panelForm_Paint;
+            // 
+            // tbBerat
+            // 
+            tbBerat.Font = new Font("Montserrat SemiBold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            tbBerat.ForeColor = Color.Gray;
+            tbBerat.Location = new Point(87, 230);
+            tbBerat.Name = "tbBerat";
+            tbBerat.Size = new Size(228, 29);
+            tbBerat.TabIndex = 9;
+            // 
+            // btnKirim
+            // 
+            btnKirim.BackColor = Color.FromArgb(66, 66, 66);
+            btnKirim.FlatAppearance.BorderSize = 0;
+            btnKirim.FlatStyle = FlatStyle.Flat;
+            btnKirim.Font = new Font("Montserrat", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnKirim.ForeColor = Color.White;
+            btnKirim.ImeMode = ImeMode.NoControl;
+            btnKirim.Location = new Point(105, 288);
+            btnKirim.Name = "btnKirim";
+            btnKirim.Size = new Size(195, 43);
+            btnKirim.TabIndex = 8;
+            btnKirim.Text = "Kirim";
+            btnKirim.UseVisualStyleBackColor = false;
+            // 
+            // labelJenis
+            // 
+            labelJenis.AutoSize = true;
+            labelJenis.BackColor = Color.Transparent;
+            labelJenis.Font = new Font("Montserrat", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
+            labelJenis.ForeColor = Color.FromArgb(66, 66, 66);
+            labelJenis.ImeMode = ImeMode.NoControl;
+            labelJenis.Location = new Point(87, 132);
+            labelJenis.Name = "labelJenis";
+            labelJenis.Size = new Size(104, 20);
+            labelJenis.TabIndex = 7;
+            labelJenis.Text = "Jenis Sampah";
+            // 
+            // labelBerat
+            // 
+            labelBerat.AutoSize = true;
+            labelBerat.BackColor = Color.Transparent;
+            labelBerat.Font = new Font("Montserrat", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
+            labelBerat.ForeColor = Color.FromArgb(66, 66, 66);
+            labelBerat.ImeMode = ImeMode.NoControl;
+            labelBerat.Location = new Point(87, 205);
+            labelBerat.Name = "labelBerat";
+            labelBerat.Size = new Size(80, 20);
+            labelBerat.TabIndex = 6;
+            labelBerat.Text = "Berat (Kg)";
+            // 
+            // tbJenis
+            // 
+            tbJenis.Font = new Font("Montserrat SemiBold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            tbJenis.ForeColor = Color.Gray;
+            tbJenis.Location = new Point(87, 159);
+            tbJenis.Name = "tbJenis";
+            tbJenis.Size = new Size(228, 29);
+            tbJenis.TabIndex = 4;
+            tbJenis.TextChanged += tbJenis_TextChanged;
+            // 
+            // labelJudul
+            // 
+            labelJudul.AutoSize = true;
+            labelJudul.BackColor = Color.Transparent;
+            labelJudul.Font = new Font("Montserrat", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            labelJudul.ForeColor = Color.FromArgb(66, 66, 66);
+            labelJudul.ImeMode = ImeMode.NoControl;
+            labelJudul.Location = new Point(122, 61);
+            labelJudul.Name = "labelJudul";
+            labelJudul.Size = new Size(168, 36);
+            labelJudul.TabIndex = 0;
+            labelJudul.Text = "Send Waste!";
+            // 
             // send
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
+            BackColor = Color.FromArgb(249, 250, 251);
             ClientSize = new Size(1366, 768);
+            Controls.Add(panelForm);
             Controls.Add(sidebar);
             Controls.Add(button7);
             FormBorderStyle = FormBorderStyle.None;
@@ -222,6 +320,7 @@
             MinimumSize = new Size(1366, 768);
             Name = "send";
             Text = "send";
+            Load += send_Load;
             sidebar.ResumeLayout(false);
             panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)logoBtn).EndInit();
@@ -230,6 +329,8 @@
             panel6.ResumeLayout(false);
             panel7.ResumeLayout(false);
             panel8.ResumeLayout(false);
+            panelForm.ResumeLayout(false);
+            panelForm.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -249,5 +350,12 @@
         private Button btn_profile;
         private Panel panel8;
         private Button btn_setting;
+        private Panel panelForm;
+        private TextBox tbBerat;
+        private Button btnKirim;
+        private Label labelJenis;
+        private Label labelBerat;
+        private TextBox tbJenis;
+        private Label labelJudul;
     }
 }

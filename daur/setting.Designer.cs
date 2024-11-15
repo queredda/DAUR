@@ -42,15 +42,12 @@
             panel8 = new Panel();
             button6 = new Button();
             button7 = new Button();
-            lbl_weather = new Label();
-            label1 = new Label();
-            button1 = new Button();
-            label2 = new Label();
-            button2 = new Button();
             label3 = new Label();
-            button5 = new Button();
-            label4 = new Label();
-            button8 = new Button();
+            panelForm = new Panel();
+            labelJudul = new Label();
+            labelView = new LinkLabel();
+            labelUsername = new LinkLabel();
+            labelBio = new LinkLabel();
             sidebar.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)logoBtn).BeginInit();
@@ -59,6 +56,7 @@
             panel6.SuspendLayout();
             panel7.SuspendLayout();
             panel8.SuspendLayout();
+            panelForm.SuspendLayout();
             SuspendLayout();
             // 
             // sidebar
@@ -190,6 +188,7 @@
             // 
             // button6
             // 
+            button6.BackColor = Color.FromArgb(42, 42, 42);
             button6.Image = Properties.Resources.btn_setting;
             button6.ImageAlign = ContentAlignment.MiddleLeft;
             button6.Location = new Point(-7, -8);
@@ -198,7 +197,7 @@
             button6.Size = new Size(194, 77);
             button6.TabIndex = 7;
             button6.TextAlign = ContentAlignment.MiddleLeft;
-            button6.UseVisualStyleBackColor = true;
+            button6.UseVisualStyleBackColor = false;
             // 
             // button7
             // 
@@ -207,7 +206,7 @@
             button7.BackgroundImageLayout = ImageLayout.Center;
             button7.FlatAppearance.BorderSize = 0;
             button7.FlatStyle = FlatStyle.Flat;
-            button7.Font = new Font("Calisto MT", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            button7.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
             button7.ForeColor = Color.Black;
             button7.ImeMode = ImeMode.NoControl;
             button7.Location = new Point(1306, -2);
@@ -218,92 +217,78 @@
             button7.UseVisualStyleBackColor = false;
             button7.Click += button7_Click;
             // 
-            // lbl_weather
-            // 
-            lbl_weather.AutoSize = true;
-            lbl_weather.BackColor = Color.Transparent;
-            lbl_weather.Font = new Font("Montserrat SemiBold", 24F, FontStyle.Bold, GraphicsUnit.Point);
-            lbl_weather.Location = new Point(217, 51);
-            lbl_weather.Name = "lbl_weather";
-            lbl_weather.Size = new Size(174, 55);
-            lbl_weather.TabIndex = 11;
-            lbl_weather.Text = "Setting";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Montserrat SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(217, 309);
-            label1.Name = "label1";
-            label1.Size = new Size(162, 28);
-            label1.TabIndex = 12;
-            label1.Text = "Edit username";
-            // 
-            // button1
-            // 
-            button1.Location = new Point(900, 301);
-            button1.Name = "button1";
-            button1.Size = new Size(139, 50);
-            button1.TabIndex = 13;
-            button1.Text = "Edit";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Montserrat SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(217, 394);
-            label2.Name = "label2";
-            label2.Size = new Size(199, 28);
-            label2.TabIndex = 14;
-            label2.Text = "Change Password";
-            // 
-            // button2
-            // 
-            button2.Location = new Point(900, 381);
-            button2.Name = "button2";
-            button2.Size = new Size(139, 50);
-            button2.TabIndex = 15;
-            button2.Text = "Change";
-            button2.UseVisualStyleBackColor = true;
-            // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Montserrat SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(217, 486);
+            label3.Location = new Point(43, 236);
             label3.Name = "label3";
-            label3.Size = new Size(92, 28);
+            label3.Size = new Size(0, 31);
             label3.TabIndex = 16;
-            label3.Text = "Edit bio";
             // 
-            // button5
+            // panelForm
             // 
-            button5.Location = new Point(900, 478);
-            button5.Name = "button5";
-            button5.Size = new Size(139, 50);
-            button5.TabIndex = 17;
-            button5.Text = "Edit";
-            button5.UseVisualStyleBackColor = true;
+            panelForm.BackColor = Color.White;
+            panelForm.Controls.Add(labelBio);
+            panelForm.Controls.Add(labelUsername);
+            panelForm.Controls.Add(labelView);
+            panelForm.Controls.Add(label3);
+            panelForm.Controls.Add(labelJudul);
+            panelForm.Location = new Point(174, 44);
+            panelForm.Name = "panelForm";
+            panelForm.Size = new Size(984, 660);
+            panelForm.TabIndex = 20;
+            panelForm.Paint += panelForm_Paint;
             // 
-            // label4
+            // labelJudul
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Montserrat SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(217, 219);
-            label4.Name = "label4";
-            label4.Size = new Size(148, 28);
-            label4.TabIndex = 18;
-            label4.Text = "View Profiles";
+            labelJudul.AutoSize = true;
+            labelJudul.BackColor = Color.Transparent;
+            labelJudul.Font = new Font("Montserrat", 22.2F, FontStyle.Bold, GraphicsUnit.Point);
+            labelJudul.ForeColor = Color.FromArgb(66, 66, 66);
+            labelJudul.ImeMode = ImeMode.NoControl;
+            labelJudul.Location = new Point(417, 17);
+            labelJudul.Name = "labelJudul";
+            labelJudul.Size = new Size(166, 58);
+            labelJudul.TabIndex = 0;
+            labelJudul.Text = "Setting";
             // 
-            // button8
+            // labelView
             // 
-            button8.Location = new Point(900, 211);
-            button8.Name = "button8";
-            button8.Size = new Size(139, 50);
-            button8.TabIndex = 19;
-            button8.Text = "View";
-            button8.UseVisualStyleBackColor = true;
+            labelView.AutoSize = true;
+            labelView.Font = new Font("Montserrat SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            labelView.LinkColor = Color.FromArgb(42, 42, 42);
+            labelView.Location = new Point(43, 145);
+            labelView.Name = "labelView";
+            labelView.Size = new Size(137, 31);
+            labelView.TabIndex = 9;
+            labelView.TabStop = true;
+            labelView.Text = "View Profile";
+
+            // 
+            // labelUsername
+            // 
+            labelUsername.AutoSize = true;
+            labelUsername.Font = new Font("Montserrat SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            labelUsername.LinkColor = Color.FromArgb(42, 42, 42);
+            labelUsername.Location = new Point(43, 209);
+            labelUsername.Name = "labelUsername";
+            labelUsername.Size = new Size(166, 31);
+            labelUsername.TabIndex = 10;
+            labelUsername.TabStop = true;
+            labelUsername.Text = "Edit Username";
+            // 
+            // labelBio
+            // 
+            labelBio.AutoSize = true;
+            labelBio.Font = new Font("Montserrat SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            labelBio.LinkColor = Color.FromArgb(42, 42, 42);
+            labelBio.Location = new Point(43, 273);
+            labelBio.Name = "labelBio";
+            labelBio.Size = new Size(95, 31);
+            labelBio.TabIndex = 17;
+            labelBio.TabStop = true;
+            labelBio.Text = "Edit Bio";
             // 
             // setting
             // 
@@ -311,15 +296,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1366, 768);
-            Controls.Add(button8);
-            Controls.Add(label4);
-            Controls.Add(button5);
-            Controls.Add(label3);
-            Controls.Add(button2);
-            Controls.Add(label2);
-            Controls.Add(button1);
-            Controls.Add(label1);
-            Controls.Add(lbl_weather);
+            Controls.Add(panelForm);
             Controls.Add(button7);
             Controls.Add(sidebar);
             FormBorderStyle = FormBorderStyle.None;
@@ -335,8 +312,9 @@
             panel6.ResumeLayout(false);
             panel7.ResumeLayout(false);
             panel8.ResumeLayout(false);
+            panelForm.ResumeLayout(false);
+            panelForm.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -355,14 +333,11 @@
         private Panel panel8;
         private Button button6;
         private Button button7;
-        private Label lbl_weather;
-        private Label label1;
-        private Button button1;
-        private Label label2;
-        private Button button2;
         private Label label3;
-        private Button button5;
-        private Label label4;
-        private Button button8;
+        private Panel panelForm;
+        private Label labelJudul;
+        private LinkLabel labelView;
+        private LinkLabel labelBio;
+        private LinkLabel labelUsername;
     }
 }

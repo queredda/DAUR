@@ -12,8 +12,8 @@
       }
     ],
     "additionalProbingPaths": [
-      "C:\\Users\\snroh\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\snroh\\.nuget\\packages"
+      "C:\\Users\\quereda\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\quereda\\.nuget\\packages"
     ],
     "configProperties": {
       "Microsoft.NETCore.DotNetHostPolicy.SetAppPaths": true

@@ -3531,19 +3531,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\snroh\\.nuget\\packages\\": {}
+    "C:\\Users\\quereda\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Junpro\\DAUR\\DAUR\\DAUR.csproj",
+      "projectUniqueName": "C:\\Users\\quereda\\source\\repos\\daur_asli\\DAUR\\DAUR\\DAUR.csproj",
       "projectName": "DAUR",
-      "projectPath": "C:\\Junpro\\DAUR\\DAUR\\DAUR.csproj",
-      "packagesPath": "C:\\Users\\snroh\\.nuget\\packages\\",
-      "outputPath": "C:\\Junpro\\DAUR\\DAUR\\obj\\",
+      "projectPath": "C:\\Users\\quereda\\source\\repos\\daur_asli\\DAUR\\DAUR\\DAUR.csproj",
+      "packagesPath": "C:\\Users\\quereda\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\quereda\\source\\repos\\daur_asli\\DAUR\\DAUR\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\snroh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\quereda\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3563,6 +3563,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -3597,7 +3602,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

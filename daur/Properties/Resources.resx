@@ -118,32 +118,20 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Light mode" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Light mode.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="btn profile" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btn profile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Notification" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Notification.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="01 - Login" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\01 - Login.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="send icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\send icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="01 - Login1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\01 - Login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Logo junpro" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Logo junpro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="btn dashboard" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btn dashboard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="weather icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\weather icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="send btn" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\send btn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="01 - Login" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\01 - Login.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Notification" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Notification.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="btn order" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btn order.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -151,10 +139,25 @@
   <data name="btn setting" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btn setting.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Light mode" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Light mode.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="btn dashboard" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btn dashboard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="3dot" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\3dot.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="send btn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\send btn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Logo junpro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Logo junpro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="01 - Login1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\01 - Login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="weather icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\weather icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Rambut cewe aesthetic Korea" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Rambut cewe aesthetic Korea.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -123,30 +123,10 @@ namespace DAUR
 
         private void sidebarTimer_Tick(object sender, EventArgs e)
         {
-            if (sidebarExpand)
-            {
-                sidebar.Width -= 10;
-                if (sidebar.Width == sidebar.MinimumSize.Width)
-                {
-                    sidebarExpand = false;
-                    sidebarTimer.Stop();
-
-                }
-            }
-            else
-            {
-                sidebar.Width += 10;
-                if (sidebar.Width == sidebar.MaximumSize.Width)
-                {
-                    sidebarExpand = true;
-                    sidebarTimer.Stop();
-                }
-            }
         }
 
         private void logoBtn_Click(object sender, EventArgs e)
         {
-            sidebarTimer.Start();
         }
 
         private void sidebar_Paint(object sender, PaintEventArgs e)
@@ -192,6 +172,18 @@ namespace DAUR
         {
             setting setting = new setting();
             setting.Show();
+            this.Hide();
+        }
+
+        private void btn_send_Click(object sender, EventArgs e)
+        {
+            OpenSend();
+        }
+
+        private void OpenSend()
+        {
+            send send = new send();
+            send.Show();
             this.Hide();
         }
     }

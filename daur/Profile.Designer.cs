@@ -38,7 +38,7 @@
             panel5 = new Panel();
             button3 = new Button();
             panel6 = new Panel();
-            button4 = new Button();
+            btn_send = new Button();
             panel7 = new Panel();
             btn_profile = new Button();
             panel8 = new Panel();
@@ -110,6 +110,7 @@
             sidebar.Name = "sidebar";
             sidebar.Size = new Size(92, 768);
             sidebar.TabIndex = 9;
+            sidebar.Paint += sidebar_Paint;
             // 
             // panel3
             // 
@@ -173,23 +174,24 @@
             // 
             // panel6
             // 
-            panel6.Controls.Add(button4);
+            panel6.Controls.Add(btn_send);
             panel6.Location = new Point(3, 253);
             panel6.Name = "panel6";
             panel6.Size = new Size(75, 58);
             panel6.TabIndex = 8;
             // 
-            // button4
+            // btn_send
             // 
-            button4.Image = Properties.Resources.send_btn;
-            button4.ImageAlign = ContentAlignment.MiddleLeft;
-            button4.Location = new Point(-7, -8);
-            button4.Name = "button4";
-            button4.Padding = new Padding(30, 0, 0, 0);
-            button4.Size = new Size(194, 77);
-            button4.TabIndex = 7;
-            button4.TextAlign = ContentAlignment.MiddleLeft;
-            button4.UseVisualStyleBackColor = true;
+            btn_send.Image = Properties.Resources.send_btn;
+            btn_send.ImageAlign = ContentAlignment.MiddleLeft;
+            btn_send.Location = new Point(-7, -8);
+            btn_send.Name = "btn_send";
+            btn_send.Padding = new Padding(30, 0, 0, 0);
+            btn_send.Size = new Size(194, 77);
+            btn_send.TabIndex = 7;
+            btn_send.TextAlign = ContentAlignment.MiddleLeft;
+            btn_send.UseVisualStyleBackColor = true;
+            btn_send.Click += btn_send_Click;
             // 
             // panel7
             // 
@@ -252,63 +254,66 @@
             // 
             // pnl_profile
             // 
+            pnl_profile.BackColor = Color.Transparent;
             pnl_profile.Controls.Add(lblRole);
             pnl_profile.Controls.Add(role_role);
             pnl_profile.Controls.Add(lblEmail);
             pnl_profile.Controls.Add(email_email);
             pnl_profile.Controls.Add(pictureBox1);
             pnl_profile.Controls.Add(urProfile);
-            pnl_profile.Location = new Point(140, 113);
+            pnl_profile.Location = new Point(221, 52);
             pnl_profile.Name = "pnl_profile";
-            pnl_profile.Size = new Size(848, 579);
+            pnl_profile.Size = new Size(925, 632);
             pnl_profile.TabIndex = 0;
             pnl_profile.Paint += pnl_profile_Paint;
             // 
             // lblRole
             // 
             lblRole.AutoSize = true;
-            lblRole.Font = new Font("Montserrat SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblRole.Location = new Point(174, 413);
+            lblRole.Font = new Font("Montserrat", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            lblRole.Location = new Point(96, 509);
             lblRole.Name = "lblRole";
-            lblRole.Size = new Size(126, 21);
+            lblRole.Size = new Size(175, 28);
             lblRole.TabIndex = 5;
             lblRole.Text = "Pelaku Industri";
             // 
             // role_role
             // 
             role_role.AutoSize = true;
-            role_role.Font = new Font("Montserrat SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            role_role.Location = new Point(174, 379);
+            role_role.Font = new Font("Montserrat SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            role_role.Location = new Point(96, 464);
             role_role.Name = "role_role";
-            role_role.Size = new Size(44, 21);
+            role_role.Size = new Size(58, 28);
             role_role.TabIndex = 4;
             role_role.Text = "Role";
             // 
             // lblEmail
             // 
             lblEmail.AutoSize = true;
-            lblEmail.Font = new Font("Montserrat SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblEmail.Location = new Point(174, 330);
+            lblEmail.Font = new Font("Montserrat", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            lblEmail.Location = new Point(96, 389);
             lblEmail.Name = "lblEmail";
-            lblEmail.Size = new Size(161, 21);
+            lblEmail.Size = new Size(216, 28);
             lblEmail.TabIndex = 3;
             lblEmail.Text = "snroha@gmail.com";
             // 
             // email_email
             // 
             email_email.AutoSize = true;
-            email_email.Font = new Font("Montserrat SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            email_email.Location = new Point(174, 290);
+            email_email.Font = new Font("Montserrat SemiBold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            email_email.Location = new Point(96, 350);
             email_email.Name = "email_email";
-            email_email.Size = new Size(53, 21);
+            email_email.Size = new Size(64, 25);
             email_email.TabIndex = 2;
             email_email.Text = "Email";
             // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(357, 134);
+            pictureBox1.Image = Properties.Resources.Rambut_cewe_aesthetic_Korea;
+            pictureBox1.Location = new Point(350, 101);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(174, 133);
+            pictureBox1.Size = new Size(230, 222);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
             // 
@@ -316,7 +321,7 @@
             // 
             urProfile.AutoSize = true;
             urProfile.Font = new Font("Montserrat ExtraBold", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            urProfile.Location = new Point(342, 34);
+            urProfile.Location = new Point(360, 35);
             urProfile.Name = "urProfile";
             urProfile.Size = new Size(207, 41);
             urProfile.TabIndex = 0;
@@ -369,7 +374,7 @@
         private Panel panel5;
         private Button button3;
         private Panel panel6;
-        private Button button4;
+        private Button btn_send;
         private Panel panel7;
         private Button btn_profile;
         private Panel panel8;

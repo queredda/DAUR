@@ -12,12 +12,12 @@ namespace DAUR
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (
-            int nLeftRect,   
-            int nTopRect,      
-            int nRightRect,    
-            int nBottomRect,   
-            int nWidthEllipse, 
-            int nHeightEllipse 
+            int nLeftRect,
+            int nTopRect,
+            int nRightRect,
+            int nBottomRect,
+            int nWidthEllipse,
+            int nHeightEllipse
         );
 
 
@@ -95,6 +95,11 @@ namespace DAUR
             Dashboard dashboard = new Dashboard();
             dashboard.Show();
             this.Hide();
+        }
+
+        private void tbPassword_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

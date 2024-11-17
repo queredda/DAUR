@@ -43,9 +43,9 @@ namespace DAUR
 
         private void OpenDashboard()
         {
-            Dashboard Dashboard = new Dashboard();
-            Dashboard.Show();
-            this.Hide();
+            newDashboard newDashboard = new newDashboard();
+            newDashboard.Show();
+            this.Close();
         }
 
         private void btn_profile_Click(object sender, EventArgs e)
@@ -57,7 +57,7 @@ namespace DAUR
         {
             Profile profile = new Profile();
             profile.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void btn_setting_Click(object sender, EventArgs e)
@@ -70,7 +70,7 @@ namespace DAUR
         {
             setting setting = new setting();
             setting.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void sidebar_Paint(object sender, PaintEventArgs e)
@@ -127,6 +127,16 @@ namespace DAUR
         private void tbJenis_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            OpenDashboard();
+        }
+
+        private void btnProfile_Click(object sender, EventArgs e)
+        {
+            OpenProfile();
         }
     }
 }

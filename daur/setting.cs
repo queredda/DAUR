@@ -25,9 +25,9 @@ namespace DAUR
         }
         private void OpenDashboard()
         {
-            Dashboard Dashboard = new Dashboard();
-            Dashboard.Show();
-            this.Hide();
+            newDashboard newDashboard = new newDashboard();
+            newDashboard.Show();
+            this.Close();
         }
 
         private void btn_profile_Click(object sender, EventArgs e)
@@ -39,7 +39,7 @@ namespace DAUR
         {
             Profile Profile = new Profile();
             Profile.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -56,7 +56,7 @@ namespace DAUR
         {
             send send = new send();
             send.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void sidebar_Paint(object sender, PaintEventArgs e)
@@ -74,12 +74,12 @@ namespace DAUR
         private void panelForm_Paint(object sender, PaintEventArgs e)
         {
             Color shadowColor = Color.FromArgb(255, 0, 0, 0); // A semi-transparent dark color for shadow effect
-            panelForm.BackColor = Color.FromArgb(255, 250, 250, 250);
+            pnlSetting.BackColor = Color.FromArgb(255, 250, 250, 250);
             Color borderColor = Color.FromArgb(236, 233, 254); // #ECE9FE
 
             using (Pen borderPen = new Pen(borderColor, 4)) // 4px border width
             {
-                e.Graphics.DrawRectangle(borderPen, 0, 0, panelForm.Width, panelForm.Height);
+                e.Graphics.DrawRectangle(borderPen, 0, 0, pnlSetting.Width, pnlSetting.Height);
             }
 
             using (Pen borderPen = new Pen(borderColor, 4)) // 2px border width
@@ -88,15 +88,40 @@ namespace DAUR
                 {
                     // Define the rounded rectangle path
                     path.AddArc(0, 0, 20, 20, 180, 90);  // Top-left corner
-                    path.AddArc(panelForm.Width - 20, 0, 20, 20, 270, 90);  // Top-right corner
-                    path.AddArc(panelForm.Width - 20, panelForm.Height - 20, 20, 20, 0, 90);  // Bottom-right corner
-                    path.AddArc(0, panelForm.Height - 20, 20, 20, 90, 90);  // Bottom-left corner
+                    path.AddArc(pnlSetting.Width - 20, 0, 20, 20, 270, 90);  // Top-right corner
+                    path.AddArc(pnlSetting.Width - 20, pnlSetting.Height - 20, 20, 20, 0, 90);  // Bottom-right corner
+                    path.AddArc(0, pnlSetting.Height - 20, 20, 20, 90, 90);  // Bottom-left corner
                     path.CloseFigure();
 
                     // Draw the border
                     e.Graphics.DrawPath(borderPen, path);
                 }
             }
+        }
+
+
+
+
+        private void btnProfile_Click(object sender, EventArgs e)
+        {
+            OpenProfiles();
+        }
+
+        private void OpenProfiles()
+        {
+            Profile profile = new Profile();
+            profile.Show();
+            this.Close();
+        }
+
+        private void btnSend_Click(object sender, EventArgs e)
+        {
+            OpenSend();
+        }
+
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            OpenDashboard();
         }
     }
 }

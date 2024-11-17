@@ -133,26 +133,6 @@ namespace DAUR.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap dashboard1 {
-            get {
-                object obj = ResourceManager.GetObject("dashboard1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap dashboard11 {
-            get {
-                object obj = ResourceManager.GetObject("dashboard11", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Light_mode {
             get {
                 object obj = ResourceManager.GetObject("Light mode", resourceCulture);
@@ -196,16 +176,6 @@ namespace DAUR.Properties {
         internal static System.Drawing.Bitmap Rambut_cewe_aesthetic_Korea {
             get {
                 object obj = ResourceManager.GetObject("Rambut cewe aesthetic Korea", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Send {
-            get {
-                object obj = ResourceManager.GetObject("Send", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

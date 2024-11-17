@@ -119,6 +119,7 @@ C:\Users\quereda\source\repos\daur_asli\DAUR\DAUR\bin\Debug\net6.0-windows\Syste
 C:\Users\quereda\source\repos\daur_asli\DAUR\DAUR\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Management.dll
 C:\Users\quereda\source\repos\daur_asli\DAUR\DAUR\bin\Debug\net6.0-windows\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
 C:\Users\quereda\source\repos\daur_asli\DAUR\DAUR\obj\Debug\net6.0-windows\DAUR.csproj.AssemblyReference.cache
+C:\Users\quereda\source\repos\daur_asli\DAUR\DAUR\obj\Debug\net6.0-windows\DAUR.Dashboard.resources
 C:\Users\quereda\source\repos\daur_asli\DAUR\DAUR\obj\Debug\net6.0-windows\DAUR.loginPage.resources
 C:\Users\quereda\source\repos\daur_asli\DAUR\DAUR\obj\Debug\net6.0-windows\DAUR.Profile.resources
 C:\Users\quereda\source\repos\daur_asli\DAUR\DAUR\obj\Debug\net6.0-windows\DAUR.Properties.Resources.resources
@@ -137,5 +138,3 @@ C:\Users\quereda\source\repos\daur_asli\DAUR\DAUR\obj\Debug\net6.0-windows\refin
 C:\Users\quereda\source\repos\daur_asli\DAUR\DAUR\obj\Debug\net6.0-windows\DAUR.pdb
 C:\Users\quereda\source\repos\daur_asli\DAUR\DAUR\obj\Debug\net6.0-windows\DAUR.genruntimeconfig.cache
 C:\Users\quereda\source\repos\daur_asli\DAUR\DAUR\obj\Debug\net6.0-windows\ref\DAUR.dll
-C:\Users\quereda\source\repos\daur_asli\DAUR\DAUR\bin\Debug\net6.0-windows\Guna.UI2.dll
-C:\Users\quereda\source\repos\daur_asli\DAUR\DAUR\obj\Debug\net6.0-windows\DAUR.newDashboard.resources

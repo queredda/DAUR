@@ -31,17 +31,6 @@
           }
         }
       },
-      "Guna.UI2.WinForms/2.0.4.6": {
-        "dependencies": {
-          "System.Management": "8.0.0"
-        },
-        "runtime": {
-          "lib/net6.0-windows7.0/Guna.UI2.dll": {
-            "assemblyVersion": "2.0.4.6",
-            "fileVersion": "2.0.4.6"
-          }
-        }
-      },
       "Microsoft.Extensions.DependencyInjection.Abstractions/8.0.0": {
         "runtime": {
           "lib/net6.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
@@ -812,13 +801,6 @@
       "sha512": "sha512-Nd53wgesLs4tXNNOWES/VRzNAGWoXu0TWvSgL+u66JBU+OajA5bM9qkXhEXI6OvbMZa9JjOiHm98hVfNjOnKEg==",
       "path": "bunifu.ui.winforms/7.2.0",
       "hashPath": "bunifu.ui.winforms.7.2.0.nupkg.sha512"
-    },
-    "Guna.UI2.WinForms/2.0.4.6": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-NYzSJp7e47Cz3NgGCHvzadash8ycmxxUnpLg4Rr/MSYG9WDw0HOoTI4SkbDW+HbACrf6tsWYCuzWkgvjuM/O6w==",
-      "path": "guna.ui2.winforms/2.0.4.6",
-      "hashPath": "guna.ui2.winforms.2.0.4.6.nupkg.sha512"
     },
     "Microsoft.Extensions.DependencyInjection.Abstractions/8.0.0": {
       "type": "package",

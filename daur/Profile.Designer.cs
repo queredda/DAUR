@@ -1,6 +1,4 @@
-﻿using Guna.UI2.WinForms;
-
-namespace DAUR
+﻿namespace DAUR
 {
     partial class Profile
     {
@@ -30,47 +28,40 @@ namespace DAUR
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Profile));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             button1 = new Button();
             panel1 = new Panel();
-            guna2Panel1 = new Guna2Panel();
-            guna2Button4 = new Guna2Button();
-            btnDashboard = new Guna2Button();
-            btnSend = new Guna2Button();
-            btnProfile = new Guna2Button();
-            btnSetting = new Guna2Button();
-            pnlProfile = new Guna2Panel();
-            lbl_Email = new Guna2HtmlLabel();
-            lbl_BioUser = new Guna2HtmlLabel();
-            lbl_RoleUser = new Guna2HtmlLabel();
-            lbl_EmailUser = new Guna2HtmlLabel();
-            btn_EditProfile = new Guna2Button();
-            lbl_Bio = new Guna2HtmlLabel();
-            lbl_Role = new Guna2HtmlLabel();
-            guna2HtmlLabel3 = new Guna2HtmlLabel();
-            guna2CirclePictureBox1 = new Guna2CirclePictureBox();
+            sidebar = new FlowLayoutPanel();
+            panel3 = new Panel();
+            logoBtn = new PictureBox();
+            panel4 = new Panel();
+            btn_dashboard = new Button();
+            panel5 = new Panel();
+            button3 = new Button();
+            panel6 = new Panel();
+            btn_send = new Button();
+            panel7 = new Panel();
+            btn_profile = new Button();
+            panel8 = new Panel();
+            btn_setting = new Button();
             button7 = new Button();
+            pnl_profile = new Panel();
+            lblRole = new Label();
+            role_role = new Label();
+            lblEmail = new Label();
+            email_email = new Label();
+            pbProfile = new PictureBox();
+            urProfile = new Label();
             panel1.SuspendLayout();
-            guna2Panel1.SuspendLayout();
-            pnlProfile.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).BeginInit();
+            sidebar.SuspendLayout();
+            panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)logoBtn).BeginInit();
+            panel4.SuspendLayout();
+            panel5.SuspendLayout();
+            panel6.SuspendLayout();
+            panel7.SuspendLayout();
+            panel8.SuspendLayout();
+            pnl_profile.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pbProfile).BeginInit();
             SuspendLayout();
             // 
             // button1
@@ -93,9 +84,9 @@ namespace DAUR
             // 
             // panel1
             // 
-            panel1.Controls.Add(guna2Panel1);
-            panel1.Controls.Add(pnlProfile);
+            panel1.Controls.Add(sidebar);
             panel1.Controls.Add(button7);
+            panel1.Controls.Add(pnl_profile);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.MaximumSize = new Size(1366, 768);
@@ -104,250 +95,145 @@ namespace DAUR
             panel1.Size = new Size(1366, 768);
             panel1.TabIndex = 10;
             // 
-            // guna2Panel1
+            // sidebar
             // 
-            guna2Panel1.BorderColor = Color.FromArgb(229, 232, 235);
-            guna2Panel1.BorderThickness = 2;
-            guna2Panel1.Controls.Add(guna2Button4);
-            guna2Panel1.Controls.Add(btnDashboard);
-            guna2Panel1.Controls.Add(btnSend);
-            guna2Panel1.Controls.Add(btnProfile);
-            guna2Panel1.Controls.Add(btnSetting);
-            guna2Panel1.CustomizableEdges = customizableEdges11;
-            guna2Panel1.Location = new Point(0, 0);
-            guna2Panel1.Name = "guna2Panel1";
-            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            guna2Panel1.Size = new Size(85, 770);
-            guna2Panel1.TabIndex = 46;
+            sidebar.Controls.Add(panel3);
+            sidebar.Controls.Add(panel4);
+            sidebar.Controls.Add(panel5);
+            sidebar.Controls.Add(panel6);
+            sidebar.Controls.Add(panel7);
+            sidebar.Controls.Add(panel8);
+            sidebar.Dock = DockStyle.Left;
+            sidebar.Location = new Point(0, 0);
+            sidebar.MaximumSize = new Size(180, 768);
+            sidebar.MinimumSize = new Size(86, 768);
+            sidebar.Name = "sidebar";
+            sidebar.Size = new Size(92, 768);
+            sidebar.TabIndex = 9;
+            sidebar.Paint += sidebar_Paint;
             // 
-            // guna2Button4
+            // panel3
             // 
-            guna2Button4.BorderRadius = 12;
-            guna2Button4.CustomImages.CheckedImage = (Image)resources.GetObject("resource.CheckedImage");
-            guna2Button4.CustomizableEdges = customizableEdges1;
-            guna2Button4.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button4.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button4.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button4.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button4.FillColor = Color.White;
-            guna2Button4.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            guna2Button4.ForeColor = Color.White;
-            guna2Button4.Image = Properties.Resources.Logo_junpro;
-            guna2Button4.ImageSize = new Size(50, 50);
-            guna2Button4.Location = new Point(12, 24);
-            guna2Button4.Name = "guna2Button4";
-            guna2Button4.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2Button4.Size = new Size(58, 56);
-            guna2Button4.TabIndex = 14;
+            panel3.Controls.Add(logoBtn);
+            panel3.Location = new Point(3, 3);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(75, 116);
+            panel3.TabIndex = 0;
             // 
-            // btnDashboard
+            // logoBtn
             // 
-            btnDashboard.BorderRadius = 12;
-            btnDashboard.CustomImages.CheckedImage = (Image)resources.GetObject("resource.CheckedImage1");
-            btnDashboard.CustomizableEdges = customizableEdges3;
-            btnDashboard.DisabledState.BorderColor = Color.DarkGray;
-            btnDashboard.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnDashboard.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnDashboard.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnDashboard.FillColor = Color.White;
-            btnDashboard.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnDashboard.ForeColor = Color.White;
-            btnDashboard.Image = Properties.Resources.btn_dashboard;
-            btnDashboard.ImageSize = new Size(26, 26);
-            btnDashboard.Location = new Point(12, 151);
-            btnDashboard.Name = "btnDashboard";
-            btnDashboard.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            btnDashboard.Size = new Size(58, 56);
-            btnDashboard.TabIndex = 13;
-            btnDashboard.Click += btnDashboard_Click;
+            logoBtn.Cursor = Cursors.Hand;
+            logoBtn.Image = Properties.Resources.Logo_junpro;
+            logoBtn.Location = new Point(9, 20);
+            logoBtn.Name = "logoBtn";
+            logoBtn.Size = new Size(61, 67);
+            logoBtn.SizeMode = PictureBoxSizeMode.StretchImage;
+            logoBtn.TabIndex = 0;
+            logoBtn.TabStop = false;
             // 
-            // btnSend
+            // panel4
             // 
-            btnSend.BorderRadius = 12;
-            btnSend.CustomImages.CheckedImage = (Image)resources.GetObject("resource.CheckedImage2");
-            btnSend.CustomizableEdges = customizableEdges5;
-            btnSend.DisabledState.BorderColor = Color.DarkGray;
-            btnSend.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnSend.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnSend.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnSend.FillColor = Color.White;
-            btnSend.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnSend.ForeColor = Color.White;
-            btnSend.Image = Properties.Resources.send_btn;
-            btnSend.ImageSize = new Size(26, 26);
-            btnSend.Location = new Point(12, 213);
-            btnSend.Name = "btnSend";
-            btnSend.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            btnSend.Size = new Size(58, 56);
-            btnSend.TabIndex = 12;
-            btnSend.Click += btnSend_Click;
+            panel4.Controls.Add(btn_dashboard);
+            panel4.Location = new Point(3, 125);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(75, 58);
+            panel4.TabIndex = 1;
             // 
-            // btnProfile
+            // btn_dashboard
             // 
-            btnProfile.BorderRadius = 12;
-            btnProfile.CustomImages.CheckedImage = (Image)resources.GetObject("resource.CheckedImage3");
-            btnProfile.CustomizableEdges = customizableEdges7;
-            btnProfile.DisabledState.BorderColor = Color.DarkGray;
-            btnProfile.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnProfile.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnProfile.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnProfile.FillColor = Color.FromArgb(42, 42, 42);
-            btnProfile.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnProfile.ForeColor = Color.White;
-            btnProfile.Image = (Image)resources.GetObject("btnProfile.Image");
-            btnProfile.ImageSize = new Size(26, 26);
-            btnProfile.Location = new Point(12, 275);
-            btnProfile.Name = "btnProfile";
-            btnProfile.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            btnProfile.Size = new Size(58, 56);
-            btnProfile.TabIndex = 11;
+            btn_dashboard.Image = Properties.Resources.btn_dashboard;
+            btn_dashboard.ImageAlign = ContentAlignment.MiddleLeft;
+            btn_dashboard.Location = new Point(-7, -8);
+            btn_dashboard.Name = "btn_dashboard";
+            btn_dashboard.Padding = new Padding(30, 0, 0, 0);
+            btn_dashboard.Size = new Size(194, 77);
+            btn_dashboard.TabIndex = 7;
+            btn_dashboard.TextAlign = ContentAlignment.MiddleLeft;
+            btn_dashboard.UseVisualStyleBackColor = true;
+            btn_dashboard.Click += btn_dashboard_Click_1;
             // 
-            // btnSetting
+            // panel5
             // 
-            btnSetting.BorderRadius = 12;
-            btnSetting.CustomImages.CheckedImage = (Image)resources.GetObject("resource.CheckedImage4");
-            btnSetting.CustomizableEdges = customizableEdges9;
-            btnSetting.DisabledState.BorderColor = Color.DarkGray;
-            btnSetting.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnSetting.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnSetting.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnSetting.FillColor = Color.White;
-            btnSetting.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnSetting.ForeColor = Color.White;
-            btnSetting.Image = Properties.Resources.btn_setting;
-            btnSetting.ImageSize = new Size(26, 26);
-            btnSetting.Location = new Point(12, 337);
-            btnSetting.Name = "btnSetting";
-            btnSetting.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            btnSetting.Size = new Size(58, 56);
-            btnSetting.TabIndex = 10;
-            btnSetting.Click += btnSetting_Click;
+            panel5.Controls.Add(button3);
+            panel5.Location = new Point(3, 189);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(75, 58);
+            panel5.TabIndex = 8;
             // 
-            // pnlProfile
+            // button3
             // 
-            pnlProfile.BackColor = Color.White;
-            pnlProfile.BorderColor = Color.FromArgb(229, 232, 235);
-            pnlProfile.BorderRadius = 20;
-            pnlProfile.BorderThickness = 2;
-            pnlProfile.Controls.Add(lbl_Email);
-            pnlProfile.Controls.Add(lbl_BioUser);
-            pnlProfile.Controls.Add(lbl_RoleUser);
-            pnlProfile.Controls.Add(lbl_EmailUser);
-            pnlProfile.Controls.Add(btn_EditProfile);
-            pnlProfile.Controls.Add(lbl_Bio);
-            pnlProfile.Controls.Add(lbl_Role);
-            pnlProfile.Controls.Add(guna2HtmlLabel3);
-            pnlProfile.Controls.Add(guna2CirclePictureBox1);
-            pnlProfile.CustomizableEdges = customizableEdges16;
-            pnlProfile.Location = new Point(351, 70);
-            pnlProfile.Name = "pnlProfile";
-            pnlProfile.ShadowDecoration.CustomizableEdges = customizableEdges17;
-            pnlProfile.Size = new Size(685, 629);
-            pnlProfile.TabIndex = 22;
-            pnlProfile.Paint += pnlProfile_Paint;
+            button3.Image = Properties.Resources.btn_order;
+            button3.ImageAlign = ContentAlignment.MiddleLeft;
+            button3.Location = new Point(-7, -8);
+            button3.Name = "button3";
+            button3.Padding = new Padding(30, 0, 0, 0);
+            button3.Size = new Size(194, 77);
+            button3.TabIndex = 7;
+            button3.TextAlign = ContentAlignment.MiddleLeft;
+            button3.UseVisualStyleBackColor = true;
             // 
-            // lbl_Email
+            // panel6
             // 
-            lbl_Email.BackColor = Color.Transparent;
-            lbl_Email.Font = new Font("Montserrat SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lbl_Email.Location = new Point(55, 239);
-            lbl_Email.Name = "lbl_Email";
-            lbl_Email.Size = new Size(46, 26);
-            lbl_Email.TabIndex = 45;
-            lbl_Email.Text = "Email";
+            panel6.Controls.Add(btn_send);
+            panel6.Location = new Point(3, 253);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(75, 58);
+            panel6.TabIndex = 8;
             // 
-            // lbl_BioUser
+            // btn_send
             // 
-            lbl_BioUser.BackColor = Color.Transparent;
-            lbl_BioUser.Font = new Font("Montserrat", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_BioUser.Location = new Point(55, 435);
-            lbl_BioUser.Name = "lbl_BioUser";
-            lbl_BioUser.Size = new Size(210, 26);
-            lbl_BioUser.TabIndex = 44;
-            lbl_BioUser.Text = "Lorem ipsum dolor sit amet";
+            btn_send.Image = Properties.Resources.send_btn;
+            btn_send.ImageAlign = ContentAlignment.MiddleLeft;
+            btn_send.Location = new Point(-7, -8);
+            btn_send.Name = "btn_send";
+            btn_send.Padding = new Padding(30, 0, 0, 0);
+            btn_send.Size = new Size(194, 77);
+            btn_send.TabIndex = 7;
+            btn_send.TextAlign = ContentAlignment.MiddleLeft;
+            btn_send.UseVisualStyleBackColor = true;
+            btn_send.Click += btn_send_Click;
             // 
-            // lbl_RoleUser
+            // panel7
             // 
-            lbl_RoleUser.BackColor = Color.Transparent;
-            lbl_RoleUser.Font = new Font("Montserrat", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_RoleUser.Location = new Point(55, 354);
-            lbl_RoleUser.Name = "lbl_RoleUser";
-            lbl_RoleUser.Size = new Size(117, 26);
-            lbl_RoleUser.TabIndex = 43;
-            lbl_RoleUser.Text = "Pelaku Industri";
+            panel7.Controls.Add(btn_profile);
+            panel7.Location = new Point(3, 317);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(75, 58);
+            panel7.TabIndex = 8;
             // 
-            // lbl_EmailUser
+            // btn_profile
             // 
-            lbl_EmailUser.BackColor = Color.Transparent;
-            lbl_EmailUser.Font = new Font("Montserrat", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_EmailUser.Location = new Point(55, 271);
-            lbl_EmailUser.Name = "lbl_EmailUser";
-            lbl_EmailUser.Size = new Size(148, 26);
-            lbl_EmailUser.TabIndex = 42;
-            lbl_EmailUser.Text = "Steven@gmail.com";
+            btn_profile.BackColor = Color.FromArgb(42, 42, 42);
+            btn_profile.Image = Properties.Resources.btn_profile;
+            btn_profile.ImageAlign = ContentAlignment.MiddleLeft;
+            btn_profile.Location = new Point(-7, -8);
+            btn_profile.Name = "btn_profile";
+            btn_profile.Padding = new Padding(30, 0, 0, 0);
+            btn_profile.Size = new Size(194, 77);
+            btn_profile.TabIndex = 7;
+            btn_profile.TextAlign = ContentAlignment.MiddleLeft;
+            btn_profile.UseVisualStyleBackColor = false;
             // 
-            // btn_EditProfile
+            // panel8
             // 
-            btn_EditProfile.BorderRadius = 12;
-            btn_EditProfile.CustomizableEdges = customizableEdges13;
-            btn_EditProfile.DisabledState.BorderColor = Color.DarkGray;
-            btn_EditProfile.DisabledState.CustomBorderColor = Color.DarkGray;
-            btn_EditProfile.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btn_EditProfile.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btn_EditProfile.FillColor = Color.FromArgb(42, 42, 42);
-            btn_EditProfile.Font = new Font("Montserrat SemiBold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_EditProfile.ForeColor = Color.White;
-            btn_EditProfile.Location = new Point(462, 562);
-            btn_EditProfile.Name = "btn_EditProfile";
-            btn_EditProfile.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            btn_EditProfile.Size = new Size(195, 46);
-            btn_EditProfile.TabIndex = 41;
-            btn_EditProfile.Text = "Edit Profile";
+            panel8.Controls.Add(btn_setting);
+            panel8.Location = new Point(3, 381);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(75, 58);
+            panel8.TabIndex = 8;
             // 
-            // lbl_Bio
+            // btn_setting
             // 
-            lbl_Bio.BackColor = Color.Transparent;
-            lbl_Bio.Font = new Font("Montserrat SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lbl_Bio.Location = new Point(55, 403);
-            lbl_Bio.Name = "lbl_Bio";
-            lbl_Bio.Size = new Size(120, 26);
-            lbl_Bio.TabIndex = 39;
-            lbl_Bio.Text = "Bio Description";
-            // 
-            // lbl_Role
-            // 
-            lbl_Role.BackColor = Color.Transparent;
-            lbl_Role.Font = new Font("Montserrat SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lbl_Role.Location = new Point(55, 322);
-            lbl_Role.Name = "lbl_Role";
-            lbl_Role.Size = new Size(37, 26);
-            lbl_Role.TabIndex = 37;
-            lbl_Role.Text = "Role";
-            // 
-            // guna2HtmlLabel3
-            // 
-            guna2HtmlLabel3.BackColor = Color.Transparent;
-            guna2HtmlLabel3.Font = new Font("Montserrat SemiBold", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            guna2HtmlLabel3.Location = new Point(253, 189);
-            guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            guna2HtmlLabel3.Size = new Size(194, 38);
-            guna2HtmlLabel3.TabIndex = 31;
-            guna2HtmlLabel3.Text = "Steven Ganteng";
-            // 
-            // guna2CirclePictureBox1
-            // 
-            guna2CirclePictureBox1.FillColor = Color.DarkGray;
-            guna2CirclePictureBox1.Image = Properties.Resources.Rambut_cewe_aesthetic_Korea;
-            guna2CirclePictureBox1.ImageRotate = 0F;
-            guna2CirclePictureBox1.InitialImage = Properties.Resources.Rambut_cewe_aesthetic_Korea;
-            guna2CirclePictureBox1.Location = new Point(272, 33);
-            guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
-            guna2CirclePictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges15;
-            guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            guna2CirclePictureBox1.Size = new Size(150, 150);
-            guna2CirclePictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            guna2CirclePictureBox1.TabIndex = 30;
-            guna2CirclePictureBox1.TabStop = false;
+            btn_setting.Image = Properties.Resources.btn_setting;
+            btn_setting.ImageAlign = ContentAlignment.MiddleLeft;
+            btn_setting.Location = new Point(-7, -8);
+            btn_setting.Name = "btn_setting";
+            btn_setting.Padding = new Padding(30, 0, 0, 0);
+            btn_setting.Size = new Size(194, 77);
+            btn_setting.TabIndex = 7;
+            btn_setting.TextAlign = ContentAlignment.MiddleLeft;
+            btn_setting.UseVisualStyleBackColor = true;
+            btn_setting.Click += btn_setting_Click;
             // 
             // button7
             // 
@@ -367,6 +253,82 @@ namespace DAUR
             button7.UseVisualStyleBackColor = false;
             button7.Click += button7_Click;
             // 
+            // pnl_profile
+            // 
+            pnl_profile.BackColor = Color.Transparent;
+            pnl_profile.Controls.Add(lblRole);
+            pnl_profile.Controls.Add(role_role);
+            pnl_profile.Controls.Add(lblEmail);
+            pnl_profile.Controls.Add(email_email);
+            pnl_profile.Controls.Add(pbProfile);
+            pnl_profile.Controls.Add(urProfile);
+            pnl_profile.Location = new Point(221, 52);
+            pnl_profile.Name = "pnl_profile";
+            pnl_profile.Size = new Size(925, 632);
+            pnl_profile.TabIndex = 0;
+            pnl_profile.Paint += pnl_profile_Paint;
+            // 
+            // lblRole
+            // 
+            lblRole.AutoSize = true;
+            lblRole.Font = new Font("Montserrat", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lblRole.Location = new Point(96, 509);
+            lblRole.Name = "lblRole";
+            lblRole.Size = new Size(165, 31);
+            lblRole.TabIndex = 5;
+            lblRole.Text = "Pelaku Industri";
+            // 
+            // role_role
+            // 
+            role_role.AutoSize = true;
+            role_role.Font = new Font("Montserrat", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            role_role.Location = new Point(96, 464);
+            role_role.Name = "role_role";
+            role_role.Size = new Size(61, 31);
+            role_role.TabIndex = 4;
+            role_role.Text = "Role";
+            // 
+            // lblEmail
+            // 
+            lblEmail.AutoSize = true;
+            lblEmail.Font = new Font("Montserrat", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lblEmail.Location = new Point(96, 389);
+            lblEmail.Name = "lblEmail";
+            lblEmail.Size = new Size(212, 31);
+            lblEmail.TabIndex = 3;
+            lblEmail.Text = "snroha@gmail.com";
+            // 
+            // email_email
+            // 
+            email_email.AutoSize = true;
+            email_email.Font = new Font("Montserrat", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            email_email.Location = new Point(96, 350);
+            email_email.Name = "email_email";
+            email_email.Size = new Size(72, 31);
+            email_email.TabIndex = 2;
+            email_email.Text = "Email";
+            // 
+            // pbProfile
+            // 
+            pbProfile.Image = Properties.Resources.Rambut_cewe_aesthetic_Korea;
+            pbProfile.Location = new Point(350, 101);
+            pbProfile.Name = "pbProfile";
+            pbProfile.Size = new Size(230, 222);
+            pbProfile.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbProfile.TabIndex = 1;
+            pbProfile.TabStop = false;
+            pbProfile.Click += pbProfile_Click;
+            // 
+            // urProfile
+            // 
+            urProfile.AutoSize = true;
+            urProfile.Font = new Font("Montserrat", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            urProfile.Location = new Point(360, 35);
+            urProfile.Name = "urProfile";
+            urProfile.Size = new Size(204, 47);
+            urProfile.TabIndex = 0;
+            urProfile.Text = "Your Profile";
+            // 
             // Profile
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -380,10 +342,17 @@ namespace DAUR
             Name = "Profile";
             Text = "Profile";
             panel1.ResumeLayout(false);
-            guna2Panel1.ResumeLayout(false);
-            pnlProfile.ResumeLayout(false);
-            pnlProfile.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).EndInit();
+            sidebar.ResumeLayout(false);
+            panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)logoBtn).EndInit();
+            panel4.ResumeLayout(false);
+            panel5.ResumeLayout(false);
+            panel6.ResumeLayout(false);
+            panel7.ResumeLayout(false);
+            panel8.ResumeLayout(false);
+            pnl_profile.ResumeLayout(false);
+            pnl_profile.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pbProfile).EndInit();
             ResumeLayout(false);
         }
 
@@ -391,34 +360,26 @@ namespace DAUR
 
         private Button button1;
         private Panel panel1;
-        private Button button7;
-        private Guna2Panel pnlProfile;
-        private Guna.UI2.WinForms.Guna2Panel pnl_profile;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lblProfile;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox pbProfile;
-        private Label lblRole;
-        private Label role_role;
+        private Panel pnl_profile;
+        private Label urProfile;
         private Label lblEmail;
         private Label email_email;
-        private Guna.UI2.WinForms.Guna2Panel pnlSetting;
-        private Guna.UI2.WinForms.Guna2Button btn_EditProfile;
-        private Guna.UI2.WinForms.Guna2TextBox tbBio;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lbl_Bio;
-        private Guna.UI2.WinForms.Guna2TextBox tbRole;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lbl_Role;
-        private Guna.UI2.WinForms.Guna2TextBox tbEmail;
-        //private Guna.UI2.WinForms.Guna2HtmlLabel lblEmail;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lbl_EmailUser;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lbl_BioUser;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lbl_RoleUser;
-        private Guna2HtmlLabel lbl_Email;
-        private Guna2Panel guna2Panel1;
-        private Guna2Button guna2Button4;
-        private Guna2Button btnDashboard;
-        private Guna2Button btnSend;
-        private Guna2Button btnProfile;
-        private Guna2Button btnSetting;
+        private PictureBox pbProfile;
+        private Label lblRole;
+        private Label role_role;
+        private Button button7;
+        private FlowLayoutPanel sidebar;
+        private Panel panel3;
+        private PictureBox logoBtn;
+        private Panel panel4;
+        private Button btn_dashboard;
+        private Panel panel5;
+        private Button button3;
+        private Panel panel6;
+        private Button btn_send;
+        private Panel panel7;
+        private Button btn_profile;
+        private Panel panel8;
+        private Button btn_setting;
     }
 }

@@ -120,8 +120,8 @@ namespace DAUR
 
         private void OpenDashboard()
         {
-            newDashboard newdashboard = new newDashboard();
-            newdashboard.Show();
+            Dashboard dashboard = new Dashboard();
+            dashboard.Show();
             this.Hide();
         }
 

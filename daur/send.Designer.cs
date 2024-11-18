@@ -70,9 +70,10 @@
             button7.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
             button7.ForeColor = Color.Black;
             button7.ImeMode = ImeMode.NoControl;
-            button7.Location = new Point(1306, -1);
+            button7.Location = new Point(1632, -1);
+            button7.Margin = new Padding(4, 4, 4, 4);
             button7.Name = "button7";
-            button7.Size = new Size(61, 56);
+            button7.Size = new Size(76, 70);
             button7.TabIndex = 11;
             button7.Text = "X";
             button7.UseVisualStyleBackColor = false;
@@ -88,28 +89,31 @@
             sidebar.Controls.Add(panel8);
             sidebar.Dock = DockStyle.Left;
             sidebar.Location = new Point(0, 0);
-            sidebar.MaximumSize = new Size(180, 768);
-            sidebar.MinimumSize = new Size(86, 768);
+            sidebar.Margin = new Padding(4, 4, 4, 4);
+            sidebar.MaximumSize = new Size(225, 960);
+            sidebar.MinimumSize = new Size(108, 960);
             sidebar.Name = "sidebar";
-            sidebar.Size = new Size(92, 768);
+            sidebar.Size = new Size(115, 960);
             sidebar.TabIndex = 12;
             sidebar.Paint += sidebar_Paint;
             // 
             // panel3
             // 
             panel3.Controls.Add(logoBtn);
-            panel3.Location = new Point(3, 3);
+            panel3.Location = new Point(4, 4);
+            panel3.Margin = new Padding(4, 4, 4, 4);
             panel3.Name = "panel3";
-            panel3.Size = new Size(75, 116);
+            panel3.Size = new Size(94, 145);
             panel3.TabIndex = 0;
             // 
             // logoBtn
             // 
             logoBtn.Cursor = Cursors.Hand;
             logoBtn.Image = Properties.Resources.Logo_junpro;
-            logoBtn.Location = new Point(9, 20);
+            logoBtn.Location = new Point(11, 25);
+            logoBtn.Margin = new Padding(4, 4, 4, 4);
             logoBtn.Name = "logoBtn";
-            logoBtn.Size = new Size(61, 67);
+            logoBtn.Size = new Size(76, 84);
             logoBtn.SizeMode = PictureBoxSizeMode.StretchImage;
             logoBtn.TabIndex = 0;
             logoBtn.TabStop = false;
@@ -117,19 +121,21 @@
             // panel4
             // 
             panel4.Controls.Add(btn_dashboard);
-            panel4.Location = new Point(3, 125);
+            panel4.Location = new Point(4, 157);
+            panel4.Margin = new Padding(4, 4, 4, 4);
             panel4.Name = "panel4";
-            panel4.Size = new Size(75, 58);
+            panel4.Size = new Size(94, 72);
             panel4.TabIndex = 1;
             // 
             // btn_dashboard
             // 
             btn_dashboard.Image = Properties.Resources.btn_dashboard;
             btn_dashboard.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_dashboard.Location = new Point(-7, -8);
+            btn_dashboard.Location = new Point(-9, -10);
+            btn_dashboard.Margin = new Padding(4, 4, 4, 4);
             btn_dashboard.Name = "btn_dashboard";
-            btn_dashboard.Padding = new Padding(30, 0, 0, 0);
-            btn_dashboard.Size = new Size(194, 77);
+            btn_dashboard.Padding = new Padding(38, 0, 0, 0);
+            btn_dashboard.Size = new Size(242, 96);
             btn_dashboard.TabIndex = 7;
             btn_dashboard.TextAlign = ContentAlignment.MiddleLeft;
             btn_dashboard.UseVisualStyleBackColor = true;
@@ -138,19 +144,21 @@
             // panel5
             // 
             panel5.Controls.Add(button3);
-            panel5.Location = new Point(3, 189);
+            panel5.Location = new Point(4, 237);
+            panel5.Margin = new Padding(4, 4, 4, 4);
             panel5.Name = "panel5";
-            panel5.Size = new Size(75, 58);
+            panel5.Size = new Size(94, 72);
             panel5.TabIndex = 8;
             // 
             // button3
             // 
             button3.Image = Properties.Resources.btn_order;
             button3.ImageAlign = ContentAlignment.MiddleLeft;
-            button3.Location = new Point(-7, -8);
+            button3.Location = new Point(-9, -10);
+            button3.Margin = new Padding(4, 4, 4, 4);
             button3.Name = "button3";
-            button3.Padding = new Padding(30, 0, 0, 0);
-            button3.Size = new Size(194, 77);
+            button3.Padding = new Padding(38, 0, 0, 0);
+            button3.Size = new Size(242, 96);
             button3.TabIndex = 7;
             button3.TextAlign = ContentAlignment.MiddleLeft;
             button3.UseVisualStyleBackColor = true;
@@ -158,9 +166,10 @@
             // panel6
             // 
             panel6.Controls.Add(button4);
-            panel6.Location = new Point(3, 253);
+            panel6.Location = new Point(4, 317);
+            panel6.Margin = new Padding(4, 4, 4, 4);
             panel6.Name = "panel6";
-            panel6.Size = new Size(75, 58);
+            panel6.Size = new Size(94, 72);
             panel6.TabIndex = 8;
             // 
             // button4
@@ -168,10 +177,11 @@
             button4.BackColor = Color.FromArgb(42, 42, 42);
             button4.Image = Properties.Resources.send_btn;
             button4.ImageAlign = ContentAlignment.MiddleLeft;
-            button4.Location = new Point(-7, -8);
+            button4.Location = new Point(-9, -10);
+            button4.Margin = new Padding(4, 4, 4, 4);
             button4.Name = "button4";
-            button4.Padding = new Padding(30, 0, 0, 0);
-            button4.Size = new Size(194, 77);
+            button4.Padding = new Padding(38, 0, 0, 0);
+            button4.Size = new Size(242, 96);
             button4.TabIndex = 7;
             button4.TextAlign = ContentAlignment.MiddleLeft;
             button4.UseVisualStyleBackColor = false;
@@ -179,19 +189,21 @@
             // panel7
             // 
             panel7.Controls.Add(btn_profile);
-            panel7.Location = new Point(3, 317);
+            panel7.Location = new Point(4, 397);
+            panel7.Margin = new Padding(4, 4, 4, 4);
             panel7.Name = "panel7";
-            panel7.Size = new Size(75, 58);
+            panel7.Size = new Size(94, 72);
             panel7.TabIndex = 8;
             // 
             // btn_profile
             // 
             btn_profile.Image = Properties.Resources.btn_profile;
             btn_profile.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_profile.Location = new Point(-7, -8);
+            btn_profile.Location = new Point(-9, -10);
+            btn_profile.Margin = new Padding(4, 4, 4, 4);
             btn_profile.Name = "btn_profile";
-            btn_profile.Padding = new Padding(30, 0, 0, 0);
-            btn_profile.Size = new Size(194, 77);
+            btn_profile.Padding = new Padding(38, 0, 0, 0);
+            btn_profile.Size = new Size(242, 96);
             btn_profile.TabIndex = 7;
             btn_profile.TextAlign = ContentAlignment.MiddleLeft;
             btn_profile.UseVisualStyleBackColor = true;
@@ -200,19 +212,21 @@
             // panel8
             // 
             panel8.Controls.Add(btn_setting);
-            panel8.Location = new Point(3, 381);
+            panel8.Location = new Point(4, 477);
+            panel8.Margin = new Padding(4, 4, 4, 4);
             panel8.Name = "panel8";
-            panel8.Size = new Size(75, 58);
+            panel8.Size = new Size(94, 72);
             panel8.TabIndex = 8;
             // 
             // btn_setting
             // 
             btn_setting.Image = Properties.Resources.btn_setting;
             btn_setting.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_setting.Location = new Point(-7, -8);
+            btn_setting.Location = new Point(-9, -10);
+            btn_setting.Margin = new Padding(4, 4, 4, 4);
             btn_setting.Name = "btn_setting";
-            btn_setting.Padding = new Padding(30, 0, 0, 0);
-            btn_setting.Size = new Size(194, 77);
+            btn_setting.Padding = new Padding(38, 0, 0, 0);
+            btn_setting.Size = new Size(242, 96);
             btn_setting.TabIndex = 7;
             btn_setting.TextAlign = ContentAlignment.MiddleLeft;
             btn_setting.UseVisualStyleBackColor = true;
@@ -227,19 +241,21 @@
             panelForm.Controls.Add(labelBerat);
             panelForm.Controls.Add(tbJenis);
             panelForm.Controls.Add(labelJudul);
-            panelForm.Location = new Point(475, 172);
+            panelForm.Location = new Point(594, 215);
+            panelForm.Margin = new Padding(4, 4, 4, 4);
             panelForm.Name = "panelForm";
-            panelForm.Size = new Size(417, 424);
+            panelForm.Size = new Size(521, 530);
             panelForm.TabIndex = 13;
             panelForm.Paint += panelForm_Paint;
             // 
             // tbBerat
             // 
-            tbBerat.Font = new Font("Montserrat SemiBold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            tbBerat.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             tbBerat.ForeColor = Color.Gray;
-            tbBerat.Location = new Point(87, 230);
+            tbBerat.Location = new Point(109, 288);
+            tbBerat.Margin = new Padding(4, 4, 4, 4);
             tbBerat.Name = "tbBerat";
-            tbBerat.Size = new Size(228, 29);
+            tbBerat.Size = new Size(284, 32);
             tbBerat.TabIndex = 9;
             // 
             // btnKirim
@@ -247,26 +263,29 @@
             btnKirim.BackColor = Color.FromArgb(66, 66, 66);
             btnKirim.FlatAppearance.BorderSize = 0;
             btnKirim.FlatStyle = FlatStyle.Flat;
-            btnKirim.Font = new Font("Montserrat", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnKirim.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnKirim.ForeColor = Color.White;
             btnKirim.ImeMode = ImeMode.NoControl;
-            btnKirim.Location = new Point(105, 288);
+            btnKirim.Location = new Point(131, 360);
+            btnKirim.Margin = new Padding(4, 4, 4, 4);
             btnKirim.Name = "btnKirim";
-            btnKirim.Size = new Size(195, 43);
+            btnKirim.Size = new Size(244, 54);
             btnKirim.TabIndex = 8;
             btnKirim.Text = "Kirim";
             btnKirim.UseVisualStyleBackColor = false;
+            btnKirim.Click += btnKirim_Click;
             // 
             // labelJenis
             // 
             labelJenis.AutoSize = true;
             labelJenis.BackColor = Color.Transparent;
-            labelJenis.Font = new Font("Montserrat", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
+            labelJenis.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
             labelJenis.ForeColor = Color.FromArgb(66, 66, 66);
             labelJenis.ImeMode = ImeMode.NoControl;
-            labelJenis.Location = new Point(87, 132);
+            labelJenis.Location = new Point(109, 165);
+            labelJenis.Margin = new Padding(4, 0, 4, 0);
             labelJenis.Name = "labelJenis";
-            labelJenis.Size = new Size(104, 20);
+            labelJenis.Size = new Size(122, 20);
             labelJenis.TabIndex = 7;
             labelJenis.Text = "Jenis Sampah";
             // 
@@ -274,22 +293,24 @@
             // 
             labelBerat.AutoSize = true;
             labelBerat.BackColor = Color.Transparent;
-            labelBerat.Font = new Font("Montserrat", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
+            labelBerat.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
             labelBerat.ForeColor = Color.FromArgb(66, 66, 66);
             labelBerat.ImeMode = ImeMode.NoControl;
-            labelBerat.Location = new Point(87, 205);
+            labelBerat.Location = new Point(109, 256);
+            labelBerat.Margin = new Padding(4, 0, 4, 0);
             labelBerat.Name = "labelBerat";
-            labelBerat.Size = new Size(80, 20);
+            labelBerat.Size = new Size(91, 20);
             labelBerat.TabIndex = 6;
             labelBerat.Text = "Berat (Kg)";
             // 
             // tbJenis
             // 
-            tbJenis.Font = new Font("Montserrat SemiBold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            tbJenis.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             tbJenis.ForeColor = Color.Gray;
-            tbJenis.Location = new Point(87, 159);
+            tbJenis.Location = new Point(109, 199);
+            tbJenis.Margin = new Padding(4, 4, 4, 4);
             tbJenis.Name = "tbJenis";
-            tbJenis.Size = new Size(228, 29);
+            tbJenis.Size = new Size(284, 32);
             tbJenis.TabIndex = 4;
             tbJenis.TextChanged += tbJenis_TextChanged;
             // 
@@ -297,27 +318,29 @@
             // 
             labelJudul.AutoSize = true;
             labelJudul.BackColor = Color.Transparent;
-            labelJudul.Font = new Font("Montserrat", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            labelJudul.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             labelJudul.ForeColor = Color.FromArgb(66, 66, 66);
             labelJudul.ImeMode = ImeMode.NoControl;
-            labelJudul.Location = new Point(122, 61);
+            labelJudul.Location = new Point(152, 76);
+            labelJudul.Margin = new Padding(4, 0, 4, 0);
             labelJudul.Name = "labelJudul";
-            labelJudul.Size = new Size(168, 36);
+            labelJudul.Size = new Size(187, 32);
             labelJudul.TabIndex = 0;
             labelJudul.Text = "Send Waste!";
             // 
             // send
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(249, 250, 251);
-            ClientSize = new Size(1366, 768);
+            ClientSize = new Size(1708, 960);
             Controls.Add(panelForm);
             Controls.Add(sidebar);
             Controls.Add(button7);
             FormBorderStyle = FormBorderStyle.None;
-            MaximumSize = new Size(1366, 768);
-            MinimumSize = new Size(1366, 768);
+            Margin = new Padding(4, 4, 4, 4);
+            MaximumSize = new Size(1708, 960);
+            MinimumSize = new Size(1708, 960);
             Name = "send";
             Text = "send";
             Load += send_Load;

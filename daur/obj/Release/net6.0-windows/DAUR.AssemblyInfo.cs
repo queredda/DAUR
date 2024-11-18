@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DAUR")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8ebe4f64a595277e70574ab76b82a6009893fb9b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d88f3b6b0b4eb052e0c02b6677f3d7650def74c0")]
 [assembly: System.Reflection.AssemblyProductAttribute("DAUR")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DAUR")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

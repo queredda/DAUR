@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(signupPage));
             signupPnl = new Panel();
-            rbKurir = new Guna.UI2.WinForms.Guna2RadioButton();
+            rbCollector = new Guna.UI2.WinForms.Guna2RadioButton();
             roleLbl = new Label();
             rbIndustri = new Guna.UI2.WinForms.Guna2RadioButton();
             tbCP = new TextBox();
@@ -53,7 +53,7 @@
             // 
             signupPnl.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             signupPnl.BackColor = Color.White;
-            signupPnl.Controls.Add(rbKurir);
+            signupPnl.Controls.Add(rbCollector);
             signupPnl.Controls.Add(roleLbl);
             signupPnl.Controls.Add(rbIndustri);
             signupPnl.Controls.Add(tbCP);
@@ -74,23 +74,23 @@
             signupPnl.TabIndex = 2;
             signupPnl.Paint += signupPnl_Paint;
             // 
-            // rbKurir
+            // rbCollector
             // 
-            rbKurir.AutoSize = true;
-            rbKurir.CheckedState.BorderColor = Color.FromArgb(94, 148, 255);
-            rbKurir.CheckedState.BorderThickness = 0;
-            rbKurir.CheckedState.FillColor = Color.FromArgb(94, 148, 255);
-            rbKurir.CheckedState.InnerColor = Color.White;
-            rbKurir.CheckedState.InnerOffset = -4;
-            rbKurir.Location = new Point(88, 460);
-            rbKurir.Name = "rbKurir";
-            rbKurir.Size = new Size(61, 24);
-            rbKurir.TabIndex = 31;
-            rbKurir.Text = "Kurir";
-            rbKurir.UncheckedState.BorderColor = Color.FromArgb(125, 137, 149);
-            rbKurir.UncheckedState.BorderThickness = 2;
-            rbKurir.UncheckedState.FillColor = Color.Transparent;
-            rbKurir.UncheckedState.InnerColor = Color.Transparent;
+            rbCollector.AutoSize = true;
+            rbCollector.CheckedState.BorderColor = Color.FromArgb(94, 148, 255);
+            rbCollector.CheckedState.BorderThickness = 0;
+            rbCollector.CheckedState.FillColor = Color.FromArgb(94, 148, 255);
+            rbCollector.CheckedState.InnerColor = Color.White;
+            rbCollector.CheckedState.InnerOffset = -4;
+            rbCollector.Location = new Point(88, 460);
+            rbCollector.Name = "rbCollector";
+            rbCollector.Size = new Size(134, 24);
+            rbCollector.TabIndex = 31;
+            rbCollector.Text = "Waste Collector";
+            rbCollector.UncheckedState.BorderColor = Color.FromArgb(125, 137, 149);
+            rbCollector.UncheckedState.BorderThickness = 2;
+            rbCollector.UncheckedState.FillColor = Color.Transparent;
+            rbCollector.UncheckedState.InnerColor = Color.Transparent;
             // 
             // roleLbl
             // 
@@ -331,7 +331,7 @@
         private TextBox tbCP;
         private Label confirmpwLbl;
         private TextBox tbPassword;
-        private Guna.UI2.WinForms.Guna2RadioButton rbKurir;
+        private Guna.UI2.WinForms.Guna2RadioButton rbCollector;
         private Label roleLbl;
         private Guna.UI2.WinForms.Guna2RadioButton rbIndustri;
     }

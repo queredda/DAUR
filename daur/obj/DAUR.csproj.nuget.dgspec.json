@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\quereda\\source\\repos\\daur_asli\\DAUR\\DAUR\\DAUR.csproj": {}
+    "\\\\Mac\\Home\\Documents\\Junpro\\DAUR\\DAUR\\DAUR.csproj": {}
   },
   "projects": {
-    "C:\\Users\\quereda\\source\\repos\\daur_asli\\DAUR\\DAUR\\DAUR.csproj": {
+    "\\\\Mac\\Home\\Documents\\Junpro\\DAUR\\DAUR\\DAUR.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\quereda\\source\\repos\\daur_asli\\DAUR\\DAUR\\DAUR.csproj",
+        "projectUniqueName": "\\\\Mac\\Home\\Documents\\Junpro\\DAUR\\DAUR\\DAUR.csproj",
         "projectName": "DAUR",
-        "projectPath": "C:\\Users\\quereda\\source\\repos\\daur_asli\\DAUR\\DAUR\\DAUR.csproj",
+        "projectPath": "\\\\Mac\\Home\\Documents\\Junpro\\DAUR\\DAUR\\DAUR.csproj",
         "packagesPath": "C:\\Users\\quereda\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\quereda\\source\\repos\\daur_asli\\DAUR\\DAUR\\obj\\",
+        "outputPath": "\\\\Mac\\Home\\Documents\\Junpro\\DAUR\\DAUR\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\quereda\\AppData\\Roaming\\NuGet\\NuGet.Config",

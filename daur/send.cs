@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Drawing2D;
 using System.Runtime.InteropServices;
+using Npgsql;
 
 
 namespace DAUR
@@ -17,14 +18,19 @@ namespace DAUR
     {
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
-(
-    int nLeftRect,
-    int nTopRect,
-    int nRightRect,
-    int nBottomRect,
-    int nWidthEllipse,
-    int nHeightEllipse
-);
+    (
+        int nLeftRect,
+        int nTopRect,
+        int nRightRect,
+        int nBottomRect,
+        int nWidthEllipse,
+        int nHeightEllipse
+    );
+        private NpgsqlConnection conn;
+        string connstring = "Host = localhost; Port = 5432; Username = postgres; Password = HusnaYTB223; Database = DAUR";
+        public DataTable dt;
+        public static NpgsqlCommand cmd;
+        private string sql = null;
         public send()
         {
             InitializeComponent();
@@ -122,6 +128,7 @@ namespace DAUR
             this.BackColor = Color.FromArgb(249, 250, 251);
             tbJenis.Padding = new Padding(10, 0, 10, 0); // Left and Right Padding: 10px, Top and Bottom Padding: 0px
             tbBerat.Padding = new Padding(10, 0, 10, 0); // Same padding for password textbox
+            conn = new NpgsqlConnection(connstring);
         }
 
         private void tbJenis_TextChanged(object sender, EventArgs e)
@@ -137,6 +144,21 @@ namespace DAUR
         private void btnProfile_Click(object sender, EventArgs e)
         {
             OpenProfile();
+        }
+
+        private void btnKirim_Click(object sender, EventArgs e)
+        {
+            conn.Open();
+            sql = @"select * from waste_send(:_waste_kind, :_waste_weight)";
+            cmd = new NpgsqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("_waste_kind", tbJenis.Text);
+            cmd.Parameters.AddWithValue("_waste_weight", int.Parse(tbBerat.Text));
+            if ((int)cmd.ExecuteScalar() == 1)
+            {
+                MessageBox.Show("Waste Sent Successfully!", "Waste Send Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                conn.Close();
+                tbBerat = tbJenis = null;
+            }
         }
     }
 }

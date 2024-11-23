@@ -13,7 +13,7 @@ namespace DAUR
     public partial class loginPage : Form
     {
         private NpgsqlConnection conn;
-        string connstring = "Host = localhost; Port = 5432; Username = postgres; Password = HusnaYTB223; Database = DAUR";
+        string connstring = "Host=daur.postgres.database.azure.com;Port=5432;Username=daur;Password=Junprokontol!123;Database=DAUR;SSL Mode=Require;Trust Server Certificate=true;";
         public static NpgsqlCommand cmd;
         private string sql = null;
 

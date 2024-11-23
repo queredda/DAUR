@@ -56,22 +56,11 @@ namespace DAUR
             this.Close();
         }
 
-        private void btn_profile_Click(object sender, EventArgs e)
-        {
-            OpenProfile();
-        }
-
         private void OpenProfile()
         {
             Profile profile = new Profile();
             profile.Show();
             this.Close();
-        }
-
-        private void btn_setting_Click(object sender, EventArgs e)
-        {
-            OpenSetting();
-
         }
 
         private void OpenSetting()
@@ -191,6 +180,19 @@ namespace DAUR
                     conn.Close();
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        private void btnSetting_Click(object sender, EventArgs e)
+        {
+            OpenSetting();
         }
     }
 }

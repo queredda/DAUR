@@ -56,22 +56,11 @@ namespace DAUR
             this.Close();
         }
 
-        private void btn_profile_Click(object sender, EventArgs e)
-        {
-            OpenProfile();
-        }
-
         private void OpenProfile()
         {
             Profile profile = new Profile();
             profile.Show();
             this.Close();
-        }
-
-        private void btn_setting_Click(object sender, EventArgs e)
-        {
-            OpenSetting();
-
         }
 
         private void OpenSetting()
@@ -172,7 +161,8 @@ namespace DAUR
                 {
                     MessageBox.Show("Waste Failed to Sent. Please try again.", "Waste Send Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -180,6 +170,11 @@ namespace DAUR
             {
                 conn.Close();
             }
+        }
+
+        private void btnSetting_Click(object sender, EventArgs e)
+        {
+            OpenSetting();
         }
     }
 }

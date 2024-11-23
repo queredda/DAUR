@@ -130,6 +130,7 @@
             tbCP.Name = "tbCP";
             tbCP.Size = new Size(228, 28);
             tbCP.TabIndex = 28;
+            tbCP.UseSystemPasswordChar = true;
             // 
             // confirmpwLbl
             // 
@@ -152,6 +153,7 @@
             tbPassword.Name = "tbPassword";
             tbPassword.Size = new Size(228, 28);
             tbPassword.TabIndex = 26;
+            tbPassword.UseSystemPasswordChar = true;
             // 
             // btn_SignUp
             // 

@@ -328,12 +328,145 @@
             labelJudul.TabIndex = 0;
             labelJudul.Text = "Send Waste!";
             // 
+<<<<<<< HEAD
+=======
+            // guna2Panel1
+            // 
+            guna2Panel1.BorderColor = Color.FromArgb(229, 232, 235);
+            guna2Panel1.BorderThickness = 2;
+            guna2Panel1.Controls.Add(guna2Button4);
+            guna2Panel1.Controls.Add(btnDashboard);
+            guna2Panel1.Controls.Add(btnSend);
+            guna2Panel1.Controls.Add(btnProfile);
+            guna2Panel1.Controls.Add(btnSetting);
+            guna2Panel1.CustomizableEdges = customizableEdges11;
+            guna2Panel1.Location = new Point(0, -1);
+            guna2Panel1.Margin = new Padding(4, 4, 4, 4);
+            guna2Panel1.Name = "guna2Panel1";
+            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            guna2Panel1.Size = new Size(106, 962);
+            guna2Panel1.TabIndex = 23;
+            // 
+            // guna2Button4
+            // 
+            guna2Button4.BorderRadius = 12;
+            guna2Button4.CustomImages.CheckedImage = (Image)resources.GetObject("resource.CheckedImage");
+            guna2Button4.CustomizableEdges = customizableEdges1;
+            guna2Button4.DisabledState.BorderColor = Color.DarkGray;
+            guna2Button4.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2Button4.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2Button4.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2Button4.FillColor = Color.White;
+            guna2Button4.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            guna2Button4.ForeColor = Color.White;
+            guna2Button4.Image = Properties.Resources.Logo_junpro;
+            guna2Button4.ImageSize = new Size(50, 50);
+            guna2Button4.Location = new Point(15, 30);
+            guna2Button4.Margin = new Padding(4, 4, 4, 4);
+            guna2Button4.Name = "guna2Button4";
+            guna2Button4.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            guna2Button4.Size = new Size(72, 70);
+            guna2Button4.TabIndex = 14;
+            // 
+            // btnDashboard
+            // 
+            btnDashboard.BorderRadius = 12;
+            btnDashboard.CustomImages.CheckedImage = (Image)resources.GetObject("resource.CheckedImage1");
+            btnDashboard.CustomizableEdges = customizableEdges3;
+            btnDashboard.DisabledState.BorderColor = Color.DarkGray;
+            btnDashboard.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnDashboard.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnDashboard.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnDashboard.FillColor = Color.White;
+            btnDashboard.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnDashboard.ForeColor = Color.White;
+            btnDashboard.Image = Properties.Resources.btn_dashboard;
+            btnDashboard.ImageSize = new Size(26, 26);
+            btnDashboard.Location = new Point(15, 189);
+            btnDashboard.Margin = new Padding(4, 4, 4, 4);
+            btnDashboard.Name = "btnDashboard";
+            btnDashboard.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btnDashboard.Size = new Size(72, 70);
+            btnDashboard.TabIndex = 13;
+            btnDashboard.Click += btnDashboard_Click;
+            // 
+            // btnSend
+            // 
+            btnSend.BorderRadius = 12;
+            btnSend.CustomImages.CheckedImage = (Image)resources.GetObject("resource.CheckedImage2");
+            btnSend.CustomizableEdges = customizableEdges5;
+            btnSend.DisabledState.BorderColor = Color.DarkGray;
+            btnSend.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnSend.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnSend.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnSend.FillColor = Color.FromArgb(42, 42, 42);
+            btnSend.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnSend.ForeColor = Color.White;
+            btnSend.Image = Properties.Resources.Send;
+            btnSend.ImageSize = new Size(26, 26);
+            btnSend.Location = new Point(15, 266);
+            btnSend.Margin = new Padding(4, 4, 4, 4);
+            btnSend.Name = "btnSend";
+            btnSend.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btnSend.Size = new Size(72, 70);
+            btnSend.TabIndex = 12;
+            // 
+            // btnProfile
+            // 
+            btnProfile.BorderRadius = 12;
+            btnProfile.CustomImages.CheckedImage = (Image)resources.GetObject("resource.CheckedImage3");
+            btnProfile.CustomizableEdges = customizableEdges7;
+            btnProfile.DisabledState.BorderColor = Color.DarkGray;
+            btnProfile.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnProfile.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnProfile.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnProfile.FillColor = Color.White;
+            btnProfile.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnProfile.ForeColor = Color.White;
+            btnProfile.Image = Properties.Resources.btn_profile;
+            btnProfile.ImageSize = new Size(26, 26);
+            btnProfile.Location = new Point(15, 344);
+            btnProfile.Margin = new Padding(4, 4, 4, 4);
+            btnProfile.Name = "btnProfile";
+            btnProfile.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btnProfile.Size = new Size(72, 70);
+            btnProfile.TabIndex = 11;
+            btnProfile.Click += btnProfile_Click;
+            // 
+            // btnSetting
+            // 
+            btnSetting.BorderRadius = 12;
+            btnSetting.CustomImages.CheckedImage = (Image)resources.GetObject("resource.CheckedImage4");
+            btnSetting.CustomizableEdges = customizableEdges9;
+            btnSetting.DisabledState.BorderColor = Color.DarkGray;
+            btnSetting.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnSetting.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnSetting.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnSetting.FillColor = Color.White;
+            btnSetting.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnSetting.ForeColor = Color.White;
+            btnSetting.Image = Properties.Resources.btn_setting;
+            btnSetting.ImageSize = new Size(26, 26);
+            btnSetting.Location = new Point(15, 421);
+            btnSetting.Margin = new Padding(4, 4, 4, 4);
+            btnSetting.Name = "btnSetting";
+            btnSetting.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            btnSetting.Size = new Size(72, 70);
+            btnSetting.TabIndex = 10;
+            // 
+>>>>>>> ed45a1ca7596b15229ffd944d5c908d9bf55328a
             // send
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
+<<<<<<< HEAD
             BackColor = Color.FromArgb(249, 250, 251);
             ClientSize = new Size(1708, 960);
+=======
+            BackColor = Color.White;
+            ClientSize = new Size(1708, 960);
+            Controls.Add(guna2Panel1);
+>>>>>>> ed45a1ca7596b15229ffd944d5c908d9bf55328a
             Controls.Add(panelForm);
             Controls.Add(sidebar);
             Controls.Add(button7);

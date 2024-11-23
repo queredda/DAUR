@@ -10,14 +10,25 @@ using System.Windows.Forms;
 using System.Drawing.Drawing2D;
 using System.Runtime.InteropServices;
 using Npgsql;
+<<<<<<< HEAD
+=======
+using System.Xml.Linq;
+>>>>>>> ed45a1ca7596b15229ffd944d5c908d9bf55328a
 
 
 namespace DAUR
 {
     public partial class send : Form
     {
+
+        private NpgsqlConnection conn;
+        string connstring = "Host = 192.168.225.243; Port = 5432; Username = postgres; Password = HusnaYTB223; Database = DAUR";
+        public static NpgsqlCommand cmd;
+        private string sql = null;
+
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
+<<<<<<< HEAD
 
 (
     int nLeftRect,
@@ -32,6 +43,16 @@ namespace DAUR
         public DataTable dt;
         public static NpgsqlCommand cmd;
         private string sql = null;
+=======
+        (
+            int nLeftRect,
+            int nTopRect,
+            int nRightRect,
+            int nBottomRect,
+            int nWidthEllipse,
+            int nHeightEllipse
+        );
+>>>>>>> ed45a1ca7596b15229ffd944d5c908d9bf55328a
         public send()
         {
             InitializeComponent();
@@ -129,6 +150,10 @@ namespace DAUR
             this.BackColor = Color.FromArgb(249, 250, 251);
             tbJenis.Padding = new Padding(10, 0, 10, 0); // Left and Right Padding: 10px, Top and Bottom Padding: 0px
             tbBerat.Padding = new Padding(10, 0, 10, 0); // Same padding for password textbox
+<<<<<<< HEAD
+=======
+
+>>>>>>> ed45a1ca7596b15229ffd944d5c908d9bf55328a
             conn = new NpgsqlConnection(connstring);
         }
 
@@ -149,6 +174,39 @@ namespace DAUR
                 MessageBox.Show("Waste Sent Successfully!", "Waste Send Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 conn.Close();
                 tbBerat = tbJenis = null;
+            }
+        }
+
+        private void btnKirim_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                conn.Open();
+                string sql = @"select * from waste_send(:_waste_kind, :_waste_weight)";
+                NpgsqlCommand cmd = new NpgsqlCommand(sql, conn);
+
+                // Adding parameter values
+                cmd.Parameters.AddWithValue("_waste_kind", tbJenis.Text);
+                cmd.Parameters.AddWithValue("_waste_weight", int.Parse(tbBerat.Text));
+
+                if ((int)cmd.ExecuteScalar() == 1)
+                {
+                    MessageBox.Show("Waste Sent Successfully!", "Waste Send Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // Clear input fields after successful sign-up
+                    tbJenis.Text = tbBerat.Text = null;
+                }
+                else
+                {
+                    MessageBox.Show("Waste Failed to Sent. Please try again.", "Waste Send Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }catch(Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                conn.Close();
             }
         }
     }

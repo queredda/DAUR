@@ -4,12 +4,20 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using Npgsql;
 using System.Drawing.Drawing2D;
+using System.Data;
 
 
 namespace DAUR
 {
+
     public partial class loginPage : Form
     {
+        private NpgsqlConnection conn;
+        string connstring = "Host = localhost; Port = 5432; Username = postgres; Password = HusnaYTB223; Database = DAUR";
+        public static NpgsqlCommand cmd;
+        private string sql = null;
+
+
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (
@@ -95,6 +103,8 @@ namespace DAUR
             tbEmail.Padding = new Padding(10, 0, 10, 0); // Left and Right Padding: 10px, Top and Bottom Padding: 0px
             tbPassword.Padding = new Padding(10, 0, 10, 0); // Same padding for password textbox
 
+            conn = new NpgsqlConnection(connstring);
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -115,7 +125,60 @@ namespace DAUR
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            OpenDashboard();
+            string email = tbEmail.Text; // Get email from the textbox
+            string password = tbPassword.Text; // Get password from the textbox
+
+            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
+            {
+                MessageBox.Show("Please enter both email and password.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                // Open connection
+                conn.Open();
+
+                // SQL query to check if the user exists with the given email and password
+                sql = "SELECT * FROM user_account WHERE email = @email AND password = @password";
+                cmd = new NpgsqlCommand(sql, conn);
+
+                // Parameterized query to prevent SQL Injection
+                cmd.Parameters.AddWithValue("Email", email);
+                cmd.Parameters.AddWithValue("Password", password);
+
+                // Execute query
+                NpgsqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    // User exists, login successful
+                    MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    reader.Close();
+
+                    OpenDashboard(); // Navigate to the dashboard
+                }
+                else
+                {
+                    // Invalid credentials
+                    MessageBox.Show("Invalid email or password. Please try again.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                reader.Close(); // Close the reader
+            }
+            catch (Exception ex)
+            {
+                // Handle errors
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                // Close the connection
+                if (conn != null && conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
         }
 
         private void OpenDashboard()

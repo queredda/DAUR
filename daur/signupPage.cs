@@ -7,13 +7,14 @@ using System.Data;
 
 namespace DAUR
 {
+
     public partial class signupPage : Form
     {
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn(int nLeftRect, int nTopRect, int nRightRect, int nBottomRect, int nWidthEllipse, int nHeightEllipse);
+        
         private NpgsqlConnection conn;
-        string connstring = "Host = localhost; Port = 5432; Username = postgres; Password = HusnaYTB223; Database = DAUR";
-        public DataTable dt;
+        string connstring = "Host = 192.168.225.243; Port = 5432; Username = postgres; Password = HusnaYTB223; Database = DAUR";
         public static NpgsqlCommand cmd;
         private string sql = null;
 
@@ -76,24 +77,62 @@ namespace DAUR
             this.Hide();
         }
 
-        private void btn_SignUp_Click(object sender, EventArgs e)
-        {
-            conn.Open();
-            sql = @"select * from acc_insert(:_name, :_email, :_password)";
-            cmd = new NpgsqlCommand(sql, conn);
-            cmd.Parameters.AddWithValue("_name", tbName.Text);
-            cmd.Parameters.AddWithValue("_email", tbEmail.Text);
-            cmd.Parameters.AddWithValue("_password", tbPassword.Text);
-            if ((int)cmd.ExecuteScalar() == 1)
-            {
-                MessageBox.Show("Sign Up Successful!", "Sign Up Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                conn.Close();
-                tbName.Text = tbEmail.Text = tbPassword.Text = tbCP.Text = null;
-            }
-        }
-
         private void tbName_TextChanged(object sender, EventArgs e)
         {
+        }
+
+        private void btn_SignUp_Click(object sender, EventArgs e)
+        {
+            if (tbPassword.Text != tbCP.Text)
+            {
+                MessageBox.Show("Passwords do not match!", "Sign Up Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (!rbCollector.Checked && !rbIndustri.Checked)
+            {
+                MessageBox.Show("Please select a role!", "Sign Up Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                conn.Open();
+                string sql = @"select * from acc_insert(:_name, :_email, :_password, :_role)";
+                NpgsqlCommand cmd = new NpgsqlCommand(sql, conn);
+
+                // Adding parameter values
+                cmd.Parameters.AddWithValue("_name", tbName.Text);
+                cmd.Parameters.AddWithValue("_email", tbEmail.Text);
+                cmd.Parameters.AddWithValue("_password", tbPassword.Text);
+
+                // Determine role based on the checked radio button
+                string role = rbCollector.Checked ? "Collector" : "Industri";
+                cmd.Parameters.AddWithValue("_role", role);
+
+                // Execute the command and check the result
+                int result = (int)cmd.ExecuteScalar();
+                if (result == 1)
+                {
+                    MessageBox.Show("Sign Up Successful!", "Sign Up Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // Clear input fields after successful sign-up
+                    tbName.Text = tbEmail.Text = tbPassword.Text = tbCP.Text = string.Empty;
+                    rbCollector.Checked = rbIndustri.Checked = false;
+                }
+                else
+                {
+                    MessageBox.Show("Sign Up Failed. Please try again.", "Sign Up Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
     }
 }

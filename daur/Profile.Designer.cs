@@ -49,7 +49,6 @@ namespace DAUR
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             button1 = new Button();
-            panel1 = new Panel();
             guna2Panel1 = new Guna2Panel();
             guna2Button4 = new Guna2Button();
             btnDashboard = new Guna2Button();
@@ -66,8 +65,6 @@ namespace DAUR
             lbl_Role = new Guna2HtmlLabel();
             guna2HtmlLabel3 = new Guna2HtmlLabel();
             guna2CirclePictureBox1 = new Guna2CirclePictureBox();
-            button7 = new Button();
-            panel1.SuspendLayout();
             guna2Panel1.SuspendLayout();
             pnlProfile.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).BeginInit();
@@ -91,19 +88,6 @@ namespace DAUR
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
-            // panel1
-            // 
-            panel1.Controls.Add(guna2Panel1);
-            panel1.Controls.Add(pnlProfile);
-            panel1.Controls.Add(button7);
-            panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(0, 0);
-            panel1.MaximumSize = new Size(1366, 768);
-            panel1.MinimumSize = new Size(1366, 768);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1366, 768);
-            panel1.TabIndex = 10;
-            // 
             // guna2Panel1
             // 
             guna2Panel1.BorderColor = Color.FromArgb(229, 232, 235);
@@ -114,11 +98,11 @@ namespace DAUR
             guna2Panel1.Controls.Add(btnProfile);
             guna2Panel1.Controls.Add(btnSetting);
             guna2Panel1.CustomizableEdges = customizableEdges11;
-            guna2Panel1.Location = new Point(0, 0);
+            guna2Panel1.Location = new Point(1, 0);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges12;
             guna2Panel1.Size = new Size(85, 770);
-            guna2Panel1.TabIndex = 46;
+            guna2Panel1.TabIndex = 48;
             // 
             // guna2Button4
             // 
@@ -159,7 +143,6 @@ namespace DAUR
             btnDashboard.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnDashboard.Size = new Size(58, 56);
             btnDashboard.TabIndex = 13;
-            btnDashboard.Click += btnDashboard_Click;
             // 
             // btnSend
             // 
@@ -180,7 +163,6 @@ namespace DAUR
             btnSend.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btnSend.Size = new Size(58, 56);
             btnSend.TabIndex = 12;
-            btnSend.Click += btnSend_Click;
             // 
             // btnProfile
             // 
@@ -221,7 +203,6 @@ namespace DAUR
             btnSetting.ShadowDecoration.CustomizableEdges = customizableEdges10;
             btnSetting.Size = new Size(58, 56);
             btnSetting.TabIndex = 10;
-            btnSetting.Click += btnSetting_Click;
             // 
             // pnlProfile
             // 
@@ -239,12 +220,11 @@ namespace DAUR
             pnlProfile.Controls.Add(guna2HtmlLabel3);
             pnlProfile.Controls.Add(guna2CirclePictureBox1);
             pnlProfile.CustomizableEdges = customizableEdges16;
-            pnlProfile.Location = new Point(351, 70);
+            pnlProfile.Location = new Point(352, 70);
             pnlProfile.Name = "pnlProfile";
             pnlProfile.ShadowDecoration.CustomizableEdges = customizableEdges17;
             pnlProfile.Size = new Size(685, 629);
-            pnlProfile.TabIndex = 22;
-            pnlProfile.Paint += pnlProfile_Paint;
+            pnlProfile.TabIndex = 47;
             // 
             // lbl_Email
             // 
@@ -303,7 +283,6 @@ namespace DAUR
             btn_EditProfile.Size = new Size(195, 46);
             btn_EditProfile.TabIndex = 41;
             btn_EditProfile.Text = "Edit Profile";
-            btn_EditProfile.Click += btn_EditProfile_Click;
             // 
             // lbl_Bio
             // 
@@ -327,13 +306,16 @@ namespace DAUR
             // 
             // guna2HtmlLabel3
             // 
+            guna2HtmlLabel3.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            guna2HtmlLabel3.AutoSize = false;
             guna2HtmlLabel3.BackColor = Color.Transparent;
             guna2HtmlLabel3.Font = new Font("Montserrat SemiBold", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            guna2HtmlLabel3.Location = new Point(253, 189);
+            guna2HtmlLabel3.Location = new Point(249, 189);
             guna2HtmlLabel3.Name = "guna2HtmlLabel3";
             guna2HtmlLabel3.Size = new Size(194, 38);
             guna2HtmlLabel3.TabIndex = 31;
             guna2HtmlLabel3.Text = "Steven Ganteng";
+            guna2HtmlLabel3.TextAlignment = ContentAlignment.TopCenter;
             // 
             // guna2CirclePictureBox1
             // 
@@ -350,37 +332,20 @@ namespace DAUR
             guna2CirclePictureBox1.TabIndex = 30;
             guna2CirclePictureBox1.TabStop = false;
             // 
-            // button7
-            // 
-            button7.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button7.BackColor = Color.Transparent;
-            button7.BackgroundImageLayout = ImageLayout.Center;
-            button7.FlatAppearance.BorderSize = 0;
-            button7.FlatStyle = FlatStyle.Flat;
-            button7.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            button7.ForeColor = Color.Black;
-            button7.ImeMode = ImeMode.NoControl;
-            button7.Location = new Point(1305, -2);
-            button7.Name = "button7";
-            button7.Size = new Size(61, 56);
-            button7.TabIndex = 7;
-            button7.Text = "X";
-            button7.UseVisualStyleBackColor = false;
-            button7.Click += button7_Click;
-            // 
             // Profile
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1366, 768);
-            Controls.Add(panel1);
+            Controls.Add(guna2Panel1);
+            Controls.Add(pnlProfile);
             Controls.Add(button1);
             FormBorderStyle = FormBorderStyle.None;
             MaximumSize = new Size(1366, 768);
             Name = "Profile";
             Text = "Profile";
-            panel1.ResumeLayout(false);
+            Load += Profile_Load;
             guna2Panel1.ResumeLayout(false);
             pnlProfile.ResumeLayout(false);
             pnlProfile.PerformLayout();
@@ -391,9 +356,6 @@ namespace DAUR
         #endregion
 
         private Button button1;
-        private Panel panel1;
-        private Button button7;
-        private Guna2Panel pnlProfile;
         private Guna.UI2.WinForms.Guna2Panel pnl_profile;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblProfile;
         private Guna.UI2.WinForms.Guna2CirclePictureBox pbProfile;
@@ -402,24 +364,24 @@ namespace DAUR
         private Label lblEmail;
         private Label email_email;
         private Guna.UI2.WinForms.Guna2Panel pnlSetting;
-        private Guna.UI2.WinForms.Guna2Button btn_EditProfile;
         private Guna.UI2.WinForms.Guna2TextBox tbBio;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lbl_Bio;
         private Guna.UI2.WinForms.Guna2TextBox tbRole;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lbl_Role;
         private Guna.UI2.WinForms.Guna2TextBox tbEmail;
-        //private Guna.UI2.WinForms.Guna2HtmlLabel lblEmail;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lbl_EmailUser;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lbl_BioUser;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lbl_RoleUser;
-        private Guna2HtmlLabel lbl_Email;
         private Guna2Panel guna2Panel1;
         private Guna2Button guna2Button4;
         private Guna2Button btnDashboard;
         private Guna2Button btnSend;
         private Guna2Button btnProfile;
         private Guna2Button btnSetting;
+        private Guna2Panel pnlProfile;
+        private Guna2HtmlLabel lbl_Email;
+        private Guna2HtmlLabel lbl_BioUser;
+        private Guna2HtmlLabel lbl_RoleUser;
+        private Guna2HtmlLabel lbl_EmailUser;
+        private Guna2Button btn_EditProfile;
+        private Guna2HtmlLabel lbl_Bio;
+        private Guna2HtmlLabel lbl_Role;
+        private Guna2HtmlLabel guna2HtmlLabel3;
+        private Guna2CirclePictureBox guna2CirclePictureBox1;
     }
 }

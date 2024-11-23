@@ -140,53 +140,62 @@ namespace DAUR
 
         private void btnKirim_Click(object sender, EventArgs e)
         {
-            if (UserSession.LoggedInIndustryID.HasValue)
+            if (!UserSession.LoggedInIndustryID.HasValue)
             {
-                int industriID = UserSession.LoggedInIndustryID.Value;
-                try
-                {
-                    conn.Open(); // Open connection only once
+                MessageBox.Show("Session expired. Please login again.", "Session Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                NavigatePage.OpenForm<loginPage>(this);
+                return;
+            }
 
-                    // Define the SQL query to call the waste_send function
-                    string sql = "INSERT INTO public.waste_send (pelakuIndustri_industri_id, wasteCollector_collector_id, waste_kind, waste_weight, waste_status) " +
-                                    "VALUES (@industri_id, @collector_id, @waste_kind, @waste_weight, @waste_status)";
+            if (string.IsNullOrWhiteSpace(tbJenis.Text) || string.IsNullOrWhiteSpace(tbBerat.Text))
+            {
+                MessageBox.Show("Please fill in all fields.", "Validation Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (!int.TryParse(tbBerat.Text, out int wasteWeight))
+            {
+                MessageBox.Show("Please enter a valid number for waste weight.",
+                    "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                using (var conn = new NpgsqlConnection(connstring))
+                {
+                    conn.Open();
+                    string sql = @"INSERT INTO public.waste_send 
+                (pelakuIndustri_industri_id, wasteCollector_collector_id, waste_kind, waste_weight, waste_status)
+                VALUES (@industri_id, @collector_id, @waste_kind, @waste_weight, @waste_status)";
 
                     using (var cmd = new NpgsqlCommand(sql, conn))
                     {
-                        // Adding parameters for the function
-                        cmd.Parameters.AddWithValue("industri_id", industriID);
-                        cmd.Parameters.AddWithValue("collector_id", DBNull.Value); // Pass DBNull.Value for null value
-                        cmd.Parameters.AddWithValue("waste_kind", tbJenis.Text); // Assuming tbJenis is the textbox for waste type
-                        cmd.Parameters.AddWithValue("waste_weight", int.Parse(tbBerat.Text)); // Assuming tbBerat is the textbox for waste weight
+                        cmd.Parameters.AddWithValue("industri_id", UserSession.LoggedInIndustryID.Value);
+                        cmd.Parameters.AddWithValue("collector_id", DBNull.Value);
+                        cmd.Parameters.AddWithValue("waste_kind", tbJenis.Text);
+                        cmd.Parameters.AddWithValue("waste_weight", wasteWeight);
                         cmd.Parameters.AddWithValue("waste_status", "Pending");
 
-                        // Execute the function
-                        cmd.ExecuteScalar();
+                        cmd.ExecuteNonQuery();
 
-                        // Display success message
-                        MessageBox.Show("Waste sent successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    // Handle any errors
-                    MessageBox.Show($"Error sending waste: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                finally
-                {
-                    // Ensure the connection is closed
-                    if (conn.State == ConnectionState.Open)
-                    {
-                        conn.Close();
+                        MessageBox.Show("Waste sent successfully!", "Success",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        tbJenis.Clear();
+                        tbBerat.Clear();
                     }
                 }
             }
-            else
+            catch (Exception ex)
             {
-                // Handle the case where the user is not logged in
-                MessageBox.Show("User is not logged in. Please log in first.", "Login Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"Error sending waste: {ex.Message}", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
 
         private void btnSetting_Click(object sender, EventArgs e)

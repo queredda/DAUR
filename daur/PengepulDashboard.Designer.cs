@@ -422,7 +422,7 @@
             MaximumSize = new Size(1366, 768);
             MinimumSize = new Size(1366, 768);
             Name = "PengepulDashboard";
-            Text = "PengepulDashboard";
+            Text = " vvj   ";
             guna2Panel1.ResumeLayout(false);
             guna2Panel5.ResumeLayout(false);
             guna2Panel5.PerformLayout();

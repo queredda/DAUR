@@ -7,13 +7,14 @@ using System.Data;
 
 namespace DAUR
 {
+
     public partial class signupPage : Form
     {
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn(int nLeftRect, int nTopRect, int nRightRect, int nBottomRect, int nWidthEllipse, int nHeightEllipse);
+        
         private NpgsqlConnection conn;
         string connstring = "Host = localhost; Port = 5432; Username = postgres; Password = HusnaYTB223; Database = DAUR";
-        public DataTable dt;
         public static NpgsqlCommand cmd;
         private string sql = null;
 

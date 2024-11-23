@@ -69,7 +69,7 @@
             signupPnl.Controls.Add(tbName);
             signupPnl.Controls.Add(SignUpLbl);
             signupPnl.Location = new Point(589, 42);
-            signupPnl.Margin = new Padding(4, 4, 4, 4);
+            signupPnl.Margin = new Padding(4);
             signupPnl.Name = "signupPnl";
             signupPnl.Size = new Size(508, 828);
             signupPnl.TabIndex = 2;
@@ -84,7 +84,7 @@
             rbCollector.CheckedState.InnerColor = Color.White;
             rbCollector.CheckedState.InnerOffset = -4;
             rbCollector.Location = new Point(110, 575);
-            rbCollector.Margin = new Padding(4, 4, 4, 4);
+            rbCollector.Margin = new Padding(4);
             rbCollector.Name = "rbCollector";
             rbCollector.Size = new Size(160, 29);
             rbCollector.TabIndex = 31;
@@ -117,7 +117,7 @@
             rbIndustri.CheckedState.InnerColor = Color.White;
             rbIndustri.CheckedState.InnerOffset = -4;
             rbIndustri.Location = new Point(110, 538);
-            rbIndustri.Margin = new Padding(4, 4, 4, 4);
+            rbIndustri.Margin = new Padding(4);
             rbIndustri.Name = "rbIndustri";
             rbIndustri.Size = new Size(152, 29);
             rbIndustri.TabIndex = 29;
@@ -132,7 +132,7 @@
             tbCP.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             tbCP.ForeColor = Color.Gray;
             tbCP.Location = new Point(110, 451);
-            tbCP.Margin = new Padding(4, 4, 4, 4);
+            tbCP.Margin = new Padding(4);
             tbCP.Name = "tbCP";
             tbCP.Size = new Size(284, 32);
             tbCP.TabIndex = 28;
@@ -156,7 +156,7 @@
             tbPassword.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             tbPassword.ForeColor = Color.Gray;
             tbPassword.Location = new Point(110, 348);
-            tbPassword.Margin = new Padding(4, 4, 4, 4);
+            tbPassword.Margin = new Padding(4);
             tbPassword.Name = "tbPassword";
             tbPassword.Size = new Size(284, 32);
             tbPassword.TabIndex = 26;
@@ -170,12 +170,13 @@
             btn_SignUp.ForeColor = Color.White;
             btn_SignUp.ImeMode = ImeMode.NoControl;
             btn_SignUp.Location = new Point(131, 632);
-            btn_SignUp.Margin = new Padding(4, 4, 4, 4);
+            btn_SignUp.Margin = new Padding(4);
             btn_SignUp.Name = "btn_SignUp";
             btn_SignUp.Size = new Size(244, 54);
             btn_SignUp.TabIndex = 8;
             btn_SignUp.Text = "Sign Up";
             btn_SignUp.UseVisualStyleBackColor = false;
+            btn_SignUp.Click += btn_SignUp_Click;
             // 
             // EmailLbl
             // 
@@ -196,7 +197,7 @@
             tbEmail.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             tbEmail.ForeColor = Color.Gray;
             tbEmail.Location = new Point(110, 262);
-            tbEmail.Margin = new Padding(4, 4, 4, 4);
+            tbEmail.Margin = new Padding(4);
             tbEmail.Name = "tbEmail";
             tbEmail.Size = new Size(284, 32);
             tbEmail.TabIndex = 24;
@@ -261,7 +262,7 @@
             tbName.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             tbName.ForeColor = Color.Gray;
             tbName.Location = new Point(110, 175);
-            tbName.Margin = new Padding(4, 4, 4, 4);
+            tbName.Margin = new Padding(4);
             tbName.Name = "tbName";
             tbName.Size = new Size(284, 32);
             tbName.TabIndex = 4;
@@ -291,7 +292,7 @@
             button1.ForeColor = Color.Black;
             button1.ImeMode = ImeMode.NoControl;
             button1.Location = new Point(1606, 2);
-            button1.Margin = new Padding(4, 4, 4, 4);
+            button1.Margin = new Padding(4);
             button1.Name = "button1";
             button1.Size = new Size(76, 70);
             button1.TabIndex = 3;
@@ -312,7 +313,7 @@
             Controls.Add(signupPnl);
             DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(4);
             MaximumSize = new Size(1708, 960);
             Name = "signupPage";
             Text = "signupPage";

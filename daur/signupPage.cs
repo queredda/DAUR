@@ -84,59 +84,39 @@ namespace DAUR
 
             try
             {
+                // Initialize the connection
+                conn = new NpgsqlConnection(connstring);
+                conn.Open();
+
+                string sql = null;
+
+                // Depending on the role selected, choose the appropriate SQL command
                 if (rbCollector.Checked)
                 {
-                    conn.Open();
-                    string sql = @"select * from collector_insert(:_name, :_email, :_password, :_role)";
-                    NpgsqlCommand cmd = new NpgsqlCommand(sql, conn);
-
-                    // Adding parameter values
-                    cmd.Parameters.AddWithValue("_name", tbName.Text);
-                    cmd.Parameters.AddWithValue("_email", tbEmail.Text);
-                    cmd.Parameters.AddWithValue("_password", tbPassword.Text);
-
-                    // Determine role based on the checked radio button
-                    string role = rbCollector.Checked ? "Collector" : "Industri";
-                    cmd.Parameters.AddWithValue("_role", role);
-
-                    // Execute the command and check the result
-                    int result = (int)cmd.ExecuteScalar();
-                    if (result == 1)
-                    {
-                        MessageBox.Show("Sign Up for Waste Collector Successful!", "Sign Up Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                        // Clear input fields after successful sign-up
-                        tbName.Text = tbEmail.Text = tbPassword.Text = tbCP.Text = string.Empty;
-                        rbCollector.Checked = rbIndustri.Checked = false;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Sign Up Failed. Please try again.", "Sign Up Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    sql = @"SELECT * FROM collector_insert(:_name, :_email, :_password, :_role)";
                 }
-                else
+                else if (rbIndustri.Checked)
                 {
-                    conn.Open();
-                    string sql = @"select * from industry_insert(:_name, :_email, :_password, :_role)";
+                    sql = @"SELECT * FROM industry_insert(:_name, :_email, :_password, :_role)";
+                }
 
-
-
-                    NpgsqlCommand cmd = new NpgsqlCommand(sql, conn);
-
-                    // Adding parameter values
+                // Create the command
+                using (var cmd = new NpgsqlCommand(sql, conn))
+                {
+                    // Adding parameters
                     cmd.Parameters.AddWithValue("_name", tbName.Text);
                     cmd.Parameters.AddWithValue("_email", tbEmail.Text);
                     cmd.Parameters.AddWithValue("_password", tbPassword.Text);
 
-                    // Determine role based on the checked radio button
+                    // Determine role based on the selected radio button
                     string role = rbCollector.Checked ? "Collector" : "Industri";
                     cmd.Parameters.AddWithValue("_role", role);
 
-                    // Execute the command and check the result
+                    // Execute the command and get the result
                     int result = (int)cmd.ExecuteScalar();
                     if (result == 1)
                     {
-                        MessageBox.Show("Sign Up for Industry Successful!", "Sign Up Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show($"Sign Up for {role} Successful!", "Sign Up Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         // Clear input fields after successful sign-up
                         tbName.Text = tbEmail.Text = tbPassword.Text = tbCP.Text = string.Empty;
@@ -150,12 +130,18 @@ namespace DAUR
             }
             catch (Exception ex)
             {
+                // Handle errors
                 MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
-                conn.Close();
+                // Close the connection if it's open
+                if (conn != null && conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
             }
         }
+
     }
 }

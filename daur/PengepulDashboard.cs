@@ -57,5 +57,19 @@ namespace DAUR
             WasteList.Show();
             this.Close();
         }
+
+        private void PengepulDashboard_Load(object sender, EventArgs e)
+        {
+            if (UserSession.LoggedInCollectorID.HasValue)
+            {
+                guna2HtmlLabel6.Text = $"Welcome, {UserSession.LoggedInName}!";
+            }
+            else
+            {
+                MessageBox.Show("Session expired. Please login again.", "Session Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                NavigatePage.OpenForm<loginPage>(this);
+            }
+        }
     }
 }

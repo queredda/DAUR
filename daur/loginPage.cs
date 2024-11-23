@@ -141,60 +141,77 @@ namespace DAUR
                 conn.Open();
 
                 // SQL query to check if the user exists with the given email and password
-                sql = "SELECT * FROM pelaku_industri WHERE email = @email AND password = @password " +
-                      "UNION " +
-                      "SELECT * FROM waste_collector WHERE email = @email AND password = @password";
-                cmd = new NpgsqlCommand(sql, conn);
+                string sql = @"
+            SELECT 
+                industri_id AS user_id, 
+                email, 
+                password, 
+                role, 
+                'Industri' AS user_type -- This indicates the user is from pelaku_industri
+            FROM 
+                pelaku_industri 
+            WHERE 
+                email = @email AND password = @password
 
-                // Parameterized query to prevent SQL Injection
-                cmd.Parameters.AddWithValue("Email", email);
-                cmd.Parameters.AddWithValue("Password", password);
+            UNION
 
-                // Execute query
-                NpgsqlDataReader reader = cmd.ExecuteReader();
+            SELECT 
+                collector_id AS user_id, 
+                email, 
+                password, 
+                role, 
+                'Collector' AS user_type -- This indicates the user is from waste_collector
+            FROM 
+                waste_collector 
+            WHERE 
+                email = @email AND password = @password;
+        ";
 
-                if (reader.HasRows)
+                using (var cmd = new NpgsqlCommand(sql, conn))
                 {
-                    reader.Read();
-                    string role = reader["role"].ToString();
-                    loggedInEmail = email;
+                    // Parameterized query to prevent SQL Injection
+                    cmd.Parameters.AddWithValue("email", email);
+                    cmd.Parameters.AddWithValue("password", password);
 
-                    // Store the ID based on the role
-                    if (role == "Industri")
+                    // Execute query
+                    using (NpgsqlDataReader reader = cmd.ExecuteReader())
                     {
-                        UserSession.LoggedInIndustryID = Convert.ToInt32(reader["industri_id"]);
-                    }
-                    else if (role == "Collector")
-                    {
-                        UserSession.LoggedInCollectorID = Convert.ToInt32(reader["collector_id"]);
-                    }
+                        if (reader.HasRows)
+                        {
+                            reader.Read();
+                            string userType = reader["user_type"].ToString(); // This tells if the user is from pelaku_industri or waste_collector
+                            string role = reader["role"].ToString(); // Get the user's role
+                            int userId = Convert.ToInt32(reader["user_id"]); // The user_id (either industri_id or collector_id)
 
-                    MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    reader.Close();
+                            // Set session or static variable based on user type
+                            if (userType == "Industri")
+                            {
+                                // Set the logged-in user's id for industri
+                                UserSession.LoggedInIndustryID = userId;
 
-                    // Navigate to the corresponding dashboard based on the role
-                    switch (role)
-                    {
-                        case "Industri":
-                            NavigatePage.OpenForm<IndustriDashboard>(this);
-                            break;
+                                // Navigate to the Industri dashboard
+                                NavigatePage.OpenForm<IndustriDashboard>(this);
+                            }
+                            else if (userType == "Collector")
+                            {
+                                // Set the logged-in user's id for collector
+                                UserSession.LoggedInCollectorID = userId;
 
-                        case "Collector":
-                            NavigatePage.OpenForm<PengepulDashboard>(this);
-                            break;
-
-                        default:
-                            MessageBox.Show("Unknown role. Please contact support.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            break;
+                                // Navigate to the Collector dashboard
+                                NavigatePage.OpenForm<PengepulDashboard>(this);
+                            }
+                            else
+                            {
+                                MessageBox.Show("Unknown role. Please contact support.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                        else
+                        {
+                            // Invalid credentials
+                            MessageBox.Show("Invalid email or password. Please try again.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                 }
-                else
-                {
-                    // Invalid credentials
-                    MessageBox.Show("Invalid email or password. Please try again.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-
-                reader.Close(); // Close the reader
             }
             catch (Exception ex)
             {
@@ -210,6 +227,7 @@ namespace DAUR
                 }
             }
         }
+
 
 
 

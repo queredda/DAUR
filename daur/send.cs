@@ -165,27 +165,16 @@ namespace DAUR
                         MessageBox.Show("Waste sent successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
-                catch (Exception ex)
-                {
-                    // Handle any errors
-                    MessageBox.Show($"Error sending waste: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                finally
-                {
-                    // Ensure the connection is closed
-                    if (conn.State == ConnectionState.Open)
-                    {
-                        conn.Close();
-                    }
-                }
             }
-            else
+            catch (Exception ex)
             {
-                // Handle the case where the user is not logged in
-                MessageBox.Show("User is not logged in. Please log in first.", "Login Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                conn.Close();
             }
         }
-
 
         private void btnSetting_Click(object sender, EventArgs e)
         {

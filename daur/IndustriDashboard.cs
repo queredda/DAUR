@@ -92,7 +92,7 @@ namespace DAUR
         }
         private void btnSend_Click(object sender, EventArgs e)
         {
-            OpenSetting();
+            OpenSend();
         }
 
         private void btnProfile_Click(object sender, EventArgs e)

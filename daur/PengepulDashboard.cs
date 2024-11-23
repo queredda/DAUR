@@ -45,5 +45,17 @@ namespace DAUR
             setting.Show();
             this.Close();
         }
+
+        private void btnSend_Click(object sender, EventArgs e)
+        {
+            OpenWasteList();
+        }
+
+        private void OpenWasteList()
+        {
+            WasteList WasteList = new WasteList();
+            WasteList.Show();
+            this.Close();
+        }
     }
 }

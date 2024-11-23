@@ -145,50 +145,47 @@ namespace DAUR
                 int industriID = UserSession.LoggedInIndustryID.Value;
                 try
                 {
-                    conn.Open();
+                    conn.Open(); // Open connection only once
+
+                    // Define the SQL query to call the waste_send function
                     string sql = "SELECT public.waste_send(@industri_id, @collector_id, @waste_kind, @waste_weight)";
 
                     using (var cmd = new NpgsqlCommand(sql, conn))
                     {
+                        // Adding parameters for the function
                         cmd.Parameters.AddWithValue("industri_id", industriID);
-                        cmd.Parameters.AddWithValue("collector_id", null);
-                        cmd.Parameters.AddWithValue("waste_kind", tbJenis.Text);
-                        cmd.Parameters.AddWithValue("waste_weight", int.Parse(tbBerat.Text));
+                        cmd.Parameters.AddWithValue("collector_id", DBNull.Value); // Pass DBNull.Value for null value
+                        cmd.Parameters.AddWithValue("waste_kind", tbJenis.Text); // Assuming tbJenis is the textbox for waste type
+                        cmd.Parameters.AddWithValue("waste_weight", int.Parse(tbBerat.Text)); // Assuming tbBerat is the textbox for waste weight
 
-                        try
-                        {
-                            conn.Open();
-                            cmd.ExecuteScalar();
-                            MessageBox.Show("Waste sent successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show($"Error sending waste: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                        finally
-                        {
-                            conn.Close();
-                        }
+                        // Execute the function
+                        cmd.ExecuteScalar();
+
+                        // Display success message
+                        MessageBox.Show("Waste sent successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    // Handle any errors
+                    MessageBox.Show($"Error sending waste: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 finally
                 {
-                    conn.Close();
+                    // Ensure the connection is closed
+                    if (conn.State == ConnectionState.Open)
+                    {
+                        conn.Close();
+                    }
                 }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                conn.Close();
+                // Handle the case where the user is not logged in
+                MessageBox.Show("User is not logged in. Please log in first.", "Login Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
 
         private void btnSetting_Click(object sender, EventArgs e)
         {

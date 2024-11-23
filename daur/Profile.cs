@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Guna.UI2.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
@@ -26,8 +28,6 @@ namespace DAUR
         public Profile()
         {
             InitializeComponent();
-
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -108,6 +108,34 @@ namespace DAUR
         private void btnDashboard_Click(object sender, EventArgs e)
         {
             OpenDashboard();
+        }
+
+        private void btn_EditProfile_Click(object sender, EventArgs e)
+        {
+            Opensetting();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Profile_Load(object sender, EventArgs e)
+        {
+            if (UserSession.LoggedInCollectorID.HasValue)
+            {
+                guna2HtmlLabel3.Text = $"{UserSession.LoggedInName}!";
+            }
+            else if (UserSession.LoggedInIndustryID.HasValue)
+            {
+                guna2HtmlLabel3.Text = $"{UserSession.LoggedInName}!";
+            }
+            else
+            {
+                MessageBox.Show("Session expired. Please login again.", "Session Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                NavigatePage.OpenForm<loginPage>(this);
+            }
         }
     }
 }

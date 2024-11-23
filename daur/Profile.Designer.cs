@@ -303,6 +303,7 @@ namespace DAUR
             btn_EditProfile.Size = new Size(195, 46);
             btn_EditProfile.TabIndex = 41;
             btn_EditProfile.Text = "Edit Profile";
+            btn_EditProfile.Click += btn_EditProfile_Click;
             // 
             // lbl_Bio
             // 

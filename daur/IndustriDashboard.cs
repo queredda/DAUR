@@ -29,47 +29,16 @@ namespace DAUR
 
         private void newDashboard_Load(object sender, EventArgs e)
         {
-            conn = new NpgsqlConnection(connstring);
-            try
+            if (UserSession.LoggedInIndustryID.HasValue)
             {
-                // Open the database connection
-                conn.Open();
-
-                // SQL query to fetch the user's name based on the logged-in email
-                sql = "SELECT * FROM pelaku_industri WHERE email = @email";
-                cmd = new NpgsqlCommand(sql, conn);
-
-                // Replace with the email of the logged-in user (stored during login)
-                cmd.Parameters.AddWithValue("email", loginPage.loggedInEmail); // Assume loggedInEmail stores the email of the logged-in user
-
-                // Execute the query and fetch the result
-                string userName = cmd.ExecuteScalar()?.ToString();
-
-                if (!string.IsNullOrEmpty(userName))
-                {
-                    // Display the user's name on the dashboard
-                    guna2HtmlLabel6.Text = $"Welcome, {userName}!";
-                }
-                else
-                {
-                    // Fallback if no name is found
-                    guna2HtmlLabel6.Text = "Welcome!";
-                }
+                guna2HtmlLabel6.Text = $"Welcome, {UserSession.LoggedInName}!";
             }
-            catch (Exception ex)
+            else
             {
-                // Handle any errors
-                MessageBox.Show($"An error occurred while fetching the user name: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Session expired. Please login again.", "Session Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                NavigatePage.OpenForm<loginPage>(this);
             }
-            finally
-            {
-                // Close the connection
-                if (conn != null && conn.State == ConnectionState.Open)
-                {
-                    conn.Close();
-                }
-            }
-
         }
 
         private void OpenSend()

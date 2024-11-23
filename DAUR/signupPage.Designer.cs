@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(signupPage));
             signupPnl = new Panel();
             rbCollector = new Guna.UI2.WinForms.Guna2RadioButton();
             roleLbl = new Label();
@@ -68,10 +67,9 @@
             signupPnl.Controls.Add(NameLbl);
             signupPnl.Controls.Add(tbName);
             signupPnl.Controls.Add(SignUpLbl);
-            signupPnl.Location = new Point(589, 42);
-            signupPnl.Margin = new Padding(4);
+            signupPnl.Location = new Point(471, 34);
             signupPnl.Name = "signupPnl";
-            signupPnl.Size = new Size(508, 828);
+            signupPnl.Size = new Size(406, 662);
             signupPnl.TabIndex = 2;
             signupPnl.Paint += signupPnl_Paint;
             // 
@@ -83,10 +81,9 @@
             rbCollector.CheckedState.FillColor = Color.FromArgb(94, 148, 255);
             rbCollector.CheckedState.InnerColor = Color.White;
             rbCollector.CheckedState.InnerOffset = -4;
-            rbCollector.Location = new Point(110, 575);
-            rbCollector.Margin = new Padding(4);
+            rbCollector.Location = new Point(88, 460);
             rbCollector.Name = "rbCollector";
-            rbCollector.Size = new Size(160, 29);
+            rbCollector.Size = new Size(134, 24);
             rbCollector.TabIndex = 31;
             rbCollector.Text = "Waste Collector";
             rbCollector.UncheckedState.BorderColor = Color.FromArgb(125, 137, 149);
@@ -101,10 +98,9 @@
             roleLbl.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
             roleLbl.ForeColor = Color.FromArgb(66, 66, 66);
             roleLbl.ImeMode = ImeMode.NoControl;
-            roleLbl.Location = new Point(110, 509);
-            roleLbl.Margin = new Padding(4, 0, 4, 0);
+            roleLbl.Location = new Point(88, 407);
             roleLbl.Name = "roleLbl";
-            roleLbl.Size = new Size(46, 20);
+            roleLbl.Size = new Size(40, 16);
             roleLbl.TabIndex = 30;
             roleLbl.Text = "Role";
             // 
@@ -116,10 +112,9 @@
             rbIndustri.CheckedState.FillColor = Color.FromArgb(94, 148, 255);
             rbIndustri.CheckedState.InnerColor = Color.White;
             rbIndustri.CheckedState.InnerOffset = -4;
-            rbIndustri.Location = new Point(110, 538);
-            rbIndustri.Margin = new Padding(4);
+            rbIndustri.Location = new Point(88, 430);
             rbIndustri.Name = "rbIndustri";
-            rbIndustri.Size = new Size(152, 29);
+            rbIndustri.Size = new Size(125, 24);
             rbIndustri.TabIndex = 29;
             rbIndustri.Text = "Pelaku Industri";
             rbIndustri.UncheckedState.BorderColor = Color.FromArgb(125, 137, 149);
@@ -131,10 +126,9 @@
             // 
             tbCP.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             tbCP.ForeColor = Color.Gray;
-            tbCP.Location = new Point(110, 451);
-            tbCP.Margin = new Padding(4);
+            tbCP.Location = new Point(88, 361);
             tbCP.Name = "tbCP";
-            tbCP.Size = new Size(284, 32);
+            tbCP.Size = new Size(228, 28);
             tbCP.TabIndex = 28;
             // 
             // confirmpwLbl
@@ -144,10 +138,9 @@
             confirmpwLbl.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
             confirmpwLbl.ForeColor = Color.FromArgb(66, 66, 66);
             confirmpwLbl.ImeMode = ImeMode.NoControl;
-            confirmpwLbl.Location = new Point(110, 411);
-            confirmpwLbl.Margin = new Padding(4, 0, 4, 0);
+            confirmpwLbl.Location = new Point(88, 329);
             confirmpwLbl.Name = "confirmpwLbl";
-            confirmpwLbl.Size = new Size(153, 20);
+            confirmpwLbl.Size = new Size(131, 16);
             confirmpwLbl.TabIndex = 27;
             confirmpwLbl.Text = "Confirm Password";
             // 
@@ -155,10 +148,9 @@
             // 
             tbPassword.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             tbPassword.ForeColor = Color.Gray;
-            tbPassword.Location = new Point(110, 348);
-            tbPassword.Margin = new Padding(4);
+            tbPassword.Location = new Point(88, 278);
             tbPassword.Name = "tbPassword";
-            tbPassword.Size = new Size(284, 32);
+            tbPassword.Size = new Size(228, 28);
             tbPassword.TabIndex = 26;
             // 
             // btn_SignUp
@@ -169,10 +161,9 @@
             btn_SignUp.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btn_SignUp.ForeColor = Color.White;
             btn_SignUp.ImeMode = ImeMode.NoControl;
-            btn_SignUp.Location = new Point(131, 632);
-            btn_SignUp.Margin = new Padding(4);
+            btn_SignUp.Location = new Point(105, 506);
             btn_SignUp.Name = "btn_SignUp";
-            btn_SignUp.Size = new Size(244, 54);
+            btn_SignUp.Size = new Size(195, 43);
             btn_SignUp.TabIndex = 8;
             btn_SignUp.Text = "Sign Up";
             btn_SignUp.UseVisualStyleBackColor = false;
@@ -185,10 +176,9 @@
             EmailLbl.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
             EmailLbl.ForeColor = Color.FromArgb(66, 66, 66);
             EmailLbl.ImeMode = ImeMode.NoControl;
-            EmailLbl.Location = new Point(110, 234);
-            EmailLbl.Margin = new Padding(4, 0, 4, 0);
+            EmailLbl.Location = new Point(88, 187);
             EmailLbl.Name = "EmailLbl";
-            EmailLbl.Size = new Size(53, 20);
+            EmailLbl.Size = new Size(46, 16);
             EmailLbl.TabIndex = 25;
             EmailLbl.Text = "Email";
             // 
@@ -196,20 +186,18 @@
             // 
             tbEmail.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             tbEmail.ForeColor = Color.Gray;
-            tbEmail.Location = new Point(110, 262);
-            tbEmail.Margin = new Padding(4);
+            tbEmail.Location = new Point(88, 210);
             tbEmail.Name = "tbEmail";
-            tbEmail.Size = new Size(284, 32);
+            tbEmail.Size = new Size(228, 28);
             tbEmail.TabIndex = 24;
             // 
             // linkLog
             // 
             linkLog.AutoSize = true;
             linkLog.Font = new Font("Microsoft Sans Serif", 7.79999971F, FontStyle.Bold, GraphicsUnit.Point);
-            linkLog.Location = new Point(351, 730);
-            linkLog.Margin = new Padding(4, 0, 4, 0);
+            linkLog.Location = new Point(281, 584);
             linkLog.Name = "linkLog";
-            linkLog.Size = new Size(60, 20);
+            linkLog.Size = new Size(49, 16);
             linkLog.TabIndex = 23;
             linkLog.TabStop = true;
             linkLog.Text = "Log In";
@@ -222,10 +210,9 @@
             lblLog.Font = new Font("Microsoft Sans Serif", 7.79999971F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             lblLog.ForeColor = Color.FromArgb(66, 66, 66);
             lblLog.ImeMode = ImeMode.NoControl;
-            lblLog.Location = new Point(110, 730);
-            lblLog.Margin = new Padding(4, 0, 4, 0);
+            lblLog.Location = new Point(88, 584);
             lblLog.Name = "lblLog";
-            lblLog.Size = new Size(218, 20);
+            lblLog.Size = new Size(187, 16);
             lblLog.TabIndex = 22;
             lblLog.Text = "Already have an Account?";
             // 
@@ -236,10 +223,9 @@
             pwLbl.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
             pwLbl.ForeColor = Color.FromArgb(66, 66, 66);
             pwLbl.ImeMode = ImeMode.NoControl;
-            pwLbl.Location = new Point(110, 319);
-            pwLbl.Margin = new Padding(4, 0, 4, 0);
+            pwLbl.Location = new Point(88, 255);
             pwLbl.Name = "pwLbl";
-            pwLbl.Size = new Size(86, 20);
+            pwLbl.Size = new Size(75, 16);
             pwLbl.TabIndex = 6;
             pwLbl.Text = "Password";
             // 
@@ -250,10 +236,9 @@
             NameLbl.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold, GraphicsUnit.Point);
             NameLbl.ForeColor = Color.FromArgb(66, 66, 66);
             NameLbl.ImeMode = ImeMode.NoControl;
-            NameLbl.Location = new Point(110, 146);
-            NameLbl.Margin = new Padding(4, 0, 4, 0);
+            NameLbl.Location = new Point(88, 117);
             NameLbl.Name = "NameLbl";
-            NameLbl.Size = new Size(55, 20);
+            NameLbl.Size = new Size(48, 16);
             NameLbl.TabIndex = 7;
             NameLbl.Text = "Nama";
             // 
@@ -261,10 +246,9 @@
             // 
             tbName.Font = new Font("Microsoft Sans Serif", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             tbName.ForeColor = Color.Gray;
-            tbName.Location = new Point(110, 175);
-            tbName.Margin = new Padding(4);
+            tbName.Location = new Point(88, 140);
             tbName.Name = "tbName";
-            tbName.Size = new Size(284, 32);
+            tbName.Size = new Size(228, 28);
             tbName.TabIndex = 4;
             // 
             // SignUpLbl
@@ -274,10 +258,9 @@
             SignUpLbl.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             SignUpLbl.ForeColor = Color.FromArgb(66, 66, 66);
             SignUpLbl.ImeMode = ImeMode.NoControl;
-            SignUpLbl.Location = new Point(192, 66);
-            SignUpLbl.Margin = new Padding(4, 0, 4, 0);
+            SignUpLbl.Location = new Point(154, 53);
             SignUpLbl.Name = "SignUpLbl";
-            SignUpLbl.Size = new Size(122, 32);
+            SignUpLbl.Size = new Size(106, 29);
             SignUpLbl.TabIndex = 0;
             SignUpLbl.Text = "Sign Up";
             // 
@@ -291,10 +274,9 @@
             button1.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
             button1.ForeColor = Color.Black;
             button1.ImeMode = ImeMode.NoControl;
-            button1.Location = new Point(1606, 2);
-            button1.Margin = new Padding(4);
+            button1.Location = new Point(1285, 2);
             button1.Name = "button1";
-            button1.Size = new Size(76, 70);
+            button1.Size = new Size(61, 56);
             button1.TabIndex = 3;
             button1.Text = "X";
             button1.UseVisualStyleBackColor = false;
@@ -304,17 +286,16 @@
             // 
             // signupPage
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImage = Properties.Resources.login_dashboard;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1685, 901);
+            ClientSize = new Size(1348, 721);
             Controls.Add(button1);
             Controls.Add(signupPnl);
             DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(4);
-            MaximumSize = new Size(1708, 960);
+            MaximumSize = new Size(1366, 768);
             Name = "signupPage";
             Text = "signupPage";
             Load += signupPage_Load;

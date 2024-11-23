@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace DAUR
 {
-    public partial class newDashboard : Form
+    public partial class IndustriDashboard : Form
     {
-        public newDashboard()
+        public IndustriDashboard()
         {
             InitializeComponent();
         }

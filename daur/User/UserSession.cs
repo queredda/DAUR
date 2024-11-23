@@ -6,10 +6,35 @@ using System.Threading.Tasks;
 
 namespace DAUR
 {
-    internal class UserSession
+    public static class UserSession
     {
-        public static int? LoggedInIndustryID { get; set; }
-        public static int? LoggedInCollectorID { get; set; }
-        public static string LoggedInEmail { get; set; }
+        public static int? LoggedInIndustryID { get; private set; }
+        public static int? LoggedInCollectorID { get; private set; }
+        public static string LoggedInEmail { get; private set; }
+        public static string LoggedInName { get; private set; }
+
+        public static void SetIndustryUser(int id, string email, string name)
+        {
+            LoggedInIndustryID = id;
+            LoggedInCollectorID = null;
+            LoggedInEmail = email;
+            LoggedInName = name;
+        }
+
+        public static void SetCollectorUser(int id, string email, string name)
+        {
+            LoggedInCollectorID = id;
+            LoggedInIndustryID = null;
+            LoggedInEmail = email;
+            LoggedInName = name;
+        }
+
+        public static void ClearSession()
+        {
+            LoggedInIndustryID = null;
+            LoggedInCollectorID = null;
+            LoggedInEmail = null;
+            LoggedInName = null;
+        }
     }
 }

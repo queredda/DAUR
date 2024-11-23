@@ -183,7 +183,7 @@ namespace DAUR
 
         private void OpenDashboard()
         {
-            newDashboard newdashboard = new newDashboard();
+            IndustriDashboard newdashboard = new IndustriDashboard();
             newdashboard.Show();
             this.Hide();
         }

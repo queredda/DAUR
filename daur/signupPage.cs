@@ -14,7 +14,7 @@ namespace DAUR
         private static extern IntPtr CreateRoundRectRgn(int nLeftRect, int nTopRect, int nRightRect, int nBottomRect, int nWidthEllipse, int nHeightEllipse);
         
         private NpgsqlConnection conn;
-        string connstring = "Host = 192.168.225.243; Port = 5432; Username = postgres; Password = HusnaYTB223; Database = DAUR";
+        string connstring = "Host = daur.postgres.database.azure.com; Port = 5432; Username = daur; Password = Junprokontol!123; Database = DAUR";
         public static NpgsqlCommand cmd;
         private string sql = null;
 

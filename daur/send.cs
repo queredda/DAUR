@@ -19,7 +19,7 @@ namespace DAUR
     {
 
         private NpgsqlConnection conn;
-        string connstring = "Host = localhost; Port = 5432; Username = postgres; Password = HusnaYTB223; Database = DAUR";
+        string connstring = "Host = 192.168.225.243; Port = 5432; Username = postgres; Password = HusnaYTB223; Database = DAUR";
         public static NpgsqlCommand cmd;
         private string sql = null;
 

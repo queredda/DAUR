@@ -148,7 +148,8 @@ namespace DAUR
                     conn.Open(); // Open connection only once
 
                     // Define the SQL query to call the waste_send function
-                    string sql = "SELECT public.waste_send(@industri_id, @collector_id, @waste_kind, @waste_weight)";
+                    string sql = "INSERT INTO public.waste_send (pelakuIndustri_industri_id, wasteCollector_collector_id, waste_kind, waste_weight, waste_status) " +
+                                    "VALUES (@industri_id, @collector_id, @waste_kind, @waste_weight, @waste_status)";
 
                     using (var cmd = new NpgsqlCommand(sql, conn))
                     {
@@ -157,6 +158,7 @@ namespace DAUR
                         cmd.Parameters.AddWithValue("collector_id", DBNull.Value); // Pass DBNull.Value for null value
                         cmd.Parameters.AddWithValue("waste_kind", tbJenis.Text); // Assuming tbJenis is the textbox for waste type
                         cmd.Parameters.AddWithValue("waste_weight", int.Parse(tbBerat.Text)); // Assuming tbBerat is the textbox for waste weight
+                        cmd.Parameters.AddWithValue("waste_status", "Pending");
 
                         // Execute the function
                         cmd.ExecuteScalar();

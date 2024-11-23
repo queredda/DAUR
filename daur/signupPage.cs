@@ -12,7 +12,7 @@ namespace DAUR
     {
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn(int nLeftRect, int nTopRect, int nRightRect, int nBottomRect, int nWidthEllipse, int nHeightEllipse);
-        
+
         private NpgsqlConnection conn;
         string connstring = "Host = 192.168.225.243; Port = 5432; Username = postgres; Password = HusnaYTB223; Database = DAUR";
         public static NpgsqlCommand cmd;

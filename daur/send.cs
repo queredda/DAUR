@@ -151,34 +151,45 @@ namespace DAUR
 
         private void btnKirim_Click(object sender, EventArgs e)
         {
-            try
+            if (UserSession.LoggedInIndustryID.HasValue)
             {
-                conn.Open();
-                string sql = @"select * from waste_send(:_waste_kind, :_waste_weight)";
-                NpgsqlCommand cmd = new NpgsqlCommand(sql, conn);
-
-                // Adding parameter values
-                cmd.Parameters.AddWithValue("_waste_kind", tbJenis.Text);
-                cmd.Parameters.AddWithValue("_waste_weight", int.Parse(tbBerat.Text));
-
-                if ((int)cmd.ExecuteScalar() == 1)
+                int industriID = UserSession.LoggedInIndustryID.Value;
+                try
                 {
-                    MessageBox.Show("Waste Sent Successfully!", "Waste Send Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    conn.Open();
+                    string sql = "SELECT public.waste_send(@industri_id, @collector_id, @waste_kind, @waste_weight)";
 
-                    // Clear input fields after successful sign-up
-                    tbJenis.Text = tbBerat.Text = null;
+                    using (var cmd = new NpgsqlCommand(sql, conn))
+                    {
+                        cmd.Parameters.AddWithValue("industri_id", industriID);
+                        cmd.Parameters.AddWithValue("collector_id", null);
+                        cmd.Parameters.AddWithValue("waste_kind", tbJenis.Text);
+                        cmd.Parameters.AddWithValue("waste_weight", int.Parse(tbBerat.Text));
+
+                        try
+                        {
+                            conn.Open();
+                            cmd.ExecuteScalar();
+                            MessageBox.Show("Waste sent successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show($"Error sending waste: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        finally
+                        {
+                            conn.Close();
+                        }
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Waste Failed to Sent. Please try again.", "Waste Send Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            }catch(Exception ex)
-            {
-                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                conn.Close();
+                finally
+                {
+                    conn.Close();
+                }
             }
         }
     }

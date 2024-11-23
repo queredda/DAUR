@@ -97,32 +97,68 @@ namespace DAUR
 
             try
             {
-                conn.Open();
-                string sql = @"select * from acc_insert(:_name, :_email, :_password, :_role)";
-                NpgsqlCommand cmd = new NpgsqlCommand(sql, conn);
-
-                // Adding parameter values
-                cmd.Parameters.AddWithValue("_name", tbName.Text);
-                cmd.Parameters.AddWithValue("_email", tbEmail.Text);
-                cmd.Parameters.AddWithValue("_password", tbPassword.Text);
-
-                // Determine role based on the checked radio button
-                string role = rbCollector.Checked ? "Collector" : "Industri";
-                cmd.Parameters.AddWithValue("_role", role);
-
-                // Execute the command and check the result
-                int result = (int)cmd.ExecuteScalar();
-                if (result == 1)
+                if (rbCollector.Checked)
                 {
-                    MessageBox.Show("Sign Up Successful!", "Sign Up Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    conn.Open();
+                    string sql = @"select * from collector_insert(:_name, :_email, :_password, :_role)";
+                    NpgsqlCommand cmd = new NpgsqlCommand(sql, conn);
 
-                    // Clear input fields after successful sign-up
-                    tbName.Text = tbEmail.Text = tbPassword.Text = tbCP.Text = string.Empty;
-                    rbCollector.Checked = rbIndustri.Checked = false;
+                    // Adding parameter values
+                    cmd.Parameters.AddWithValue("_name", tbName.Text);
+                    cmd.Parameters.AddWithValue("_email", tbEmail.Text);
+                    cmd.Parameters.AddWithValue("_password", tbPassword.Text);
+
+                    // Determine role based on the checked radio button
+                    string role = rbCollector.Checked ? "Collector" : "Industri";
+                    cmd.Parameters.AddWithValue("_role", role);
+
+                    // Execute the command and check the result
+                    int result = (int)cmd.ExecuteScalar();
+                    if (result == 1)
+                    {
+                        MessageBox.Show("Sign Up for Waste Collector Successful!", "Sign Up Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        // Clear input fields after successful sign-up
+                        tbName.Text = tbEmail.Text = tbPassword.Text = tbCP.Text = string.Empty;
+                        rbCollector.Checked = rbIndustri.Checked = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sign Up Failed. Please try again.", "Sign Up Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Sign Up Failed. Please try again.", "Sign Up Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    conn.Open();
+                    string sql = @"select * from industry_insert(:_name, :_email, :_password, :_role)";
+
+
+
+                    NpgsqlCommand cmd = new NpgsqlCommand(sql, conn);
+
+                    // Adding parameter values
+                    cmd.Parameters.AddWithValue("_name", tbName.Text);
+                    cmd.Parameters.AddWithValue("_email", tbEmail.Text);
+                    cmd.Parameters.AddWithValue("_password", tbPassword.Text);
+
+                    // Determine role based on the checked radio button
+                    string role = rbCollector.Checked ? "Collector" : "Industri";
+                    cmd.Parameters.AddWithValue("_role", role);
+
+                    // Execute the command and check the result
+                    int result = (int)cmd.ExecuteScalar();
+                    if (result == 1)
+                    {
+                        MessageBox.Show("Sign Up for Industry Successful!", "Sign Up Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        // Clear input fields after successful sign-up
+                        tbName.Text = tbEmail.Text = tbPassword.Text = tbCP.Text = string.Empty;
+                        rbCollector.Checked = rbIndustri.Checked = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sign Up Failed. Please try again.", "Sign Up Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
             catch (Exception ex)

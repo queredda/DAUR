@@ -141,7 +141,9 @@ namespace DAUR
                 conn.Open();
 
                 // SQL query to check if the user exists with the given email and password
-                sql = "SELECT * FROM user_account WHERE email = @email AND password = @password";
+                sql = "SELECT * FROM pelaku_industri WHERE email = @email AND password = @password " +
+                      "UNION " +
+                      "SELECT * FROM waste_collector WHERE email = @email AND password = @password";
                 cmd = new NpgsqlCommand(sql, conn);
 
                 // Parameterized query to prevent SQL Injection
@@ -155,11 +157,22 @@ namespace DAUR
                 {
                     reader.Read();
                     string role = reader["role"].ToString();
-                    // User exists, login successful
-                    MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    reader.Close();
                     loggedInEmail = email;
 
+                    // Store the ID based on the role
+                    if (role == "Industri")
+                    {
+                        UserSession.LoggedInIndustryID = Convert.ToInt32(reader["industri_id"]);
+                    }
+                    else if (role == "Collector")
+                    {
+                        UserSession.LoggedInCollectorID = Convert.ToInt32(reader["collector_id"]);
+                    }
+
+                    MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    reader.Close();
+
+                    // Navigate to the corresponding dashboard based on the role
                     switch (role)
                     {
                         case "Industri":
@@ -197,6 +210,8 @@ namespace DAUR
                 }
             }
         }
+
+
 
         private void OpenDashboard()
         {

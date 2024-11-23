@@ -36,11 +36,11 @@ namespace DAUR
                 conn.Open();
 
                 // SQL query to fetch the user's name based on the logged-in email
-                sql = "SELECT name FROM user_account WHERE email = @email";
+                sql = "SELECT * FROM pelaku_industri WHERE email = @email";
                 cmd = new NpgsqlCommand(sql, conn);
 
                 // Replace with the email of the logged-in user (stored during login)
-                cmd.Parameters.AddWithValue("Email", loginPage.loggedInEmail); // Assume loggedInEmail stores the email of the logged-in user
+                cmd.Parameters.AddWithValue("email", loginPage.loggedInEmail); // Assume loggedInEmail stores the email of the logged-in user
 
                 // Execute the query and fetch the result
                 string userName = cmd.ExecuteScalar()?.ToString();

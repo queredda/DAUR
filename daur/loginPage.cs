@@ -9,9 +9,10 @@ using System.Data;
 
 namespace DAUR
 {
-
     public partial class loginPage : Form
     {
+        public static string loggedInEmail;
+
         private NpgsqlConnection conn;
         string connstring = "Host=daur.postgres.database.azure.com;Port=5432;Username=daur;Password=Junprokontol!123;Database=DAUR;SSL Mode=Require;Trust Server Certificate=true;";
         public static NpgsqlCommand cmd;
@@ -152,11 +153,27 @@ namespace DAUR
 
                 if (reader.HasRows)
                 {
+                    reader.Read();
+                    string role = reader["role"].ToString();
                     // User exists, login successful
                     MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     reader.Close();
+                    loggedInEmail = email;
 
-                    OpenDashboard(); // Navigate to the dashboard
+                    switch (role)
+                    {
+                        case "Industri":
+                            NavigatePage.OpenForm<IndustriDashboard>(this);
+                            break;
+
+                        case "Collector":
+                            NavigatePage.OpenForm<PengepulDashboard>(this);
+                            break;
+
+                        default:
+                            MessageBox.Show("Unknown role. Please contact support.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            break;
+                    }
                 }
                 else
                 {

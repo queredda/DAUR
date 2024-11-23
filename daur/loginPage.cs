@@ -84,110 +84,85 @@ namespace DAUR
             this.Hide();
         }
 
-
-
-
         private void btnLogin_Click_1(object sender, EventArgs e)
         {
-            string email = tbEmail.Text; // Get email from the textbox
-            string password = tbPassword.Text; // Get password from the textbox
+            string email = tbEmail.Text;
+            string password = tbPassword.Text;
 
             if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
             {
-                MessageBox.Show("Please enter both email and password.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please enter both email and password.", "Validation Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             try
             {
-                // Open connection
-                conn.Open();
-
-                // SQL query to check if the user exists with the given email and password
-                string sql = @"
-            SELECT 
-                industri_id AS user_id, 
-                email, 
-                password, 
-                role, 
-                'Industri' AS user_type -- This indicates the user is from pelaku_industri
-            FROM 
-                pelaku_industri 
-            WHERE 
-                email = @email AND password = @password
-
-            UNION
-
-            SELECT 
-                collector_id AS user_id, 
-                email, 
-                password, 
-                role, 
-                'Collector' AS user_type -- This indicates the user is from waste_collector
-            FROM 
-                waste_collector 
-            WHERE 
-                email = @email AND password = @password;
-        ";
-
-                using (var cmd = new NpgsqlCommand(sql, conn))
+                using (var conn = new NpgsqlConnection(connstring))
                 {
-                    // Parameterized query to prevent SQL Injection
-                    cmd.Parameters.AddWithValue("email", email);
-                    cmd.Parameters.AddWithValue("password", password);
+                    conn.Open();
+                    string sql = @"
+                SELECT 
+                    CASE 
+                        WHEN pi.industri_id IS NOT NULL THEN pi.industri_id 
+                        ELSE wc.collector_id 
+                    END AS user_id,
+                    CASE 
+                        WHEN pi.industri_id IS NOT NULL THEN pi.name
+                        ELSE wc.name
+                    END AS name,
+                    CASE 
+                        WHEN pi.industri_id IS NOT NULL THEN 'Industri'
+                        ELSE 'Collector'
+                    END AS user_type,
+                    COALESCE(pi.email, wc.email) as email
+                FROM (
+                    SELECT industri_id, name, email FROM pelaku_industri 
+                    WHERE email = @email AND password = @password
+                ) pi
+                FULL OUTER JOIN (
+                    SELECT collector_id, name, email FROM waste_collector 
+                    WHERE email = @email AND password = @password
+                ) wc ON FALSE";
 
-                    // Execute query
-                    using (NpgsqlDataReader reader = cmd.ExecuteReader())
+                    using (var cmd = new NpgsqlCommand(sql, conn))
                     {
-                        if (reader.HasRows)
+                        cmd.Parameters.AddWithValue("email", email);
+                        cmd.Parameters.AddWithValue("password", password);
+
+                        using (var reader = cmd.ExecuteReader())
                         {
-                            reader.Read();
-                            string userType = reader["user_type"].ToString(); // This tells if the user is from pelaku_industri or waste_collector
-                            string role = reader["role"].ToString(); // Get the user's role
-                            int userId = Convert.ToInt32(reader["user_id"]); // The user_id (either industri_id or collector_id)
-
-                            // Set session or static variable based on user type
-                            if (userType == "Industri")
+                            if (reader.Read())
                             {
-                                // Set the logged-in user's id for industri
-                                UserSession.LoggedInIndustryID = userId;
+                                int userId = reader.GetInt32(0);
+                                string userName = reader.GetString(1);
+                                string userType = reader.GetString(2);
+                                string userEmail = reader.GetString(3);
 
-                                // Navigate to the Industri dashboard
-                                NavigatePage.OpenForm<IndustriDashboard>(this);
-                            }
-                            else if (userType == "Collector")
-                            {
-                                // Set the logged-in user's id for collector
-                                UserSession.LoggedInCollectorID = userId;
-
-                                // Navigate to the Collector dashboard
-                                NavigatePage.OpenForm<PengepulDashboard>(this);
+                                if (userType == "Industri")
+                                {
+                                    UserSession.SetIndustryUser(userId, userEmail, userName);
+                                    NavigatePage.OpenForm<IndustriDashboard>(this);
+                                }
+                                else
+                                {
+                                    UserSession.SetCollectorUser(userId, userEmail, userName);
+                                    NavigatePage.OpenForm<PengepulDashboard>(this);
+                                }
                             }
                             else
                             {
-                                MessageBox.Show("Unknown role. Please contact support.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("Invalid email or password.", "Login Failed",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
-                        }
-                        else
-                        {
-                            // Invalid credentials
-                            MessageBox.Show("Invalid email or password. Please try again.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                 }
             }
             catch (Exception ex)
             {
-                // Handle errors
-                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                // Close the connection
-                if (conn != null && conn.State == ConnectionState.Open)
-                {
-                    conn.Close();
-                }
+                MessageBox.Show($"Login error: {ex.Message}", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

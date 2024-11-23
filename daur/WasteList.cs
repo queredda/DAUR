@@ -36,5 +36,10 @@ namespace DAUR
                 }
                 );
         }
+
+        private void table_list_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -28,25 +28,9 @@ namespace DAUR
 
         private void signupPage_Load(object sender, EventArgs e)
         {
-            btn_SignUp.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, btn_SignUp.Width, btn_SignUp.Height, 35, 35));
-            tbName.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, tbName.Width, tbName.Height, 15, 15));
-            tbEmail.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, tbEmail.Width, tbEmail.Height, 15, 15));
-            tbPassword.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, tbPassword.Width, tbPassword.Height, 15, 15));
-            tbCP.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, tbCP.Width, tbCP.Height, 15, 15));
-            signupPnl.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, signupPnl.Width, signupPnl.Height, 25, 25));
-            conn = new NpgsqlConnection(connstring);
-
         }
 
-        private void signupPnl_Paint(object sender, PaintEventArgs e)
-        {
-            signupPnl.BackColor = Color.FromArgb(120, 72, 207, 203);
-        }
 
-        private void btnSignUp_Click(object sender, EventArgs e)
-        {
-
-        }
 
 
         private void button1_MouseEnter(object sender, EventArgs e)
@@ -77,11 +61,14 @@ namespace DAUR
             this.Hide();
         }
 
-        private void tbName_TextChanged(object sender, EventArgs e)
+
+
+        private void tbName_TextChanged_1(object sender, EventArgs e)
         {
+
         }
 
-        private void btn_SignUp_Click(object sender, EventArgs e)
+        private void btn_SignUp_Click_1(object sender, EventArgs e)
         {
             if (tbPassword.Text != tbCP.Text)
             {

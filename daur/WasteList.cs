@@ -22,6 +22,19 @@ namespace DAUR
             Application.Exit();
         }
 
-
+        private void WasteList_Shown(object sender, EventArgs e)
+        {
+            table_list.Rows.Add(
+                new object[]
+                {
+                    "Hafidh husna",
+                    "hafidh@gmail.com",
+                    "Plastik",
+                    10,
+                    "Pending",
+                    "Here",
+                }
+                );
+        }
     }
 }

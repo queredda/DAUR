@@ -66,7 +66,7 @@
             table_jenis = new DataGridViewTextBoxColumn();
             table_berat = new DataGridViewTextBoxColumn();
             table_status = new DataGridViewTextBoxColumn();
-            table_action = new DataGridViewLinkColumn();
+            table_action = new DataGridViewButtonColumn();
             guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)table_list).BeginInit();
             guna2Panel2.SuspendLayout();
@@ -82,10 +82,9 @@
             exit_btn.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
             exit_btn.ForeColor = Color.Black;
             exit_btn.ImeMode = ImeMode.NoControl;
-            exit_btn.Location = new Point(1634, -2);
-            exit_btn.Margin = new Padding(4, 4, 4, 4);
+            exit_btn.Location = new Point(1307, -2);
             exit_btn.Name = "exit_btn";
-            exit_btn.Size = new Size(76, 70);
+            exit_btn.Size = new Size(61, 56);
             exit_btn.TabIndex = 27;
             exit_btn.Text = "X";
             exit_btn.UseVisualStyleBackColor = false;
@@ -105,10 +104,9 @@
             guna2Panel1.CustomBorderThickness = new Padding(0, 0, 2, 0);
             guna2Panel1.CustomizableEdges = customizableEdges11;
             guna2Panel1.Location = new Point(-1, -2);
-            guna2Panel1.Margin = new Padding(4, 4, 4, 4);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            guna2Panel1.Size = new Size(106, 962);
+            guna2Panel1.Size = new Size(85, 770);
             guna2Panel1.TabIndex = 28;
             // 
             // guna2Button4
@@ -125,11 +123,10 @@
             guna2Button4.ForeColor = Color.White;
             guna2Button4.Image = Properties.Resources.Logo_junpro;
             guna2Button4.ImageSize = new Size(50, 50);
-            guna2Button4.Location = new Point(15, 30);
-            guna2Button4.Margin = new Padding(4, 4, 4, 4);
+            guna2Button4.Location = new Point(12, 24);
             guna2Button4.Name = "guna2Button4";
             guna2Button4.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2Button4.Size = new Size(72, 70);
+            guna2Button4.Size = new Size(58, 56);
             guna2Button4.TabIndex = 14;
             // 
             // btnDashboard
@@ -146,11 +143,10 @@
             btnDashboard.ForeColor = Color.White;
             btnDashboard.Image = Properties.Resources.btn_dashboard;
             btnDashboard.ImageSize = new Size(26, 26);
-            btnDashboard.Location = new Point(15, 189);
-            btnDashboard.Margin = new Padding(4, 4, 4, 4);
+            btnDashboard.Location = new Point(12, 151);
             btnDashboard.Name = "btnDashboard";
             btnDashboard.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            btnDashboard.Size = new Size(72, 70);
+            btnDashboard.Size = new Size(58, 56);
             btnDashboard.TabIndex = 13;
             // 
             // btnSend
@@ -167,11 +163,10 @@
             btnSend.ForeColor = Color.White;
             btnSend.Image = Properties.Resources.Send;
             btnSend.ImageSize = new Size(26, 26);
-            btnSend.Location = new Point(15, 266);
-            btnSend.Margin = new Padding(4, 4, 4, 4);
+            btnSend.Location = new Point(12, 213);
             btnSend.Name = "btnSend";
             btnSend.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            btnSend.Size = new Size(72, 70);
+            btnSend.Size = new Size(58, 56);
             btnSend.TabIndex = 12;
             // 
             // btnProfile
@@ -188,11 +183,10 @@
             btnProfile.ForeColor = Color.White;
             btnProfile.Image = Properties.Resources.btn_profile;
             btnProfile.ImageSize = new Size(26, 26);
-            btnProfile.Location = new Point(15, 344);
-            btnProfile.Margin = new Padding(4, 4, 4, 4);
+            btnProfile.Location = new Point(12, 275);
             btnProfile.Name = "btnProfile";
             btnProfile.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            btnProfile.Size = new Size(72, 70);
+            btnProfile.Size = new Size(58, 56);
             btnProfile.TabIndex = 11;
             // 
             // btnSetting
@@ -209,21 +203,19 @@
             btnSetting.ForeColor = Color.White;
             btnSetting.Image = Properties.Resources.btn_setting;
             btnSetting.ImageSize = new Size(26, 26);
-            btnSetting.Location = new Point(15, 421);
-            btnSetting.Margin = new Padding(4, 4, 4, 4);
+            btnSetting.Location = new Point(12, 337);
             btnSetting.Name = "btnSetting";
             btnSetting.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            btnSetting.Size = new Size(72, 70);
+            btnSetting.Size = new Size(58, 56);
             btnSetting.TabIndex = 10;
             // 
             // guna2HtmlLabel6
             // 
             guna2HtmlLabel6.BackColor = Color.Transparent;
             guna2HtmlLabel6.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            guna2HtmlLabel6.Location = new Point(192, 68);
-            guna2HtmlLabel6.Margin = new Padding(4, 4, 4, 4);
+            guna2HtmlLabel6.Location = new Point(154, 54);
             guna2HtmlLabel6.Name = "guna2HtmlLabel6";
-            guna2HtmlLabel6.Size = new Size(163, 39);
+            guna2HtmlLabel6.Size = new Size(140, 33);
             guna2HtmlLabel6.TabIndex = 33;
             guna2HtmlLabel6.Text = "Waste List";
             // 
@@ -244,15 +236,15 @@
             guna2TextBox1.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             guna2TextBox1.IconLeft = Properties.Resources.search;
             guna2TextBox1.IconLeftOffset = new Point(15, 0);
-            guna2TextBox1.Location = new Point(192, 145);
-            guna2TextBox1.Margin = new Padding(6, 5, 6, 5);
+            guna2TextBox1.Location = new Point(154, 116);
+            guna2TextBox1.Margin = new Padding(5, 4, 5, 4);
             guna2TextBox1.Name = "guna2TextBox1";
             guna2TextBox1.PasswordChar = '\0';
             guna2TextBox1.PlaceholderForeColor = Color.FromArgb(53, 159, 133);
             guna2TextBox1.PlaceholderText = "";
             guna2TextBox1.SelectedText = "";
             guna2TextBox1.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            guna2TextBox1.Size = new Size(1406, 60);
+            guna2TextBox1.Size = new Size(1125, 48);
             guna2TextBox1.TabIndex = 34;
             guna2TextBox1.TextOffset = new Point(20, -4);
             // 
@@ -269,7 +261,7 @@
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             table_list.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            table_list.ColumnHeadersHeight = 25;
+            table_list.ColumnHeadersHeight = 50;
             table_list.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             table_list.Columns.AddRange(new DataGridViewColumn[] { table_name, table_email, table_jenis, table_berat, table_status, table_action });
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
@@ -281,13 +273,12 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             table_list.DefaultCellStyle = dataGridViewCellStyle3;
             table_list.GridColor = Color.FromArgb(232, 237, 242);
-            table_list.Location = new Point(0, 76);
-            table_list.Margin = new Padding(4, 4, 4, 4);
+            table_list.Location = new Point(0, 61);
             table_list.Name = "table_list";
             table_list.RowHeadersVisible = false;
             table_list.RowHeadersWidth = 51;
             table_list.RowTemplate.Height = 29;
-            table_list.Size = new Size(1406, 594);
+            table_list.Size = new Size(1125, 475);
             table_list.TabIndex = 0;
             table_list.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             table_list.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -301,7 +292,7 @@
             table_list.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             table_list.ThemeStyle.HeaderStyle.ForeColor = Color.White;
             table_list.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            table_list.ThemeStyle.HeaderStyle.Height = 25;
+            table_list.ThemeStyle.HeaderStyle.Height = 50;
             table_list.ThemeStyle.ReadOnly = false;
             table_list.ThemeStyle.RowsStyle.BackColor = Color.White;
             table_list.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
@@ -317,21 +308,19 @@
             guna2Panel2.Controls.Add(guna2HtmlLabel1);
             guna2Panel2.Controls.Add(table_list);
             guna2Panel2.CustomizableEdges = customizableEdges15;
-            guna2Panel2.Location = new Point(192, 242);
-            guna2Panel2.Margin = new Padding(4, 4, 4, 4);
+            guna2Panel2.Location = new Point(154, 194);
             guna2Panel2.Name = "guna2Panel2";
             guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            guna2Panel2.Size = new Size(1406, 670);
+            guna2Panel2.Size = new Size(1125, 536);
             guna2Panel2.TabIndex = 35;
             // 
             // guna2HtmlLabel2
             // 
             guna2HtmlLabel2.BackColor = Color.Transparent;
             guna2HtmlLabel2.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            guna2HtmlLabel2.Location = new Point(68, 26);
-            guna2HtmlLabel2.Margin = new Padding(4, 4, 4, 4);
+            guna2HtmlLabel2.Location = new Point(54, 21);
             guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            guna2HtmlLabel2.Size = new Size(43, 27);
+            guna2HtmlLabel2.Size = new Size(37, 22);
             guna2HtmlLabel2.TabIndex = 2;
             guna2HtmlLabel2.Text = "(10)";
             // 
@@ -339,10 +328,9 @@
             // 
             guna2HtmlLabel1.BackColor = Color.Transparent;
             guna2HtmlLabel1.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            guna2HtmlLabel1.Location = new Point(31, 28);
-            guna2HtmlLabel1.Margin = new Padding(4, 4, 4, 4);
+            guna2HtmlLabel1.Location = new Point(25, 22);
             guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            guna2HtmlLabel1.Size = new Size(28, 27);
+            guna2HtmlLabel1.Size = new Size(25, 22);
             guna2HtmlLabel1.TabIndex = 1;
             guna2HtmlLabel1.Text = "All";
             // 
@@ -392,21 +380,21 @@
             // 
             // WasteList
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1708, 960);
+            ClientSize = new Size(1366, 768);
             Controls.Add(guna2Panel2);
             Controls.Add(guna2TextBox1);
             Controls.Add(guna2HtmlLabel6);
             Controls.Add(guna2Panel1);
             Controls.Add(exit_btn);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(4, 4, 4, 4);
-            MaximumSize = new Size(1708, 960);
-            MinimumSize = new Size(1708, 960);
+            MaximumSize = new Size(1366, 768);
+            MinimumSize = new Size(1366, 768);
             Name = "WasteList";
             Text = "WasteList";
+            Shown += WasteList_Shown;
             guna2Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)table_list).EndInit();
             guna2Panel2.ResumeLayout(false);
@@ -435,6 +423,6 @@
         private DataGridViewTextBoxColumn table_jenis;
         private DataGridViewTextBoxColumn table_berat;
         private DataGridViewTextBoxColumn table_status;
-        private DataGridViewLinkColumn table_action;
+        private DataGridViewButtonColumn table_action;
     }
 }

@@ -58,15 +58,15 @@
             guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             table_list = new Guna.UI2.WinForms.Guna2DataGridView();
-            guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             table_name = new DataGridViewTextBoxColumn();
             table_email = new DataGridViewTextBoxColumn();
             table_jenis = new DataGridViewTextBoxColumn();
             table_berat = new DataGridViewTextBoxColumn();
             table_status = new DataGridViewTextBoxColumn();
             table_action = new DataGridViewButtonColumn();
+            guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)table_list).BeginInit();
             guna2Panel2.SuspendLayout();
@@ -302,38 +302,6 @@
             table_list.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             table_list.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
             // 
-            // guna2Panel2
-            // 
-            guna2Panel2.Controls.Add(guna2HtmlLabel2);
-            guna2Panel2.Controls.Add(guna2HtmlLabel1);
-            guna2Panel2.Controls.Add(table_list);
-            guna2Panel2.CustomizableEdges = customizableEdges15;
-            guna2Panel2.Location = new Point(154, 194);
-            guna2Panel2.Name = "guna2Panel2";
-            guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            guna2Panel2.Size = new Size(1125, 536);
-            guna2Panel2.TabIndex = 35;
-            // 
-            // guna2HtmlLabel2
-            // 
-            guna2HtmlLabel2.BackColor = Color.Transparent;
-            guna2HtmlLabel2.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            guna2HtmlLabel2.Location = new Point(54, 21);
-            guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            guna2HtmlLabel2.Size = new Size(37, 22);
-            guna2HtmlLabel2.TabIndex = 2;
-            guna2HtmlLabel2.Text = "(10)";
-            // 
-            // guna2HtmlLabel1
-            // 
-            guna2HtmlLabel1.BackColor = Color.Transparent;
-            guna2HtmlLabel1.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            guna2HtmlLabel1.Location = new Point(25, 22);
-            guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            guna2HtmlLabel1.Size = new Size(25, 22);
-            guna2HtmlLabel1.TabIndex = 1;
-            guna2HtmlLabel1.Text = "All";
-            // 
             // table_name
             // 
             table_name.HeaderText = "Name";
@@ -378,6 +346,38 @@
             table_action.Resizable = DataGridViewTriState.True;
             table_action.SortMode = DataGridViewColumnSortMode.Automatic;
             // 
+            // guna2Panel2
+            // 
+            guna2Panel2.Controls.Add(guna2HtmlLabel2);
+            guna2Panel2.Controls.Add(guna2HtmlLabel1);
+            guna2Panel2.Controls.Add(table_list);
+            guna2Panel2.CustomizableEdges = customizableEdges15;
+            guna2Panel2.Location = new Point(154, 194);
+            guna2Panel2.Name = "guna2Panel2";
+            guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            guna2Panel2.Size = new Size(1125, 536);
+            guna2Panel2.TabIndex = 35;
+            // 
+            // guna2HtmlLabel2
+            // 
+            guna2HtmlLabel2.BackColor = Color.Transparent;
+            guna2HtmlLabel2.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            guna2HtmlLabel2.Location = new Point(54, 21);
+            guna2HtmlLabel2.Name = "guna2HtmlLabel2";
+            guna2HtmlLabel2.Size = new Size(37, 22);
+            guna2HtmlLabel2.TabIndex = 2;
+            guna2HtmlLabel2.Text = "(10)";
+            // 
+            // guna2HtmlLabel1
+            // 
+            guna2HtmlLabel1.BackColor = Color.Transparent;
+            guna2HtmlLabel1.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            guna2HtmlLabel1.Location = new Point(25, 22);
+            guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            guna2HtmlLabel1.Size = new Size(25, 22);
+            guna2HtmlLabel1.TabIndex = 1;
+            guna2HtmlLabel1.Text = "All";
+            // 
             // WasteList
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -394,7 +394,8 @@
             MinimumSize = new Size(1366, 768);
             Name = "WasteList";
             Text = "WasteList";
-            Shown += WasteList_Shown;
+            Load += WasteList_Load;
+            //Shown += WasteList_Shown;
             guna2Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)table_list).EndInit();
             guna2Panel2.ResumeLayout(false);

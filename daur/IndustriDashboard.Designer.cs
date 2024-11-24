@@ -77,6 +77,7 @@
             guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
             guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            guna2MessageDialog1 = new Guna.UI2.WinForms.Guna2MessageDialog();
             guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -407,7 +408,16 @@
             guna2HtmlLabel6.TabIndex = 32;
             guna2HtmlLabel6.Text = "Welcome, Steven.";
             // 
-            // newDashboard
+            // guna2MessageDialog1
+            // 
+            guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            guna2MessageDialog1.Caption = null;
+            guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.None;
+            guna2MessageDialog1.Parent = null;
+            guna2MessageDialog1.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
+            guna2MessageDialog1.Text = null;
+            // 
+            // IndustriDashboard
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -422,7 +432,7 @@
             FormBorderStyle = FormBorderStyle.None;
             MaximumSize = new Size(1366, 768);
             MinimumSize = new Size(1366, 768);
-            Name = "newDashboard";
+            Name = "IndustriDashboard";
             Text = "newDashboard";
             Load += newDashboard_Load;
             guna2Panel1.ResumeLayout(false);
@@ -465,5 +475,6 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel6;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel6;
+        private Guna.UI2.WinForms.Guna2MessageDialog guna2MessageDialog1;
     }
 }

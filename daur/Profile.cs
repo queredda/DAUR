@@ -33,8 +33,69 @@ namespace DAUR
         {
             InitializeComponent();
             conn = new NpgsqlConnection(connstring);
-
+            InitializeProfilePicture();
         }
+
+        private void InitializeProfilePicture()
+        {
+            guna2CirclePictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            LoadProfilePicture();
+        }
+
+        private void LoadProfilePicture()
+        {
+            try
+            {
+                using (var conn = new NpgsqlConnection(connstring))
+                {
+                    conn.Open();
+                    string sql;
+
+                    if (UserSession.LoggedInIndustryID.HasValue)
+                    {
+                        sql = "SELECT profile_picture FROM pelaku_industri WHERE industri_id = @id";
+                    }
+                    else
+                    {
+                        sql = "SELECT profile_picture FROM waste_collector WHERE collector_id = @id";
+                    }
+
+                    using (var cmd = new NpgsqlCommand(sql, conn))
+                    {
+                        if (UserSession.LoggedInIndustryID.HasValue)
+                        {
+                            cmd.Parameters.AddWithValue("id", UserSession.LoggedInIndustryID.Value);
+                        }
+                        else
+                        {
+                            cmd.Parameters.AddWithValue("id", UserSession.LoggedInCollectorID.Value);
+                        }
+
+                        using (var reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read() && !reader.IsDBNull(0))
+                            {
+                                byte[] imageBytes = (byte[])reader["profile_picture"];
+                                using (MemoryStream ms = new MemoryStream(imageBytes))
+                                {
+                                    guna2CirclePictureBox1.Image = Image.FromStream(ms);
+                                }
+                            }
+                            else
+                            {
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading profile picture: {ex.Message}", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -146,13 +207,13 @@ namespace DAUR
 
                     if (UserSession.LoggedInIndustryID.HasValue)
                     {
-                        sql = "SELECT name, email, role, bio FROM pelaku_industri WHERE industri_id = @id";
+                        sql = "SELECT name, email, role, bio, profile_picture FROM pelaku_industri WHERE industri_id = @id";
                         cmd = new NpgsqlCommand(sql, conn);
                         cmd.Parameters.AddWithValue("id", UserSession.LoggedInIndustryID.Value);
                     }
                     else
                     {
-                        sql = "SELECT name, email, role, bio FROM waste_collector WHERE collector_id = @id";
+                        sql = "SELECT name, email, role, bio, profile_picture FROM waste_collector WHERE collector_id = @id";
                         cmd = new NpgsqlCommand(sql, conn);
                         cmd.Parameters.AddWithValue("id", UserSession.LoggedInCollectorID.Value);
                     }
@@ -165,6 +226,20 @@ namespace DAUR
                             lbl_EmailUser.Text = reader["email"].ToString();
                             lbl_RoleUser.Text = reader["role"]?.ToString() ?? "";
                             lbl_BioUser.Text = reader["bio"]?.ToString() ?? "";
+
+                            // Load profile picture
+                            if (!reader.IsDBNull(reader.GetOrdinal("profile_picture")))
+                            {
+                                byte[] imageBytes = (byte[])reader["profile_picture"];
+                                using (MemoryStream ms = new MemoryStream(imageBytes))
+                                {
+                                    guna2CirclePictureBox1.Image = Image.FromStream(ms);
+                                }
+                            }
+                            else
+                            {
+                                guna2CirclePictureBox1.Image = Properties.Resources.Rambut_cewe_aesthetic_Korea;
+                            }
                         }
                     }
                 }
@@ -178,7 +253,6 @@ namespace DAUR
 
         private void Profile_Load(object sender, EventArgs e)
         {
-
             LoadUserData();
         }
 
@@ -215,6 +289,26 @@ namespace DAUR
         private void btnSetting_Click_1(object sender, EventArgs e)
         {
             NavigatePage.OpenForm<setting>(this);
+        }
+
+        private void guna2CirclePictureBox1_Click_1(object sender, EventArgs e)
+        {
+            if (guna2CirclePictureBox1.Image != null && guna2CirclePictureBox1.Image != Properties.Resources.Rambut_cewe_aesthetic_Korea)
+            {
+                using (Form imageForm = new Form())
+                {
+                    PictureBox pb = new PictureBox();
+                    pb.Dock = DockStyle.Fill;
+                    pb.SizeMode = PictureBoxSizeMode.Zoom;
+                    pb.Image = new Bitmap(guna2CirclePictureBox1.Image);
+
+                    imageForm.Controls.Add(pb);
+                    imageForm.WindowState = FormWindowState.Normal;
+                    imageForm.Size = new Size(400, 400);
+                    imageForm.StartPosition = FormStartPosition.CenterParent;
+                    imageForm.ShowDialog();
+                }
+            }
         }
     }
 }

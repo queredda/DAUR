@@ -324,9 +324,9 @@ namespace DAUR
             // guna2CirclePictureBox1
             // 
             guna2CirclePictureBox1.FillColor = Color.DarkGray;
-            guna2CirclePictureBox1.Image = Properties.Resources.Rambut_cewe_aesthetic_Korea;
+            guna2CirclePictureBox1.Image = (Image)resources.GetObject("guna2CirclePictureBox1.Image");
             guna2CirclePictureBox1.ImageRotate = 0F;
-            guna2CirclePictureBox1.InitialImage = Properties.Resources.Rambut_cewe_aesthetic_Korea;
+            guna2CirclePictureBox1.InitialImage = (Image)resources.GetObject("guna2CirclePictureBox1.InitialImage");
             guna2CirclePictureBox1.Location = new Point(272, 33);
             guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
             guna2CirclePictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges15;
@@ -335,6 +335,7 @@ namespace DAUR
             guna2CirclePictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             guna2CirclePictureBox1.TabIndex = 30;
             guna2CirclePictureBox1.TabStop = false;
+            guna2CirclePictureBox1.Click += guna2CirclePictureBox1_Click_1;
             // 
             // Profile
             // 

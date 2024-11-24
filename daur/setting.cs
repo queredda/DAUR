@@ -16,6 +16,70 @@ namespace DAUR
 {
     public partial class setting : Form
     {
+        private bool isImageChanged = false;
+        private byte[] currentImageBytes = null;
+
+        private void InitializePictureBox()
+        {
+            pbProfile.SizeMode = PictureBoxSizeMode.StretchImage;
+            LoadProfilePicture(); // Load existing picture if any
+        }
+
+        private void LoadProfilePicture()
+        {
+            try
+            {
+                using (var conn = new NpgsqlConnection(connstring))
+                {
+                    conn.Open();
+                    string sql;
+
+                    if (UserSession.LoggedInIndustryID.HasValue)
+                    {
+                        sql = "SELECT profile_picture FROM pelaku_industri WHERE industri_id = @id";
+                    }
+                    else
+                    {
+                        sql = "SELECT profile_picture FROM waste_collector WHERE collector_id = @id";
+                    }
+
+                    using (var cmd = new NpgsqlCommand(sql, conn))
+                    {
+                        if (UserSession.LoggedInIndustryID.HasValue)
+                        {
+                            cmd.Parameters.AddWithValue("id", UserSession.LoggedInIndustryID.Value);
+                        }
+                        else
+                        {
+                            cmd.Parameters.AddWithValue("id", UserSession.LoggedInCollectorID.Value);
+                        }
+
+                        using (var reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read() && !reader.IsDBNull(0))
+                            {
+                                byte[] imageBytes = (byte[])reader["profile_picture"];
+                                currentImageBytes = imageBytes;
+                                using (MemoryStream ms = new MemoryStream(imageBytes))
+                                {
+                                    pbProfile.Image = Image.FromStream(ms);
+                                }
+                            }
+                            else
+                            {
+
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading profile picture: {ex.Message}", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private string connstring = "Host=daur.postgres.database.azure.com;Port=5432;Username=daur;Password=Junprokontol!123;Database=DAUR;SSL Mode=Require;Trust Server Certificate=true;";
         private NpgsqlConnection conn;
         public setting()
@@ -173,38 +237,61 @@ namespace DAUR
                 {
                     conn.Open();
                     string sql;
-                    NpgsqlCommand cmd;
 
                     if (UserSession.LoggedInIndustryID.HasValue)
                     {
                         sql = @"UPDATE pelaku_industri 
-                       SET name = @name::varchar, email = @email::varchar, role = @role::varchar, bio = @bio::varchar
-                       WHERE industri_id = @id";
-                        cmd = new NpgsqlCommand(sql, conn);
-                        cmd.Parameters.AddWithValue("id", UserSession.LoggedInIndustryID.Value);
+                               SET name = @name::varchar, 
+                                   email = @email::varchar, 
+                                   role = @role::varchar, 
+                                   bio = @bio::varchar" +
+                               (isImageChanged ? ", profile_picture = @profile_picture" : "") +
+                               " WHERE industri_id = @id";
                     }
                     else
                     {
                         sql = @"UPDATE waste_collector 
-                       SET name = @name::varchar, email = @email::varchar, role = @role::varchar, bio = @bio::varchar
-                       WHERE collector_id = @id";
-                        cmd = new NpgsqlCommand(sql, conn);
-                        cmd.Parameters.AddWithValue("id", UserSession.LoggedInCollectorID.Value);
+                               SET name = @name::varchar, 
+                                   email = @email::varchar, 
+                                   role = @role::varchar, 
+                                   bio = @bio::varchar" +
+                               (isImageChanged ? ", profile_picture = @profile_picture" : "") +
+                               " WHERE collector_id = @id";
                     }
 
-                    cmd.Parameters.AddWithValue("name", NpgsqlTypes.NpgsqlDbType.Varchar, tbUsername.Text);
-                    cmd.Parameters.AddWithValue("email", NpgsqlTypes.NpgsqlDbType.Varchar, tbEmail.Text);
-                    cmd.Parameters.AddWithValue("role", NpgsqlTypes.NpgsqlDbType.Varchar, tbRole.Text);
-                    cmd.Parameters.AddWithValue("bio", NpgsqlTypes.NpgsqlDbType.Varchar,
-                        string.IsNullOrWhiteSpace(tbBio.Text) ? DBNull.Value : tbBio.Text);
+                    using (var cmd = new NpgsqlCommand(sql, conn))
+                    {
+                        if (UserSession.LoggedInIndustryID.HasValue)
+                        {
+                            cmd.Parameters.AddWithValue("id", UserSession.LoggedInIndustryID.Value);
+                        }
+                        else
+                        {
+                            cmd.Parameters.AddWithValue("id", UserSession.LoggedInCollectorID.Value);
+                        }
 
-                    cmd.ExecuteNonQuery();
+                        cmd.Parameters.AddWithValue("name", NpgsqlTypes.NpgsqlDbType.Varchar, tbUsername.Text);
+                        cmd.Parameters.AddWithValue("email", NpgsqlTypes.NpgsqlDbType.Varchar, tbEmail.Text);
+                        cmd.Parameters.AddWithValue("role", NpgsqlTypes.NpgsqlDbType.Varchar, tbRole.Text);
+                        cmd.Parameters.AddWithValue("bio", NpgsqlTypes.NpgsqlDbType.Varchar,
+                            string.IsNullOrWhiteSpace(tbBio.Text) ? DBNull.Value : tbBio.Text);
 
-                    // Update the session data
-                    UserSession.UpdateUserInfo(tbUsername.Text, tbEmail.Text);
+                        if (isImageChanged && currentImageBytes != null)
+                        {
+                            cmd.Parameters.AddWithValue("profile_picture", NpgsqlTypes.NpgsqlDbType.Bytea, currentImageBytes);
+                        }
 
-                    MessageBox.Show("Profile updated successfully!", "Success",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        cmd.ExecuteNonQuery();
+
+                        // Reset the image changed flag
+                        isImageChanged = false;
+
+                        // Update the session data
+                        UserSession.UpdateUserInfo(tbUsername.Text, tbEmail.Text);
+
+                        MessageBox.Show("Profile updated successfully!", "Success",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
             }
             catch (Exception ex)
@@ -268,6 +355,7 @@ namespace DAUR
         private void setting_Load(object sender, EventArgs e)
         {
             LoadUserData();
+            InitializePictureBox();
             pnlSetting.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, pnlSetting.Width, pnlSetting.Height, 25, 25));
         }
 
@@ -286,6 +374,64 @@ namespace DAUR
         }
 
         private void btnEditPicture_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.bmp";
+                openFileDialog.Title = "Select Profile Picture";
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        // Load and resize the image
+                        using (Image originalImage = Image.FromFile(openFileDialog.FileName))
+                        {
+                            // Resize image to a reasonable size (e.g., 256x256)
+                            int maxSize = 256;
+                            int width = originalImage.Width;
+                            int height = originalImage.Height;
+
+                            if (width > maxSize || height > maxSize)
+                            {
+                                double ratio = (double)width / height;
+                                if (width > height)
+                                {
+                                    width = maxSize;
+                                    height = (int)(maxSize / ratio);
+                                }
+                                else
+                                {
+                                    height = maxSize;
+                                    width = (int)(maxSize * ratio);
+                                }
+                            }
+
+                            using (Bitmap resizedImage = new Bitmap(originalImage, width, height))
+                            {
+                                pbProfile.Image = new Bitmap(resizedImage);
+
+                                // Convert image to byte array
+                                using (MemoryStream ms = new MemoryStream())
+                                {
+                                    resizedImage.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                                    currentImageBytes = ms.ToArray();
+                                    isImageChanged = true;
+                                }
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Error loading image: {ex.Message}", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+
+
+        private void pbProfile_Click(object sender, EventArgs e)
         {
 
         }

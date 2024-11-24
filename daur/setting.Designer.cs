@@ -320,6 +320,7 @@
             pbProfile.SizeMode = PictureBoxSizeMode.StretchImage;
             pbProfile.TabIndex = 30;
             pbProfile.TabStop = false;
+            pbProfile.Click += pbProfile_Click;
             // 
             // guna2Panel1
             // 

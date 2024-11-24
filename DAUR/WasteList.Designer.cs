@@ -148,6 +148,7 @@
             btnDashboard.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnDashboard.Size = new Size(58, 56);
             btnDashboard.TabIndex = 13;
+            btnDashboard.Click += btnDashboard_Click;
             // 
             // btnSend
             // 
@@ -188,6 +189,7 @@
             btnProfile.ShadowDecoration.CustomizableEdges = customizableEdges8;
             btnProfile.Size = new Size(58, 56);
             btnProfile.TabIndex = 11;
+            btnProfile.Click += btnProfile_Click;
             // 
             // btnSetting
             // 
@@ -208,6 +210,7 @@
             btnSetting.ShadowDecoration.CustomizableEdges = customizableEdges10;
             btnSetting.Size = new Size(58, 56);
             btnSetting.TabIndex = 10;
+            btnSetting.Click += btnSetting_Click;
             // 
             // guna2HtmlLabel6
             // 
@@ -395,7 +398,6 @@
             Name = "WasteList";
             Text = "WasteList";
             Load += WasteList_Load;
-            //Shown += WasteList_Shown;
             guna2Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)table_list).EndInit();
             guna2Panel2.ResumeLayout(false);

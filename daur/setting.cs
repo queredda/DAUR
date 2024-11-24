@@ -275,5 +275,14 @@ namespace DAUR
         {
 
         }
+
+        private void logout_btn_Click(object sender, EventArgs e)
+        {
+            UserSession.ClearSession();
+            MessageBox.Show("You have been successfully logged out.", "Logout Successful",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            NavigatePage.OpenForm<loginPage>(this);
+        }
     }
 }

@@ -56,6 +56,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             button7 = new Button();
             pnlSetting = new Guna.UI2.WinForms.Guna2Panel();
             btnSubmit = new Guna.UI2.WinForms.Guna2Button();
@@ -76,6 +78,7 @@
             btnSend = new Guna.UI2.WinForms.Guna2Button();
             btnProfile = new Guna.UI2.WinForms.Guna2Button();
             btnSetting = new Guna.UI2.WinForms.Guna2Button();
+            logout_btn = new Guna.UI2.WinForms.Guna2Button();
             pnlSetting.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbProfile).BeginInit();
             guna2Panel1.SuspendLayout();
@@ -436,12 +439,32 @@
             btnSetting.Size = new Size(58, 56);
             btnSetting.TabIndex = 10;
             // 
+            // logout_btn
+            // 
+            logout_btn.BorderRadius = 22;
+            logout_btn.CustomizableEdges = customizableEdges28;
+            logout_btn.DisabledState.BorderColor = Color.DarkGray;
+            logout_btn.DisabledState.CustomBorderColor = Color.DarkGray;
+            logout_btn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            logout_btn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            logout_btn.FillColor = Color.FromArgb(42, 42, 42);
+            logout_btn.Font = new Font("Montserrat SemiBold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            logout_btn.ForeColor = Color.White;
+            logout_btn.Location = new Point(1194, 701);
+            logout_btn.Name = "logout_btn";
+            logout_btn.ShadowDecoration.CustomizableEdges = customizableEdges29;
+            logout_btn.Size = new Size(146, 46);
+            logout_btn.TabIndex = 42;
+            logout_btn.Text = "Log Out";
+            logout_btn.Click += logout_btn_Click;
+            // 
             // setting
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(254, 254, 254);
             ClientSize = new Size(1366, 768);
+            Controls.Add(logout_btn);
             Controls.Add(guna2Panel1);
             Controls.Add(pnlSetting);
             Controls.Add(button7);
@@ -479,5 +502,6 @@
         private Guna.UI2.WinForms.Guna2Button btnSend;
         private Guna.UI2.WinForms.Guna2Button btnDashboard;
         private Guna.UI2.WinForms.Guna2Button guna2Button4;
+        private Guna.UI2.WinForms.Guna2Button logout_btn;
     }
 }

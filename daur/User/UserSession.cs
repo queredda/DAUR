@@ -29,6 +29,12 @@ namespace DAUR
             LoggedInName = name;
         }
 
+        public static void UpdateUserInfo(string name, string email)
+        {
+            LoggedInName = name;
+            LoggedInEmail = email;
+        }
+
         public static void ClearSession()
         {
             LoggedInIndustryID = null;

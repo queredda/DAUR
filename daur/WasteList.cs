@@ -82,6 +82,7 @@ namespace DAUR
                 string sql = @"
                     SELECT 
                         pi.industri_id,
+                        pi.name,
                         pi.email,
                         ws.waste_kind,
                         ws.waste_weight,
@@ -100,7 +101,7 @@ namespace DAUR
                         while (reader.Read())
                         {
                             table_list.Rows.Add(
-                                reader["industri_id"].ToString(),
+                                reader["name"].ToString(),
                                 reader["email"].ToString(),
                                 reader["waste_kind"].ToString(),
                                 Convert.ToInt32(reader["waste_weight"]),
@@ -128,6 +129,40 @@ namespace DAUR
         private void WasteList_Load(object sender, EventArgs e)
         {
             LoadWasteData();
+        }
+
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            if (UserSession.LoggedInIndustryID.HasValue)
+            {
+                NavigatePage.OpenForm<IndustriDashboard>(this);
+            }
+            else
+            {
+                NavigatePage.OpenForm<PengepulDashboard>(this);
+            }
+        }
+        private void OpenProfile()
+        {
+            Profile Profile = new Profile();
+            Profile.Show();
+            this.Close();
+        }
+
+        private void OpenSetting()
+        {
+            setting setting = new setting();
+            setting.Show();
+            this.Close();
+        }
+        private void btnProfile_Click(object sender, EventArgs e)
+        {
+            OpenProfile();
+        }
+
+        private void btnSetting_Click(object sender, EventArgs e)
+        {
+            OpenSetting();
         }
     }
 }

@@ -53,8 +53,12 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             btnDashboard = new Guna.UI2.WinForms.Guna2Button();
@@ -62,25 +66,22 @@
             btnProfile = new Guna.UI2.WinForms.Guna2Button();
             btnSetting = new Guna.UI2.WinForms.Guna2Button();
             button1 = new Button();
-            pictureBox3 = new PictureBox();
-            pictureBox2 = new PictureBox();
             guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            waste_sent_lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
-            guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            weight_lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
             guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
+            guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            notif_btn = new Guna.UI2.WinForms.Guna2Button();
             guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            guna2MessageDialog1 = new Guna.UI2.WinForms.Guna2MessageDialog();
             guna2Panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
             guna2Panel3.SuspendLayout();
@@ -229,31 +230,13 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
-            // pictureBox3
-            // 
-            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(1136, 20);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(48, 48);
-            pictureBox3.TabIndex = 27;
-            pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(1062, 20);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(48, 48);
-            pictureBox2.TabIndex = 26;
-            pictureBox2.TabStop = false;
-            // 
             // guna2Panel2
             // 
             guna2Panel2.BackColor = Color.White;
             guna2Panel2.BorderColor = Color.FromArgb(236, 233, 254);
             guna2Panel2.BorderRadius = 20;
             guna2Panel2.BorderThickness = 2;
-            guna2Panel2.Controls.Add(guna2HtmlLabel2);
+            guna2Panel2.Controls.Add(waste_sent_lbl);
             guna2Panel2.Controls.Add(guna2HtmlLabel1);
             guna2Panel2.Controls.Add(guna2PictureBox1);
             guna2Panel2.CustomizableEdges = customizableEdges15;
@@ -263,15 +246,15 @@
             guna2Panel2.Size = new Size(529, 227);
             guna2Panel2.TabIndex = 28;
             // 
-            // guna2HtmlLabel2
+            // waste_sent_lbl
             // 
-            guna2HtmlLabel2.BackColor = Color.Transparent;
-            guna2HtmlLabel2.Font = new Font("Montserrat", 22.2F, FontStyle.Bold, GraphicsUnit.Point);
-            guna2HtmlLabel2.Location = new Point(28, 144);
-            guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            guna2HtmlLabel2.Size = new Size(25, 60);
-            guna2HtmlLabel2.TabIndex = 31;
-            guna2HtmlLabel2.Text = "5";
+            waste_sent_lbl.BackColor = Color.Transparent;
+            waste_sent_lbl.Font = new Font("Montserrat", 22.2F, FontStyle.Bold, GraphicsUnit.Point);
+            waste_sent_lbl.Location = new Point(28, 144);
+            waste_sent_lbl.Name = "waste_sent_lbl";
+            waste_sent_lbl.Size = new Size(25, 60);
+            waste_sent_lbl.TabIndex = 31;
+            waste_sent_lbl.Text = "5";
             // 
             // guna2HtmlLabel1
             // 
@@ -302,7 +285,7 @@
             guna2Panel3.BorderColor = Color.FromArgb(236, 233, 254);
             guna2Panel3.BorderRadius = 20;
             guna2Panel3.BorderThickness = 2;
-            guna2Panel3.Controls.Add(guna2HtmlLabel4);
+            guna2Panel3.Controls.Add(weight_lbl);
             guna2Panel3.Controls.Add(guna2HtmlLabel3);
             guna2Panel3.Controls.Add(guna2PictureBox2);
             guna2Panel3.CustomizableEdges = customizableEdges19;
@@ -312,15 +295,15 @@
             guna2Panel3.Size = new Size(529, 227);
             guna2Panel3.TabIndex = 29;
             // 
-            // guna2HtmlLabel4
+            // weight_lbl
             // 
-            guna2HtmlLabel4.BackColor = Color.Transparent;
-            guna2HtmlLabel4.Font = new Font("Montserrat", 22.2F, FontStyle.Bold, GraphicsUnit.Point);
-            guna2HtmlLabel4.Location = new Point(31, 144);
-            guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            guna2HtmlLabel4.Size = new Size(126, 60);
-            guna2HtmlLabel4.TabIndex = 32;
-            guna2HtmlLabel4.Text = "Sunny";
+            weight_lbl.BackColor = Color.Transparent;
+            weight_lbl.Font = new Font("Montserrat", 22.2F, FontStyle.Bold, GraphicsUnit.Point);
+            weight_lbl.Location = new Point(31, 144);
+            weight_lbl.Name = "weight_lbl";
+            weight_lbl.Size = new Size(52, 60);
+            weight_lbl.TabIndex = 32;
+            weight_lbl.Text = "90";
             // 
             // guna2HtmlLabel3
             // 
@@ -328,9 +311,9 @@
             guna2HtmlLabel3.Font = new Font("Montserrat SemiBold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             guna2HtmlLabel3.Location = new Point(31, 109);
             guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            guna2HtmlLabel3.Size = new Size(151, 29);
+            guna2HtmlLabel3.Size = new Size(200, 29);
             guna2HtmlLabel3.TabIndex = 32;
-            guna2HtmlLabel3.Text = "Today's Weather";
+            guna2HtmlLabel3.Text = "Total Weight of Waste";
             // 
             // guna2PictureBox2
             // 
@@ -387,16 +370,51 @@
             // 
             guna2Panel5.BorderColor = Color.FromArgb(234, 236, 240);
             guna2Panel5.BorderThickness = 2;
+            guna2Panel5.Controls.Add(guna2Button2);
+            guna2Panel5.Controls.Add(notif_btn);
             guna2Panel5.Controls.Add(guna2HtmlLabel6);
-            guna2Panel5.Controls.Add(pictureBox3);
-            guna2Panel5.Controls.Add(pictureBox2);
             guna2Panel5.CustomBorderColor = Color.FromArgb(234, 236, 240);
-            guna2Panel5.CustomizableEdges = customizableEdges25;
+            guna2Panel5.CustomizableEdges = customizableEdges29;
             guna2Panel5.Location = new Point(75, -2);
             guna2Panel5.Name = "guna2Panel5";
-            guna2Panel5.ShadowDecoration.CustomizableEdges = customizableEdges26;
+            guna2Panel5.ShadowDecoration.CustomizableEdges = customizableEdges30;
             guna2Panel5.Size = new Size(1293, 83);
             guna2Panel5.TabIndex = 31;
+            // 
+            // guna2Button2
+            // 
+            guna2Button2.BackgroundImage = Properties.Resources.Light_mode;
+            guna2Button2.CustomizableEdges = customizableEdges25;
+            guna2Button2.DisabledState.BorderColor = Color.DarkGray;
+            guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2Button2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2Button2.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2Button2.FillColor = Color.Transparent;
+            guna2Button2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            guna2Button2.ForeColor = Color.White;
+            guna2Button2.Location = new Point(1142, 20);
+            guna2Button2.Name = "guna2Button2";
+            guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges26;
+            guna2Button2.Size = new Size(48, 48);
+            guna2Button2.TabIndex = 34;
+            // 
+            // notif_btn
+            // 
+            notif_btn.BackgroundImage = Properties.Resources.Notification;
+            notif_btn.CustomizableEdges = customizableEdges27;
+            notif_btn.DisabledState.BorderColor = Color.DarkGray;
+            notif_btn.DisabledState.CustomBorderColor = Color.DarkGray;
+            notif_btn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            notif_btn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            notif_btn.FillColor = Color.Transparent;
+            notif_btn.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            notif_btn.ForeColor = Color.White;
+            notif_btn.Location = new Point(1062, 20);
+            notif_btn.Name = "notif_btn";
+            notif_btn.ShadowDecoration.CustomizableEdges = customizableEdges28;
+            notif_btn.Size = new Size(48, 48);
+            notif_btn.TabIndex = 33;
+            notif_btn.Click += notif_btn_Click;
             // 
             // guna2HtmlLabel6
             // 
@@ -407,15 +425,6 @@
             guna2HtmlLabel6.Size = new Size(215, 38);
             guna2HtmlLabel6.TabIndex = 32;
             guna2HtmlLabel6.Text = "Welcome, Steven.";
-            // 
-            // guna2MessageDialog1
-            // 
-            guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
-            guna2MessageDialog1.Caption = null;
-            guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.None;
-            guna2MessageDialog1.Parent = null;
-            guna2MessageDialog1.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
-            guna2MessageDialog1.Text = null;
             // 
             // IndustriDashboard
             // 
@@ -436,8 +445,6 @@
             Text = "newDashboard";
             Load += newDashboard_Load;
             guna2Panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             guna2Panel2.ResumeLayout(false);
             guna2Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).EndInit();
@@ -460,21 +467,20 @@
         private Guna.UI2.WinForms.Guna2Button btnProfile;
         private Guna.UI2.WinForms.Guna2Button btnSetting;
         private Button button1;
-        private PictureBox pictureBox3;
-        private PictureBox pictureBox2;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
+        private Guna.UI2.WinForms.Guna2HtmlLabel waste_sent_lbl;
+        private Guna.UI2.WinForms.Guna2HtmlLabel weight_lbl;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel6;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel6;
-        private Guna.UI2.WinForms.Guna2MessageDialog guna2MessageDialog1;
+        private Guna.UI2.WinForms.Guna2Button notif_btn;
+        private Guna.UI2.WinForms.Guna2Button guna2Button2;
     }
 }

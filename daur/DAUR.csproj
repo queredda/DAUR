@@ -29,4 +29,9 @@
     </EmbeddedResource>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Article\" />
+    <Folder Include="PageNavigate\" />
+  </ItemGroup>
+
 </Project>

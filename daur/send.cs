@@ -167,9 +167,10 @@ namespace DAUR
                 using (var conn = new NpgsqlConnection(connstring))
                 {
                     conn.Open();
-                    string sql = @"INSERT INTO public.waste_send 
-                (pelakuIndustri_industri_id, wasteCollector_collector_id, waste_kind, waste_weight, waste_status)
-                VALUES (@industri_id, @collector_id, @waste_kind, @waste_weight, @waste_status)";
+                    string sql = @"INSERT INTO waste_send 
+                (pelakuindustri_industri_id, wastecollector_collector_id, waste_kind, waste_weight, waste_status)
+                VALUES (@industri_id, @collector_id, @waste_kind, @waste_weight, @waste_status)
+                RETURNING waste_send_id";
 
                     using (var cmd = new NpgsqlCommand(sql, conn))
                     {
@@ -179,9 +180,10 @@ namespace DAUR
                         cmd.Parameters.AddWithValue("waste_weight", wasteWeight);
                         cmd.Parameters.AddWithValue("waste_status", "Pending");
 
-                        cmd.ExecuteNonQuery();
+                        // Execute the query and get the new waste_send_id
+                        int newWasteSendId = (int)cmd.ExecuteScalar();
 
-                        MessageBox.Show("Waste sent successfully!", "Success",
+                        MessageBox.Show($"Waste sent successfully! ID: {newWasteSendId}", "Success",
                             MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         tbJenis.Clear();

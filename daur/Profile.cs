@@ -1,4 +1,5 @@
 ﻿using Guna.UI2.WinForms;
+using Npgsql;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,9 @@ namespace DAUR
 {
     public partial class Profile : Form
     {
+        private string connstring = "Host=daur.postgres.database.azure.com;Port=5432;Username=daur;Password=Junprokontol!123;Database=DAUR;SSL Mode=Require;Trust Server Certificate=true;";
+        private NpgsqlConnection conn;
+
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn(
         int nLeftRect,
@@ -28,6 +32,8 @@ namespace DAUR
         public Profile()
         {
             InitializeComponent();
+            conn = new NpgsqlConnection(connstring);
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -120,21 +126,89 @@ namespace DAUR
 
         }
 
+        private void LoadUserData()
+        {
+            try
+            {
+                if (!UserSession.LoggedInIndustryID.HasValue && !UserSession.LoggedInCollectorID.HasValue)
+                {
+                    MessageBox.Show("Session expired. Please login again.", "Session Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    NavigatePage.OpenForm<loginPage>(this);
+                    return;
+                }
+
+                using (var conn = new NpgsqlConnection(connstring))
+                {
+                    conn.Open();
+                    string sql;
+                    NpgsqlCommand cmd;
+
+                    if (UserSession.LoggedInIndustryID.HasValue)
+                    {
+                        sql = "SELECT name, email, role, bio FROM pelaku_industri WHERE industri_id = @id";
+                        cmd = new NpgsqlCommand(sql, conn);
+                        cmd.Parameters.AddWithValue("id", UserSession.LoggedInIndustryID.Value);
+                    }
+                    else
+                    {
+                        sql = "SELECT name, email, role, bio FROM waste_collector WHERE collector_id = @id";
+                        cmd = new NpgsqlCommand(sql, conn);
+                        cmd.Parameters.AddWithValue("id", UserSession.LoggedInCollectorID.Value);
+                    }
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            guna2HtmlLabel3.Text = reader["name"].ToString();
+                            lbl_EmailUser.Text = reader["email"].ToString();
+                            lbl_RoleUser.Text = reader["role"]?.ToString() ?? "";
+                            lbl_BioUser.Text = reader["bio"]?.ToString() ?? "";
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading user data: {ex.Message}", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void Profile_Load(object sender, EventArgs e)
         {
-            if (UserSession.LoggedInCollectorID.HasValue)
+
+            LoadUserData();
+        }
+
+        private void btn_EditProfile_Click_1(object sender, EventArgs e)
+        {
+            Opensetting();
+        }
+
+        private void btnDashboard_Click_1(object sender, EventArgs e)
+        {
+            if (UserSession.LoggedInIndustryID.HasValue)
             {
-                guna2HtmlLabel3.Text = $"{UserSession.LoggedInName}!";
-            }
-            else if (UserSession.LoggedInIndustryID.HasValue)
-            {
-                guna2HtmlLabel3.Text = $"{UserSession.LoggedInName}!";
+                NavigatePage.OpenForm<IndustriDashboard>(this);
             }
             else
             {
-                MessageBox.Show("Session expired. Please login again.", "Session Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                NavigatePage.OpenForm<loginPage>(this);
+                NavigatePage.OpenForm<PengepulDashboard>(this);
+
+            }
+        }
+
+        private void btnSend_Click_1(object sender, EventArgs e)
+        {
+            if(UserSession.LoggedInIndustryID.HasValue)
+            {
+                NavigatePage.OpenForm<send>(this);
+            }
+            else
+            {
+                NavigatePage.OpenForm<WasteList>(this);
             }
         }
     }

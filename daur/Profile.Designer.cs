@@ -143,6 +143,7 @@ namespace DAUR
             btnDashboard.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnDashboard.Size = new Size(58, 56);
             btnDashboard.TabIndex = 13;
+            btnDashboard.Click += btnDashboard_Click_1;
             // 
             // btnSend
             // 
@@ -163,6 +164,7 @@ namespace DAUR
             btnSend.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btnSend.Size = new Size(58, 56);
             btnSend.TabIndex = 12;
+            btnSend.Click += btnSend_Click_1;
             // 
             // btnProfile
             // 
@@ -283,6 +285,7 @@ namespace DAUR
             btn_EditProfile.Size = new Size(195, 46);
             btn_EditProfile.TabIndex = 41;
             btn_EditProfile.Text = "Edit Profile";
+            btn_EditProfile.Click += btn_EditProfile_Click_1;
             // 
             // lbl_Bio
             // 

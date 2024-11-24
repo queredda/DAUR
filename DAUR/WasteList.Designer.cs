@@ -253,6 +253,8 @@
             // 
             // table_list
             // 
+            table_list.AllowUserToAddRows = false;
+            table_list.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = Color.White;
             table_list.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             table_list.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
@@ -278,6 +280,7 @@
             table_list.GridColor = Color.FromArgb(232, 237, 242);
             table_list.Location = new Point(0, 61);
             table_list.Name = "table_list";
+            table_list.ReadOnly = true;
             table_list.RowHeadersVisible = false;
             table_list.RowHeadersWidth = 51;
             table_list.RowTemplate.Height = 29;
@@ -296,7 +299,7 @@
             table_list.ThemeStyle.HeaderStyle.ForeColor = Color.White;
             table_list.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             table_list.ThemeStyle.HeaderStyle.Height = 50;
-            table_list.ThemeStyle.ReadOnly = false;
+            table_list.ThemeStyle.ReadOnly = true;
             table_list.ThemeStyle.RowsStyle.BackColor = Color.White;
             table_list.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             table_list.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
@@ -304,12 +307,14 @@
             table_list.ThemeStyle.RowsStyle.Height = 29;
             table_list.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             table_list.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            table_list.CellContentClick += table_list_CellContentClick;
             // 
             // table_name
             // 
             table_name.HeaderText = "Name";
             table_name.MinimumWidth = 6;
             table_name.Name = "table_name";
+            table_name.ReadOnly = true;
             table_name.Resizable = DataGridViewTriState.True;
             // 
             // table_email
@@ -318,6 +323,7 @@
             table_email.HeaderText = "Email";
             table_email.MinimumWidth = 6;
             table_email.Name = "table_email";
+            table_email.ReadOnly = true;
             // 
             // table_jenis
             // 
@@ -325,6 +331,7 @@
             table_jenis.HeaderText = "Jenis Sampah";
             table_jenis.MinimumWidth = 6;
             table_jenis.Name = "table_jenis";
+            table_jenis.ReadOnly = true;
             // 
             // table_berat
             // 
@@ -332,6 +339,7 @@
             table_berat.HeaderText = "Berat(Kg)";
             table_berat.MinimumWidth = 6;
             table_berat.Name = "table_berat";
+            table_berat.ReadOnly = true;
             // 
             // table_status
             // 
@@ -339,6 +347,7 @@
             table_status.HeaderText = "Status";
             table_status.MinimumWidth = 6;
             table_status.Name = "table_status";
+            table_status.ReadOnly = true;
             // 
             // table_action
             // 
@@ -346,6 +355,7 @@
             table_action.HeaderText = "Action";
             table_action.MinimumWidth = 6;
             table_action.Name = "table_action";
+            table_action.ReadOnly = true;
             table_action.Resizable = DataGridViewTriState.True;
             table_action.SortMode = DataGridViewColumnSortMode.Automatic;
             // 

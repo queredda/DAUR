@@ -43,10 +43,10 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             exit_btn = new Button();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
@@ -54,18 +54,18 @@
             btnSend = new Guna.UI2.WinForms.Guna2Button();
             btnProfile = new Guna.UI2.WinForms.Guna2Button();
             btnSetting = new Guna.UI2.WinForms.Guna2Button();
-            guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            waste_lbl = new Label();
-            Nama = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            name_lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            jenis_lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            berat = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            berat_lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            tolak_btn = new Guna.UI2.WinForms.Guna2Button();
+            wasteDetail_pnl = new Guna.UI2.WinForms.Guna2Panel();
             terima_btn = new Guna.UI2.WinForms.Guna2Button();
+            tolak_btn = new Guna.UI2.WinForms.Guna2Button();
+            berat_lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            berat = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            jenis_lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            name_lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            Nama = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            waste_lbl = new Label();
             guna2Panel1.SuspendLayout();
-            guna2Panel2.SuspendLayout();
+            wasteDetail_pnl.SuspendLayout();
             SuspendLayout();
             // 
             // exit_btn
@@ -204,118 +204,28 @@
             btnSetting.Size = new Size(58, 56);
             btnSetting.TabIndex = 10;
             // 
-            // guna2Panel2
+            // wasteDetail_pnl
             // 
-            guna2Panel2.BackColor = Color.FromArgb(249, 250, 251);
-            guna2Panel2.BorderColor = Color.FromArgb(236, 233, 254);
-            guna2Panel2.BorderRadius = 20;
-            guna2Panel2.BorderThickness = 2;
-            guna2Panel2.Controls.Add(terima_btn);
-            guna2Panel2.Controls.Add(tolak_btn);
-            guna2Panel2.Controls.Add(berat_lbl);
-            guna2Panel2.Controls.Add(berat);
-            guna2Panel2.Controls.Add(jenis_lbl);
-            guna2Panel2.Controls.Add(guna2HtmlLabel2);
-            guna2Panel2.Controls.Add(name_lbl);
-            guna2Panel2.Controls.Add(Nama);
-            guna2Panel2.Controls.Add(waste_lbl);
-            guna2Panel2.CustomizableEdges = customizableEdges17;
-            guna2Panel2.Location = new Point(386, 97);
-            guna2Panel2.Name = "guna2Panel2";
-            guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges18;
-            guna2Panel2.Size = new Size(647, 528);
-            guna2Panel2.TabIndex = 30;
-            // 
-            // waste_lbl
-            // 
-            waste_lbl.AutoSize = true;
-            waste_lbl.BackColor = Color.Transparent;
-            waste_lbl.Font = new Font("Montserrat", 13.7999992F, FontStyle.Bold, GraphicsUnit.Point);
-            waste_lbl.ForeColor = Color.FromArgb(66, 66, 66);
-            waste_lbl.ImeMode = ImeMode.NoControl;
-            waste_lbl.Location = new Point(240, 52);
-            waste_lbl.Name = "waste_lbl";
-            waste_lbl.Size = new Size(170, 32);
-            waste_lbl.TabIndex = 1;
-            waste_lbl.Text = "Waste Detail";
-            // 
-            // Nama
-            // 
-            Nama.BackColor = Color.Transparent;
-            Nama.Font = new Font("Montserrat", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            Nama.Location = new Point(80, 114);
-            Nama.Name = "Nama";
-            Nama.Size = new Size(56, 25);
-            Nama.TabIndex = 2;
-            Nama.Text = "Name";
-            // 
-            // name_lbl
-            // 
-            name_lbl.BackColor = Color.Transparent;
-            name_lbl.Font = new Font("Montserrat SemiBold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            name_lbl.Location = new Point(91, 154);
-            name_lbl.Name = "name_lbl";
-            name_lbl.Size = new Size(129, 27);
-            name_lbl.TabIndex = 3;
-            name_lbl.Text = "Hafidh Husna";
-            // 
-            // guna2HtmlLabel2
-            // 
-            guna2HtmlLabel2.BackColor = Color.Transparent;
-            guna2HtmlLabel2.Font = new Font("Montserrat", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            guna2HtmlLabel2.Location = new Point(80, 207);
-            guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            guna2HtmlLabel2.Size = new Size(127, 25);
-            guna2HtmlLabel2.TabIndex = 4;
-            guna2HtmlLabel2.Text = "Jenis Sampah";
-            // 
-            // jenis_lbl
-            // 
-            jenis_lbl.BackColor = Color.Transparent;
-            jenis_lbl.Font = new Font("Montserrat SemiBold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            jenis_lbl.Location = new Point(91, 251);
-            jenis_lbl.Name = "jenis_lbl";
-            jenis_lbl.Size = new Size(65, 27);
-            jenis_lbl.TabIndex = 5;
-            jenis_lbl.Text = "Plastik";
-            // 
-            // berat
-            // 
-            berat.BackColor = Color.Transparent;
-            berat.Font = new Font("Montserrat", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            berat.Location = new Point(80, 296);
-            berat.Name = "berat";
-            berat.Size = new Size(93, 25);
-            berat.TabIndex = 6;
-            berat.Text = "Berat (Kg)";
-            // 
-            // berat_lbl
-            // 
-            berat_lbl.BackColor = Color.Transparent;
-            berat_lbl.Font = new Font("Montserrat SemiBold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            berat_lbl.Location = new Point(91, 341);
-            berat_lbl.Name = "berat_lbl";
-            berat_lbl.Size = new Size(25, 27);
-            berat_lbl.TabIndex = 7;
-            berat_lbl.Text = "30";
-            // 
-            // tolak_btn
-            // 
-            tolak_btn.BorderRadius = 10;
-            tolak_btn.CustomizableEdges = customizableEdges15;
-            tolak_btn.DisabledState.BorderColor = Color.DarkGray;
-            tolak_btn.DisabledState.CustomBorderColor = Color.DarkGray;
-            tolak_btn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            tolak_btn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            tolak_btn.FillColor = Color.FromArgb(232, 237, 242);
-            tolak_btn.Font = new Font("Montserrat ExtraBold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            tolak_btn.ForeColor = Color.Black;
-            tolak_btn.Location = new Point(80, 410);
-            tolak_btn.Name = "tolak_btn";
-            tolak_btn.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            tolak_btn.Size = new Size(218, 46);
-            tolak_btn.TabIndex = 8;
-            tolak_btn.Text = "Tolak";
+            wasteDetail_pnl.BackColor = Color.FromArgb(249, 250, 251);
+            wasteDetail_pnl.BorderColor = Color.FromArgb(236, 233, 254);
+            wasteDetail_pnl.BorderRadius = 20;
+            wasteDetail_pnl.BorderThickness = 2;
+            wasteDetail_pnl.Controls.Add(terima_btn);
+            wasteDetail_pnl.Controls.Add(tolak_btn);
+            wasteDetail_pnl.Controls.Add(berat_lbl);
+            wasteDetail_pnl.Controls.Add(berat);
+            wasteDetail_pnl.Controls.Add(jenis_lbl);
+            wasteDetail_pnl.Controls.Add(guna2HtmlLabel2);
+            wasteDetail_pnl.Controls.Add(name_lbl);
+            wasteDetail_pnl.Controls.Add(Nama);
+            wasteDetail_pnl.Controls.Add(waste_lbl);
+            wasteDetail_pnl.CustomizableEdges = customizableEdges17;
+            wasteDetail_pnl.Location = new Point(386, 97);
+            wasteDetail_pnl.Name = "wasteDetail_pnl";
+            wasteDetail_pnl.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            wasteDetail_pnl.Size = new Size(647, 528);
+            wasteDetail_pnl.TabIndex = 30;
+            wasteDetail_pnl.Paint += wasteDetail_pnl_Paint;
             // 
             // terima_btn
             // 
@@ -334,6 +244,99 @@
             terima_btn.Size = new Size(218, 46);
             terima_btn.TabIndex = 9;
             terima_btn.Text = "Terima";
+            terima_btn.Click += terima_btn_Click;
+            // 
+            // tolak_btn
+            // 
+            tolak_btn.BorderRadius = 10;
+            tolak_btn.CustomizableEdges = customizableEdges15;
+            tolak_btn.DisabledState.BorderColor = Color.DarkGray;
+            tolak_btn.DisabledState.CustomBorderColor = Color.DarkGray;
+            tolak_btn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            tolak_btn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            tolak_btn.FillColor = Color.FromArgb(232, 237, 242);
+            tolak_btn.Font = new Font("Montserrat ExtraBold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            tolak_btn.ForeColor = Color.Black;
+            tolak_btn.Location = new Point(80, 410);
+            tolak_btn.Name = "tolak_btn";
+            tolak_btn.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            tolak_btn.Size = new Size(218, 46);
+            tolak_btn.TabIndex = 8;
+            tolak_btn.Text = "Tolak";
+            tolak_btn.Click += tolak_btn_Click;
+            // 
+            // berat_lbl
+            // 
+            berat_lbl.BackColor = Color.Transparent;
+            berat_lbl.Font = new Font("Montserrat SemiBold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            berat_lbl.Location = new Point(91, 341);
+            berat_lbl.Name = "berat_lbl";
+            berat_lbl.Size = new Size(25, 30);
+            berat_lbl.TabIndex = 7;
+            berat_lbl.Text = "30";
+            // 
+            // berat
+            // 
+            berat.BackColor = Color.Transparent;
+            berat.Font = new Font("Montserrat", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            berat.Location = new Point(80, 296);
+            berat.Name = "berat";
+            berat.Size = new Size(93, 29);
+            berat.TabIndex = 6;
+            berat.Text = "Berat (Kg)";
+            // 
+            // jenis_lbl
+            // 
+            jenis_lbl.BackColor = Color.Transparent;
+            jenis_lbl.Font = new Font("Montserrat SemiBold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            jenis_lbl.Location = new Point(91, 251);
+            jenis_lbl.Name = "jenis_lbl";
+            jenis_lbl.Size = new Size(65, 30);
+            jenis_lbl.TabIndex = 5;
+            jenis_lbl.Text = "Plastik";
+            // 
+            // guna2HtmlLabel2
+            // 
+            guna2HtmlLabel2.BackColor = Color.Transparent;
+            guna2HtmlLabel2.Font = new Font("Montserrat", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            guna2HtmlLabel2.Location = new Point(80, 207);
+            guna2HtmlLabel2.Name = "guna2HtmlLabel2";
+            guna2HtmlLabel2.Size = new Size(127, 29);
+            guna2HtmlLabel2.TabIndex = 4;
+            guna2HtmlLabel2.Text = "Jenis Sampah";
+            // 
+            // name_lbl
+            // 
+            name_lbl.BackColor = Color.Transparent;
+            name_lbl.Font = new Font("Montserrat SemiBold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            name_lbl.Location = new Point(91, 154);
+            name_lbl.Name = "name_lbl";
+            name_lbl.Size = new Size(129, 30);
+            name_lbl.TabIndex = 3;
+            name_lbl.Text = "Hafidh Husna";
+            // 
+            // Nama
+            // 
+            Nama.BackColor = Color.Transparent;
+            Nama.Font = new Font("Montserrat", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            Nama.Location = new Point(80, 114);
+            Nama.Name = "Nama";
+            Nama.Size = new Size(56, 29);
+            Nama.TabIndex = 2;
+            Nama.Text = "Name";
+            // 
+            // waste_lbl
+            // 
+            waste_lbl.AutoSize = true;
+            waste_lbl.BackColor = Color.Transparent;
+            waste_lbl.Font = new Font("Montserrat", 13.7999992F, FontStyle.Bold, GraphicsUnit.Point);
+            waste_lbl.ForeColor = Color.FromArgb(66, 66, 66);
+            waste_lbl.ImeMode = ImeMode.NoControl;
+            waste_lbl.Location = new Point(240, 52);
+            waste_lbl.Name = "waste_lbl";
+            waste_lbl.Size = new Size(171, 36);
+            waste_lbl.TabIndex = 1;
+            waste_lbl.Text = "Waste Detail";
             // 
             // wasteDetail
             // 
@@ -341,7 +344,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(249, 250, 251);
             ClientSize = new Size(1366, 768);
-            Controls.Add(guna2Panel2);
+            Controls.Add(wasteDetail_pnl);
             Controls.Add(guna2Panel1);
             Controls.Add(exit_btn);
             FormBorderStyle = FormBorderStyle.None;
@@ -350,8 +353,8 @@
             Name = "wasteDetail";
             Text = "wasteDetail";
             guna2Panel1.ResumeLayout(false);
-            guna2Panel2.ResumeLayout(false);
-            guna2Panel2.PerformLayout();
+            wasteDetail_pnl.ResumeLayout(false);
+            wasteDetail_pnl.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -364,7 +367,7 @@
         private Guna.UI2.WinForms.Guna2Button btnSend;
         private Guna.UI2.WinForms.Guna2Button btnProfile;
         private Guna.UI2.WinForms.Guna2Button btnSetting;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
+        private Guna.UI2.WinForms.Guna2Panel wasteDetail_pnl;
         private Guna.UI2.WinForms.Guna2HtmlLabel berat;
         private Guna.UI2.WinForms.Guna2HtmlLabel jenis_lbl;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;

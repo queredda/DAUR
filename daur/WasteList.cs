@@ -51,22 +51,6 @@ namespace DAUR
         //        );
         //}
 
-        private void table_list_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            // Handle the Details button click
-            if (e.ColumnIndex == table_list.Columns["Action"].Index && e.RowIndex >= 0)
-            {
-                // Get the waste details from the selected row
-                string industryId = table_list.Rows[e.RowIndex].Cells["IndustryId"].Value.ToString();
-                string wasteKind = table_list.Rows[e.RowIndex].Cells["WasteKind"].Value.ToString();
-                int wasteWeight = Convert.ToInt32(table_list.Rows[e.RowIndex].Cells["WasteWeight"].Value);
-                string status = table_list.Rows[e.RowIndex].Cells["Status"].Value.ToString();
-
-                // Show details in a message box
-                string details = $"Industry ID: {industryId}\nWaste Type: {wasteKind}\nWeight: {wasteWeight} kg\nStatus: {status}";
-                MessageBox.Show(details, "Waste Details", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-        }
 
 
         public void RefreshData()
@@ -93,24 +77,26 @@ namespace DAUR
                     ORDER BY ws.waste_send_id DESC";
 
                 using (var cmd = new NpgsqlCommand(sql, conn))
-                {
-                    using (var reader = cmd.ExecuteReader())
+                using (var reader = cmd.ExecuteReader())
                     {
                         table_list.Rows.Clear();
 
                         while (reader.Read())
                         {
-                            table_list.Rows.Add(
-                                reader["name"].ToString(),
-                                reader["email"].ToString(),
-                                reader["waste_kind"].ToString(),
-                                Convert.ToInt32(reader["waste_weight"]),
-                                reader["waste_status"].ToString(),
-                                "Details" // Button text for the action column
-                            );
+                        DataGridViewRow row = new DataGridViewRow();
+                        row.CreateCells(table_list);
+                        row.Cells[0].Value = reader["name"].ToString();
+                        row.Cells[1].Value = reader["email"].ToString();
+                        row.Cells[2].Value = reader["waste_kind"].ToString();
+                        row.Cells[3].Value = Convert.ToInt32(reader["waste_weight"]);
+                        row.Cells[4].Value = reader["waste_status"].ToString();
+                        row.Cells[5].Value = "Details";
+                        row.Tag = reader["waste_send_id"].ToString(); // Store waste_send_id in row's Tag property
+
+                        table_list.Rows.Add(row);
                         }
                     }
-                }
+                
             }
             catch (Exception ex)
             {
@@ -163,6 +149,27 @@ namespace DAUR
         private void btnSetting_Click(object sender, EventArgs e)
         {
             OpenSetting();
+        }
+
+        private void table_list_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == table_list.Columns["Action"].Index && e.RowIndex >= 0)
+            {
+                DataGridViewRow selectedRow = table_list.Rows[e.RowIndex];
+
+                // Create new wasteDetail form and pass the necessary data
+                wasteDetail detailForm = new wasteDetail(
+                    selectedRow.Cells["IndustryName"].Value.ToString(),
+                    selectedRow.Cells["WasteKind"].Value.ToString(),
+                    Convert.ToInt32(selectedRow.Cells["WasteWeight"].Value),
+                    Convert.ToInt32(selectedRow.Tag)
+                );
+
+                this.Hide();
+                detailForm.ShowDialog();
+                this.Show();
+                LoadWasteData(); // Refresh the data when returning from detail form
+            }
         }
     }
 }

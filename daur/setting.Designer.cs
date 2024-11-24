@@ -123,6 +123,7 @@
             pnlSetting.ShadowDecoration.CustomizableEdges = customizableEdges15;
             pnlSetting.Size = new Size(760, 629);
             pnlSetting.TabIndex = 21;
+            pnlSetting.Paint += pnlSetting_Paint;
             // 
             // btnSubmit
             // 
@@ -141,6 +142,7 @@
             btnSubmit.Size = new Size(195, 46);
             btnSubmit.TabIndex = 41;
             btnSubmit.Text = "Submit";
+            btnSubmit.Click += btnSubmit_Click;
             // 
             // tbBio
             // 
@@ -260,6 +262,7 @@
             tbEmail.ShadowDecoration.CustomizableEdges = customizableEdges10;
             tbEmail.Size = new Size(653, 45);
             tbEmail.TabIndex = 34;
+            tbEmail.TextChanged += tbEmail_TextChanged;
             // 
             // lblEmail
             // 
@@ -447,6 +450,7 @@
             MinimumSize = new Size(1366, 768);
             Name = "setting";
             Text = " ";
+            Load += setting_Load;
             pnlSetting.ResumeLayout(false);
             pnlSetting.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pbProfile).EndInit();

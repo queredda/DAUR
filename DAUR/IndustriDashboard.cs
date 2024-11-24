@@ -1,4 +1,5 @@
-﻿using Npgsql;
+﻿using Guna.UI2.WinForms;
+using Npgsql;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,6 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.Json.Serialization;
+using System.Text.Json;
 
 namespace DAUR
 {
@@ -176,6 +179,90 @@ namespace DAUR
             }
         }
 
+        private async void guna2Button1_Click(object sender, EventArgs e)
+        {
+            string baseUrl = "https://newsapi.org/v2/everything";
+            string userInput = guna2TextBox1.Text;  // User input
+            string apiKey = "c67becea8a4044cf8db088767ee8fe86";  // Your valid API key
 
+            // Construct the URL, ensure query parameter is properly encoded
+            var url = $"{baseUrl}?q={Uri.EscapeDataString(userInput)}&apiKey={apiKey}";
+
+            // Print the generated URL for debugging purposes
+            Console.WriteLine($"Generated URL: {url}");
+
+            using (HttpClient client = new HttpClient())
+            {
+                try
+                {
+                    // Add necessary headers, including User-Agent
+                    client.DefaultRequestHeaders.Add("User-Agent", "C# App");
+
+                    // Send GET request
+                    HttpResponseMessage response = await client.GetAsync(url);
+
+                    // Check if request is successful
+                    if (response.IsSuccessStatusCode)
+                    {
+                        string json = await response.Content.ReadAsStringAsync();
+                        var newsResponse = JsonSerializer.Deserialize<NewsResponse>(json);
+
+                        if (newsResponse?.Articles != null && newsResponse.Articles.Count > 0)
+                        {
+                            var firstArticle = newsResponse.Articles[0];
+                            guna2HtmlLabel2.Text = firstArticle.Title;    // Display title
+                            guna2HtmlLabel7.Text = firstArticle.Description; // Display description
+                            linkLabel2.Text = firstArticle.Url; // Display URL
+                            linkLabel2.Links.Clear(); // Clear any existing links
+                            linkLabel2.Links.Add(0, firstArticle.Url.Length, firstArticle.Url);
+                        }
+                        else
+                        {
+                            MessageBox.Show("No articles found.");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show($"Error: {response.StatusCode} - {response.ReasonPhrase}");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occurred:\n" + ex.Message);
+                }
+            }
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            // Check if LinkData is not null before attempting to open
+            try
+            {
+                // Ensure LinkData is not null
+                if (e.Link.LinkData != null)
+                {
+                    string url = e.Link.LinkData.ToString();
+
+                    // Make sure the URL starts with "http://" or "https://"
+                    if (!url.StartsWith("http://") && !url.StartsWith("https://"))
+                    {
+                        url = "https://" + url;  // Add "https://" if missing
+                    }
+
+                    // Use ProcessStartInfo to open the URL with the default browser
+                    var processStartInfo = new System.Diagnostics.ProcessStartInfo
+                    {
+                        FileName = url,
+                        UseShellExecute = true // This ensures the URL is opened in the default browser
+                    };
+
+                    System.Diagnostics.Process.Start(processStartInfo);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while trying to open the URL: " + ex.Message);
+            }
+        }
     }
 }

@@ -205,6 +205,7 @@ namespace DAUR
             btnSetting.ShadowDecoration.CustomizableEdges = customizableEdges10;
             btnSetting.Size = new Size(58, 56);
             btnSetting.TabIndex = 10;
+            btnSetting.Click += btnSetting_Click_1;
             // 
             // pnlProfile
             // 
@@ -359,17 +360,17 @@ namespace DAUR
         #endregion
 
         private Button button1;
-        private Guna.UI2.WinForms.Guna2Panel pnl_profile;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lblProfile;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox pbProfile;
+        private Guna2Panel pnl_profile;
+        private Guna2HtmlLabel lblProfile;
+        private Guna2CirclePictureBox pbProfile;
         private Label lblRole;
         private Label role_role;
         private Label lblEmail;
         private Label email_email;
-        private Guna.UI2.WinForms.Guna2Panel pnlSetting;
-        private Guna.UI2.WinForms.Guna2TextBox tbBio;
-        private Guna.UI2.WinForms.Guna2TextBox tbRole;
-        private Guna.UI2.WinForms.Guna2TextBox tbEmail;
+        private Guna2Panel pnlSetting;
+        private Guna2TextBox tbBio;
+        private Guna2TextBox tbRole;
+        private Guna2TextBox tbEmail;
         private Guna2Panel guna2Panel1;
         private Guna2Button guna2Button4;
         private Guna2Button btnDashboard;

@@ -294,6 +294,7 @@
             btnEditPicture.Size = new Size(154, 46);
             btnEditPicture.TabIndex = 32;
             btnEditPicture.Text = "Edit Picture";
+            btnEditPicture.Click += btnEditPicture_Click;
             // 
             // lblProfile
             // 

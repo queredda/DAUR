@@ -284,5 +284,10 @@ namespace DAUR
 
             NavigatePage.OpenForm<loginPage>(this);
         }
+
+        private void btnEditPicture_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

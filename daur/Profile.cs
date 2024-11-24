@@ -202,7 +202,7 @@ namespace DAUR
 
         private void btnSend_Click_1(object sender, EventArgs e)
         {
-            if(UserSession.LoggedInIndustryID.HasValue)
+            if (UserSession.LoggedInIndustryID.HasValue)
             {
                 NavigatePage.OpenForm<send>(this);
             }
@@ -210,6 +210,11 @@ namespace DAUR
             {
                 NavigatePage.OpenForm<WasteList>(this);
             }
+        }
+
+        private void btnSetting_Click_1(object sender, EventArgs e)
+        {
+            NavigatePage.OpenForm<setting>(this);
         }
     }
 }
